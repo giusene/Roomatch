@@ -1,11 +1,16 @@
-import styles from './Rooms.module.scss'
+import styles from "./Rooms.module.scss";
+import RoomCard from "../../components/RoomCard/RoomCard";
+import Header from "../../components/Header";
+import MainNav from "../../components/MainNav";
 
 const Rooms = () => {
-    return (
-        <div className={styles.main}>
-            <h4>Rooms page</h4>
-        </div>
-    )
-} 
+  return (
+    <div className={styles.main}>
+      <Header />
+      <RoomCard />
+      <MainNav />
+    </div>
+  );
+};
 
-export default Rooms
+export default Rooms;

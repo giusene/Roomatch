@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 // Colors
 $mainPink: #990066;
-$mainLightBlue: #B9D1E0;
-
+$mainLightBlue: #b9d1e0;
 
 // Fonts
-$titleFont: 'Montserrat', sans-serif;
-$paragraphFont: 'Roboto', sans-serif;
+$titleFont: "Montserrat", sans-serif;
+$paragraphFont: "Roboto", sans-serif;
 
 //texts
-$logoSize: 16px;
-$superSmall: 14px;
+$logoSize: 1.3rem;
+$smallSize: 0.8rem;
+$superSmall: 1rem;
 
 // Margin Padding
 
 $sidePadding: 2.5rem;
 $sideMargin: 3rem;
-
 $topMargin: 2rem;
 
+$radiusDiv: 21px;
