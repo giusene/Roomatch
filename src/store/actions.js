@@ -5,12 +5,14 @@ import {
     FETCH_LOGIN_ERROR
 } from "./constants";
 
+import { backend_URL } from '../libs/functions';
+
 export const loginAction = (loginInput) => {
     return async (dispatch) => {
         dispatch({type: FETCH_LOGIN_REQUEST})
         try {
-            const {data: user} = await axios.post('https://roomatch0.herokuapp.com/login', loginInput)
-            dispatch({type: FETCH_LOGIN_SUCCESS, payload: user})
+            const { data } = await axios.post( backend_URL + '/login', loginInput)
+            dispatch({type: FETCH_LOGIN_SUCCESS, payload: data[0]})
         }
         catch(e) {
             dispatch({type: FETCH_LOGIN_ERROR, payload: e })
