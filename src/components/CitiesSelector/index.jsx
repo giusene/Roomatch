@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { cities } from "./../../libs/cities";
 import { provData } from "./../../libs/prov";
 
-const CitiesSelector = () => {
+const CitiesSelector = ({handleInputCities}) => {
   const [prov, setProv] = useState("AG");
   const [filteredCities, setFilteredCities] = useState([]);
 
@@ -12,7 +12,10 @@ const CitiesSelector = () => {
 
   return (
     <>
-      <select onChange={(e) => setProv(e.target.value)}>
+      <select name='city' onChange={(e) => {
+          setProv(e.target.value)
+          handleInputCities('city', e.target.value)
+          }}>
         {provData.map((item, index) => (
           <option value={item.sigla} key={index}>
             {item.nome}
@@ -20,7 +23,9 @@ const CitiesSelector = () => {
         ))}
       </select>
 
-      <select>
+      <select name='town' onChange={(e) => {
+          handleInputCities('town', e.target.value)
+          }} >
         {filteredCities.map((city, index) => (
           <option value={city.nome} key={index}>
             {city.nome}

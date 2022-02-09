@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styles from './LoginPage.module.scss'
 import LoginForm from './../../components/LoginForm'
+import RegistrationForm from '../../components/SubscribeForm/RegistrationForm';
 
 const LoginPage = () => {
     const [form, setForm] = useState('login');
@@ -9,7 +10,7 @@ const LoginPage = () => {
         <div className={styles.main}>
             {form === 'login' ?
                 <LoginForm /> :
-                'registration form'
+                <RegistrationForm />
             }
             <p>non hai un account? <span onClick={() => setForm('registration')}>Registrati</span></p>
         </div>

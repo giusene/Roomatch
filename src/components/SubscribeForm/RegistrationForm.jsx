@@ -1,18 +1,39 @@
-// import styles from "./SubscribeFormContainer.module.scss";
-
+// import styles from "./RegistrationForm.module.scss";
 import { useState } from "react";
 import FirstStep from "./registrationSteps/FirstStep";
 import SecondStep from "./registrationSteps/SecondStep";
 import ThirdStep from "./registrationSteps/ThirdStep";
 
 const initialForm = {
-  photo: "",
-  fullname: "",
-  age: "",
+  iam: {
+    lgbtq: 0,
+    multicultural: 0,
+    pet_owner: 0,
+    veg: 0,
+    party_lover: 0,
+    smooker: 0,
+  },
+  name: "",
+  surname: "",
   email: "",
   password: "",
+  gender: "",
+  age: 18,
+  ilike: [],
+  wholikesme: [],
   city: "",
+  town: "",
+  photo: "https://ibb.co/BTyj7Zn",
 };
+
+// const initialForm = {
+//   photo: "",
+//   fullname: "",
+//   age: "",
+//   email: "",
+//   password: "",
+//   city: "",
+// };
 
 const RegistrationForm = () => {
   const [step, setStep] = useState(1);
@@ -30,6 +51,22 @@ const RegistrationForm = () => {
     setFormData({
       ...formData,
       [input]: e.target.value,
+    });
+  };
+
+
+  const handleInputCities = (input, value) => {
+    setFormData({
+      ...formData,
+      [input]: value,
+    });
+  };
+
+  const handleInputPref = (input, e) => {
+    // console.log(input, e.target.checked)
+    setFormData({
+      ...formData,
+      iam: {...formData.iam, [input]: e.target.checked ? 1 : 0}
     });
   };
 
@@ -51,6 +88,8 @@ const RegistrationForm = () => {
             prevStep={prevStep}
             nextStep={nextStep}
             handleFormData={handleInputData}
+            handleInputPref={handleInputPref}
+            handleInputCities={handleInputCities}
             values={formData}
           />
         </div>
