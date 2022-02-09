@@ -5,7 +5,7 @@ import {
 } from "./constants";
 
 const defaultStore = {
-    logged: true,
+    logged: false,
     loading: false
 }
 
