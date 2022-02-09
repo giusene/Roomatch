@@ -1,11 +1,11 @@
-import SubscribeFormContainer from "./SubscribeFormContainer"
+import RegistrationForm from "./SubscribeFormContainer";
 
 const SubsForm = () => {
-    return(
-        <>
-        <SubscribeFormContainer/>
-        </>
-    )
-}
+  return (
+    <>
+      <RegistrationForm />
+    </>
+  );
+};
 
-export default SubsForm
+export default SubsForm;
