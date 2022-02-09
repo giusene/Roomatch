@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {loginAction} from './../../store/actions';
 import styles from './LoginForm.module.scss';
 import { useDispatch } from 'react-redux'
+import CitiesSelector from '../CitiesSelector';
 
 
 const LoginForm = () => {
@@ -23,6 +24,7 @@ const LoginForm = () => {
             <input onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}  type='password' placeholder="password" required/>
             <button>Entra</button>
         </form>
+        <CitiesSelector />
         </div>
     )
 }
