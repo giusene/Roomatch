@@ -1,0 +1,21 @@
+
+.main {
+    border: 1px solid red;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+    height: 100px;
+    background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul {
+        list-style: none;
+        display: flex;
+        padding: 0;
+        li {
+            margin: 0 10px;
+            font-size: 10px;
+        }
+    }
+}

@@ -4,7 +4,7 @@ import thunk from 'redux-thunk'
 import LoginReducer from './loginReducer'
 
 const defaultStore = {
-    logged: false,
+    logged: true,
     loading: false
 }
 
