@@ -35,4 +35,16 @@ export const likeDislike = (body, roomId, type) => {
   };
 }
 
+export const changeChar = (body, userId) => {
+  return async (dispatch) => {
+    dispatch({ type: USER_UPDATE_REQUEST });
+    try {
+      const { data } = await axios.patch(backend_URL + `/users/${userId}`, body);
+      dispatch({ type: USER_UPDATE_SUCCESS, payload: data });
+    } catch (e) {
+      dispatch({ type: USER_UPDATE_ERROR, payload: e });
+    }
+  };
+}
+
 

@@ -23,7 +23,7 @@ const initialForm = {
   wholikesme: [],
   city: "",
   town: "",
-  photo: "https://ibb.co/BTyj7Zn",
+  photo: "https://i.ibb.co/NNVky0R/profile-default.png",
 };
 
 // const initialForm = {
