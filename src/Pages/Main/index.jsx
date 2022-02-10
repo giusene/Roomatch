@@ -2,7 +2,7 @@
 import { useSelector } from "react-redux"
 import styles from './Main.module.scss'
 import { Routes, Route } from 'react-router-dom'
-// import Header from './../../components/Header'
+import Header from './../../components/Header'
 import MainNav from './../../components/MainNav'
 import Rooms from './../Rooms'
 import Likes from '../Likes'
@@ -18,7 +18,7 @@ const Main = () => {
     return (
         <div className={styles.main}>
             {console.log(reduxStore)}
-            {/* <Header /> */}
+            <Header />
             <Routes>
                 <Route path='/' element={<Rooms />} />
                 <Route path='/likes' element={<Likes />} />

@@ -6,17 +6,20 @@
   height: 30rem;
   position: relative;
   border-radius: 21px;
+  margin-bottom: 25px;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
   box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
 }
 
-.cardImg {
-  height: 30rem;
-  width: auto;
-  border-radius: 21px;
-  margin-bottom: 25px;
-  border-radius: 2px;
-}
+// .cardImg {
+//   height: 30rem;
+//   width: auto;
+//   border-radius: 21px;
+//   margin-bottom: 25px;
+//   border-radius: 2px;
+// }
 
 .cardText {
   position: absolute;

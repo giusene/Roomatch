@@ -1,14 +1,22 @@
+import { useEffect, useState } from "react";
 import styles from "./Rooms.module.scss";
 import RoomCard from "../../components/RoomCard/RoomCard";
-import Header from "../../components/Header";
-import MainNav from "../../components/MainNav";
+import { httpGET } from "../../libs/http";
 
 const Rooms = () => {
+  const [roomsList, setRoomList] = useState([]);
+
+  useEffect(() => {
+    httpGET('/rooms').then(data => setRoomList(data))
+  }, []);
+
+
+
   return (
     <div className={styles.main}>
-      <Header />
-      <RoomCard />
-      <MainNav />
+      {roomsList.map((room) => (
+        <RoomCard room={room} key={room._id} />
+      ))}
     </div>
   );
 };
