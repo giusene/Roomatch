@@ -19,6 +19,14 @@
   color: $mainPink;
 }
 
+.containerForm {
+  border: 1px solid blue;
+  width: $mobileWidth;
+  height: $mobileHeight;
+  margin: 0 auto;
+  padding: $sidePadding;
+  position: relative;
+}
 .stepText {
   font-family: $paragraphFont;
   text-align: left;

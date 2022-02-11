@@ -1,4 +1,6 @@
 import CitiesSelector from "../../CitiesSelector";
+import styles from "./SecondStep.module.scss";
+import { BsArrowRightCircleFill, BsArrowLeftCircle } from "react-icons/bs";
 
 const SecondStep = ({
   nextStep,
@@ -14,102 +16,146 @@ const SecondStep = ({
   };
 
   return (
-    <div className="wrapper">
-      <p className="secondStepText">What roommate are you</p>
+    <div className={styles.containerForm}>
       <form onSubmit={(e) => submitFormData(e)}>
-        <div className="inputWrapper">
-          <label htmlFor="age">Age*</label>
-          <input
-            value={values.age}
-            onChange={handleFormData("age")}
-            name="age"
-            id="age"
-            type="number"
-            placeholder="Your age"
-            min="18"
-            max="90"
-            required
-          />
+        <div>
+          <div className={styles.age}>
+            <label htmlFor="age">Age*</label>
+            <input
+              className={styles.styledCheckbox}
+              value={values.age}
+              onChange={handleFormData("age")}
+              name="age"
+              id="age"
+              type="number"
+              placeholder="Your age"
+              min="18"
+              max="90"
+              required
+            />
+          </div>
+          <div className={styles.gender}>
+            <label htmlFor="gender">Gender*</label>
+            <select
+              defaultValue={"DEFAULT"}
+              onChange={handleFormData("gender")}
+              name="gender"
+              id="gender"
+              placeholder="Gender"
+              required
+            >
+              <option value="DEFAULT" disabled>
+                Gender
+              </option>
+              <option value={values.genre}>M</option>
+              <option value={values.genre}>F</option>
+            </select>
+          </div>
 
-          <label htmlFor="gender">gender*</label>
-          <select
-            defaultValue={"DEFAULT"}
-            onChange={handleFormData("gender")}
-            name="gender"
-            id="gender"
-            placeholder="gender"
-            required
-          >
-            <option value="DEFAULT" disabled>
-              gender
-            </option>
-            <option value={values.genre}>M</option>
-            <option value={values.genre}>F</option>
-          </select>
+          <div className={styles.city}>
+            <label htmlFor="City">City*</label>
+            <CitiesSelector handleInputCities={handleInputCities} />
+          </div>
 
-          <label htmlFor="City">City*</label>
-          <CitiesSelector handleInputCities={handleInputCities} />
           <fieldset>
             <legend>I'm</legend>
-            <label htmlFor="lgbtq">LGBTQ+</label>
-            <input
-              type="checkbox"
-              name="action"
-              id="lgbtq"
-              value={values.lgbt}
-              onChange={(e) => handleInputPref("lgbtq", e)}
-            />
-            <br />
-            <label htmlFor="multicultural">Multicultural</label>
-            <input
-              value={values.multicultural}
-              onChange={(e) => handleInputPref("multicultural", e)}
-              type="checkbox"
-              name="action"
-              id="multicultural"
-            />
-            <br />
+            <section>
+              <div className={styles.flexColumn}>
+                <div>
+                  <label className={styles.container} htmlFor="lgbtq">
+                    LGBTQ+
+                    <input
+                      type="checkbox"
+                      name="action"
+                      id="lgbtq"
+                      value={values.lgbt}
+                      onChange={(e) => handleInputPref("lgbtq", e)}
+                    />
+                    <span className={styles.mark}></span>
+                  </label>
+                </div>
 
-            <label htmlFor="musician">Musician</label>
-            <input
-              value={values.musician}
-              onChange={(e) => handleInputPref("musician", e)}
-              type="checkbox"
-              name="action"
-              id="musician"
-            />
-            <br />
-            <label htmlFor="pets">Pet owner</label>
-            <input
-              value={values.pets}
-              type="checkbox"
-              onChange={(e) => handleInputPref("pets", e)}
-              name="action"
-              id="pets"
-            />
-            <br />
-            <label htmlFor="veg">Veg</label>
-            <input
-              value={values.veg}
-              onChange={(e) => handleInputPref("veg", e)}
-              type="checkbox"
-              name="action"
-              id="veg"
-            />
-            <br />
-            <label htmlFor="party">Party lover</label>
-            <input
-              value={values.party}
-              onChange={(e) => handleInputPref("party", e)}
-              type="checkbox"
-              name="action"
-              id="party"
-            />
+                <div>
+                  <label className={styles.container} htmlFor="pets">
+                    Pet owner
+                    <input
+                      value={values.pets}
+                      onChange={(e) => handleInputPref("pets", e)}
+                      type="checkbox"
+                      name="action"
+                      id="pets"
+                    />
+                    <span className={styles.mark}></span>
+                  </label>
+                </div>
+                <div>
+                  <label className={styles.container} htmlFor="multicultural">
+                    Multicultural
+                    <input
+                      value={values.multicultural}
+                      onChange={(e) => handleInputPref("multicultural", e)}
+                      type="checkbox"
+                      name="action"
+                      id="multicultural"
+                    />
+                    <span className={styles.mark}></span>
+                  </label>
+                </div>
+              </div>
+
+              <div className={styles.flexColumn}>
+                <div>
+                  <label className={styles.container} htmlFor="veg">
+                    Veg
+                    <input
+                      value={values.veg}
+                      type="checkbox"
+                      onChange={(e) => handleInputPref("veg", e)}
+                      name="action"
+                      id="veg"
+                    />
+                    <span className={styles.mark}></span>
+                  </label>
+                </div>
+
+                <div>
+                  <label className={styles.container} htmlFor="musician">
+                    Musician
+                    <input
+                      value={values.musician}
+                      onChange={(e) => handleInputPref("musician", e)}
+                      type="checkbox"
+                      name="action"
+                      id="musician"
+                    />
+                    <span className={styles.mark}></span>
+                  </label>
+                </div>
+
+                <div>
+                  <label className={styles.container} htmlFor="party">
+                    Party lover
+                    <input
+                      value={values.party}
+                      onChange={(e) => handleInputPref("party", e)}
+                      type="checkbox"
+                      name="action"
+                      id="party"
+                    />
+                    <span className={styles.mark}></span>
+                  </label>
+                </div>
+              </div>
+            </section>
           </fieldset>
         </div>
       </form>
-      <button onClick={prevStep}>{"<"}</button>
-      <button onClick={nextStep}>{">"}</button>
+      <button className={styles.prevStep} onClick={prevStep}>
+        <BsArrowLeftCircle />
+      </button>
+      <button className={styles.nextStep} onClick={nextStep}>
+        <BsArrowRightCircleFill />
+      </button>
     </div>
   );
 };

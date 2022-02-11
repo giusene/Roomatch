@@ -1,0 +1,16 @@
+@import "./../../../libs/variables.scss";
+.container {
+  label {
+    font-size: $labelSize;
+    font-weight: bold;
+  }
+
+  input {
+    border: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 0.8rem;
+    &::placeholder {
+      font-size: $labelSize;
+    }
+  }
+}

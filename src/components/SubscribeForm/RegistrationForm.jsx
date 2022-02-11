@@ -1,5 +1,6 @@
-// import styles from "./RegistrationForm.module.scss";
+import styles from "./RegistrationForm.module.scss";
 import { useState } from "react";
+import HeaderForms from "../HeaderForms/HeaderForms";
 import FirstStep from "./registrationSteps/FirstStep";
 import SecondStep from "./registrationSteps/SecondStep";
 import ThirdStep from "./registrationSteps/ThirdStep";
@@ -54,7 +55,6 @@ const RegistrationForm = () => {
     });
   };
 
-
   const handleInputCities = (input, value) => {
     setFormData({
       ...formData,
@@ -66,14 +66,15 @@ const RegistrationForm = () => {
     // console.log(input, e.target.checked)
     setFormData({
       ...formData,
-      iam: {...formData.iam, [input]: e.target.checked ? 1 : 0}
+      iam: { ...formData.iam, [input]: e.target.checked ? 1 : 0 },
     });
   };
 
   switch (step) {
     case 1:
       return (
-        <div className="RegistrationForm">
+        <div className={styles.containerForm}>
+          <HeaderForms step={step} />
           <FirstStep
             nextStep={nextStep}
             handleFormData={handleInputData}
@@ -83,7 +84,9 @@ const RegistrationForm = () => {
       );
     case 2:
       return (
-        <div className="RegistrationForm">
+        <div className={styles.containerForm}>
+          <HeaderForms step={step} />
+
           <SecondStep
             prevStep={prevStep}
             nextStep={nextStep}
@@ -96,7 +99,8 @@ const RegistrationForm = () => {
       );
     case 3:
       return (
-        <div className="RegistrationForm">
+        <div className={styles.containerForm}>
+          <HeaderForms step={step} />
           <ThirdStep prevStep={prevStep} values={formData} />
         </div>
       );

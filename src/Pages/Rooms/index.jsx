@@ -7,10 +7,8 @@ const Rooms = () => {
   const [roomsList, setRoomList] = useState([]);
 
   useEffect(() => {
-    httpGET('/rooms').then(data => setRoomList(data))
+    httpGET("/rooms").then((data) => setRoomList(data));
   }, []);
-
-
 
   return (
     <div className={styles.main}>

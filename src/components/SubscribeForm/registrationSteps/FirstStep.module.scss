@@ -1,0 +1,32 @@
+@import "./../../../libs/variables.scss";
+
+.nextStep {
+  border: none;
+  background-color: rgba(80, 80, 80, 0);
+  position: absolute;
+  bottom: 1.5rem;
+  right: $sidePadding;
+  color: $mainLightBlue;
+  font-size: 2rem;
+}
+
+.flexForm {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: $labelSize;
+    font-weight: bold;
+    margin: 0.8rem 0 0.3rem;
+  }
+
+  input {
+    border: none;
+    border-bottom: 2px solid black;
+    margin-bottom: 0.8rem;
+    &::placeholder {
+      font-size: $labelSize;
+    }
+  }
+}

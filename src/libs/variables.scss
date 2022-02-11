@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
+// mobile-size
+$mobileHeight: 50rem;
+$mobileWidth: 22.5rem;
+
 // Colors
 $mainPink: #990066;
 $mainLightBlue: #b9d1e0;
@@ -9,9 +13,10 @@ $titleFont: "Montserrat", sans-serif;
 $paragraphFont: "Roboto", sans-serif;
 
 //texts
-$logoSize: 1.3rem;
-$smallSize: 0.8rem;
-$superSmall: 1rem;
+$logoSize: 1rem;
+$smallSize: 1rem;
+$superSmall: 0.8rem;
+$labelSize: 0.7rem;
 
 // Margin Padding
 
