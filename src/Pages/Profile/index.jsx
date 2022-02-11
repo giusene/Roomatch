@@ -14,7 +14,7 @@ const Profile = () => {
   const handleChar = (char) => {
     dispatch(
       changeChar(
-         [{
+        [{
           propName: 'iam',
           value: {
               ...user.iam, [char]: user.iam[char] === 0 ? 1 : 0
@@ -79,7 +79,7 @@ const Profile = () => {
         </div>
       </div>
       <div className={styles.bottomContent}>
-        {user.roomId.length > 0 ? <RoomAd /> : <button>Find roommate</button>}
+        {user.roomId.roomId ? <RoomAd room={user.roomId} /> : <button>Find roommate</button>}
       </div>
     </div>
   );
