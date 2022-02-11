@@ -19,8 +19,10 @@ const LoginForm = () => {
     return (
         <div className={styles.main}>
         <form onSubmit={(e) => handleSubmit(e)}>
-            <input onChange={(e) => setLoginForm({...loginForm, email: e.target.value})} type='email' placeholder="email" required/>
-            <input onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}  type='password' placeholder="password" required/>
+        <label htmlFor='email'>Email*</label>
+            <input id='email' name='email' onChange={(e) => setLoginForm({...loginForm, email: e.target.value})} type='email' placeholder="email" required/>
+            <label htmlFor='password'>Password*</label>
+            <input id='password' name='password' onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}  type='password' placeholder="password" required/>
             <button>Entra</button>
         </form>
         </div>

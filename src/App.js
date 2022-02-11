@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 import Main from "./Pages/Main";
-import LoginPage from "./Pages/LoginPage";
+import LandingPage from "./Pages/LandingPage";
+import Registration from './Pages/Registration'
+import Login from './Pages/Login'
 
 function App() {
   const loginStatus = useSelector((state) => state.logged);
@@ -9,7 +11,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="*" element={loginStatus ? <Main /> : <LoginPage />} />
+        <Route path="*" element={loginStatus ? <Main /> : <LandingPage />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );

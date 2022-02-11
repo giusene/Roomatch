@@ -26,4 +26,23 @@ fetch(backend_URL + resource, {
 }).then(response => response.json());
 
 
-export { httpGET, httpPOST, httpPATCH }
+const dataConvert = (data) => {
+    let formData = new FormData();
+    formData.append(
+        'image',
+        data,
+    );
+    return formData;
+}
+
+const uploadImg = (data) =>
+    fetch(process.env.REACT_APP_IMG_UPLOAD_ENDPOINT, {
+        method: 'POST',
+        body: dataConvert(data),
+    }).then((response) => response.json());
+
+
+
+
+
+export { httpGET, httpPOST, httpPATCH, uploadImg }

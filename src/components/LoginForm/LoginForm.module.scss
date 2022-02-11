@@ -1,0 +1,27 @@
+@import './../../libs/variables.scss';
+
+
+.main {
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: auto;
+    margin-top: 50px;
+
+    input {
+      margin-bottom: 40px;
+      margin-top: 10px;
+    }
+    button {
+        text-decoration: none;
+        background-color: $mainPink;
+        color: #fff;
+        font-weight: bold;
+        padding: 8px 25px;
+        border-radius: 15px;
+        margin: 20px;
+        border: none;
+    }
+  }
+}

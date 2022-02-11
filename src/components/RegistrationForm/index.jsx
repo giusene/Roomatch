@@ -22,8 +22,8 @@ const initialForm = {
   age: 18,
   ilike: [],
   wholikesme: [],
-  city: "",
-  town: "",
+  city: "AG",
+  town: "Agrigento",
   photo: "https://i.ibb.co/NNVky0R/profile-default.png",
 };
 
@@ -55,6 +55,13 @@ const RegistrationForm = () => {
     });
   };
 
+  const setImage = (input) => {
+    setFormData({
+      ...formData,
+      photo: input,
+    });
+  };
+
   const handleInputCities = (input, value) => {
     setFormData({
       ...formData,
@@ -78,6 +85,7 @@ const RegistrationForm = () => {
           <FirstStep
             nextStep={nextStep}
             handleFormData={handleInputData}
+            setImage={setImage}
             values={formData}
           />
         </div>
@@ -106,11 +114,13 @@ const RegistrationForm = () => {
       );
     default:
       return (
+        <div className={styles.containerForm}>
         <FirstStep
           nextStep={nextStep}
           handleFormData={handleInputData}
           values={formData}
         />
+        </div>
       );
   }
 };

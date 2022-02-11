@@ -37,24 +37,23 @@ const SecondStep = ({
           <div className={styles.gender}>
             <label htmlFor="gender">Gender*</label>
             <select
-              defaultValue={"DEFAULT"}
               onChange={handleFormData("gender")}
               name="gender"
               id="gender"
               placeholder="Gender"
+              value={values.gender}
               required
             >
-              <option value="DEFAULT" disabled>
-                Gender
-              </option>
-              <option value={values.genre}>M</option>
-              <option value={values.genre}>F</option>
+
+              <option value='Male'>Male</option>
+              <option value='Female'>Female</option>
+              <option value='Other'>Other</option>
             </select>
           </div>
 
           <div className={styles.city}>
             <label htmlFor="City">City*</label>
-            <CitiesSelector handleInputCities={handleInputCities} />
+            <CitiesSelector handleInputCities={handleInputCities} values={values} />
           </div>
 
           <fieldset>
@@ -62,24 +61,25 @@ const SecondStep = ({
             <section>
               <div className={styles.flexColumn}>
                 <div>
-                  <label className={styles.container} htmlFor="lgbtq">
+                  <label className={styles.labelContainer} htmlFor="lgbtq">
                     LGBTQ+
                     <input
                       type="checkbox"
                       name="action"
                       id="lgbtq"
-                      value={values.lgbt}
+                      checked={values.iam.lqbtq === 1 ? true : false}
                       onChange={(e) => handleInputPref("lgbtq", e)}
+                    
                     />
                     <span className={styles.mark}></span>
                   </label>
                 </div>
 
                 <div>
-                  <label className={styles.container} htmlFor="pets">
+                  <label className={styles.labelContainer} htmlFor="pets">
                     Pet owner
                     <input
-                      value={values.pets}
+                      checked={values.iam.pets === 1 ? true : false}
                       onChange={(e) => handleInputPref("pets", e)}
                       type="checkbox"
                       name="action"
@@ -89,10 +89,10 @@ const SecondStep = ({
                   </label>
                 </div>
                 <div>
-                  <label className={styles.container} htmlFor="multicultural">
+                  <label className={styles.labelContainer} htmlFor="multicultural">
                     Multicultural
                     <input
-                      value={values.multicultural}
+                      checked={values.iam.multicultural === 1 ? true : false}
                       onChange={(e) => handleInputPref("multicultural", e)}
                       type="checkbox"
                       name="action"
@@ -105,10 +105,10 @@ const SecondStep = ({
 
               <div className={styles.flexColumn}>
                 <div>
-                  <label className={styles.container} htmlFor="veg">
+                  <label className={styles.labelContainer} htmlFor="veg">
                     Veg
                     <input
-                      value={values.veg}
+                      checked={values.iam.veg === 1 ? true : false}
                       type="checkbox"
                       onChange={(e) => handleInputPref("veg", e)}
                       name="action"
@@ -119,10 +119,10 @@ const SecondStep = ({
                 </div>
 
                 <div>
-                  <label className={styles.container} htmlFor="musician">
+                  <label className={styles.labelContainer} htmlFor="musician">
                     Musician
                     <input
-                      value={values.musician}
+                      checked={values.iam.musician === 1 ? true : false}
                       onChange={(e) => handleInputPref("musician", e)}
                       type="checkbox"
                       name="action"
@@ -133,10 +133,10 @@ const SecondStep = ({
                 </div>
 
                 <div>
-                  <label className={styles.container} htmlFor="party">
+                  <label className={styles.labelContainer} htmlFor="party">
                     Party lover
                     <input
-                      value={values.party}
+                      checked={values.iam.party === 1 ? true : false}
                       onChange={(e) => handleInputPref("party", e)}
                       type="checkbox"
                       name="action"

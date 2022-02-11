@@ -26,7 +26,7 @@
 }
 
 .stepperWrapper {
-  width: 100%;
+  width: 280px;
   display: flex;
   justify-content: space-between;
   margin: 2rem auto;
@@ -34,7 +34,6 @@
 .stepCounter {
   width: 1.5rem;
   height: 1.5rem;
-  // margin-top: 3.5rem;
   border: 3px solid $mainPink;
   background-color: white;
   border-radius: 5rem;
@@ -43,19 +42,13 @@
     position: absolute;
     content: "";
     border-bottom: 3px solid $mainPink;
-    width: 100%;
+    width: 150px;
     top: 8.8rem;
-    left: -50%;
     z-index: -1;
   }
-  &::after {
-    position: absolute;
-    content: "";
-    border-bottom: 3px solid $mainPink;
-    width: 100%;
-    top: 8.8rem;
-    left: 50%;
-    z-index: -1;
+  &:last-child::before{
+    content: '';
+    display: none;
   }
 }
 

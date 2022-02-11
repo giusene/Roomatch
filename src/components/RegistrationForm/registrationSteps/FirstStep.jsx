@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import styles from "./../registrationSteps/FirstStep.module.scss";
+import { uploadImg } from "../../../libs/http";
 
-const FirstStep = ({ handleFormData, values, nextStep }) => {
+const FirstStep = ({ handleFormData, values, nextStep, setImage }) => {
   const [message, setMessage] = useState("");
 
   const submitFormData = (e) => {
@@ -12,18 +13,31 @@ const FirstStep = ({ handleFormData, values, nextStep }) => {
       : setMessage("le password non coincidono");
   };
 
+  const selectPhoto = (e) => {
+    uploadImg(e.target.files[0])
+    .then(result => setImage(result.data.display_url))
+  };
+
   return (
     <div className={styles.containerForm}>
       <form className={styles.flexForm} onSubmit={(e) => submitFormData(e)}>
-        <label htmlFor="photo">Photo</label>
+        <div
+          className={styles.img}
+          style={{ backgroundImage: `url(${values.photo})` }}
+        >
+          <label htmlFor="upload" className={styles.uploadBtn}>
+            +
+          </label>
+        </div>
         <input
-          value={values.photo}
-          onChange={handleFormData("photo")}
-          name="photo"
-          id="photo"
-          type="img"
-          placeholder="Photo URL"
-          required
+          type="file"
+          onChange={(e) => selectPhoto(e)}
+          accept=".jpg, .jpeg, .png"
+          placeholder="carica"
+          name="upload"
+          id="upload"
+          title="Carica"
+          className={styles.hidden}
         />
 
         <label htmlFor="fullname">Name / Surname*</label>
