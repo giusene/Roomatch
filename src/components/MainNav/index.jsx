@@ -1,40 +1,42 @@
-import { NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./MainNav.module.scss";
 
+import {
+  BsChatRightDots,
+  BsHeart,
+  BsPerson,
+  BsPersonFill,
+  BsHeartFill,
+  BsChatRightDotsFill,
+} from "react-icons/bs";
+
 const MainNav = () => {
+  const url = useLocation();
+
   return (
     <div className={styles.main}>
       <ul>
-        <NavLink
-          className={({ isActive }) => (isActive ? styles.active : "")}
-          to={"/"}
-        >
-          <li>Rooms</li>
-        </NavLink>
-        <NavLink
-          className={({ isActive }) => (isActive ? styles.active : "")}
-          to={"/likes"}
-        >
-          <li>Likes</li>
-        </NavLink>
-        <NavLink
-          className={({ isActive }) => (isActive ? styles.active : "")}
-          to={"/matches"}
-        >
-          <li>Matches</li>
-        </NavLink>
-        <NavLink
-          className={({ isActive }) => (isActive ? styles.active : "")}
-          to={"/messages"}
-        >
-          <li>Messaggi</li>
-        </NavLink>
-        <NavLink
-          className={({ isActive }) => (isActive ? styles.active : "")}
-          to={"/profile"}
-        >
-          <li>Profilo</li>
-        </NavLink>
+        <Link to={"/rooms"}>
+          <li>{url.pathname === "/rooms" ? <BsPersonFill /> : <BsPerson />}</li>
+        </Link>
+        <Link to={"/likes"}>
+          <li>
+            {url.pathname === "/likes" ? (
+              <BsChatRightDotsFill />
+            ) : (
+              <BsChatRightDots />
+            )}
+          </li>
+        </Link>
+
+        <Link to={"/matches"}>
+          <li>{url.pathname === "/matches" ? <BsHeartFill /> : <BsHeart />}</li>
+        </Link>
+        <Link to={"/profile"}>
+          <li>
+            {url.pathname === "/profile" ? <BsPersonFill /> : <BsPerson />}
+          </li>
+        </Link>
       </ul>
     </div>
   );

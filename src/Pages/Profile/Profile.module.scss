@@ -1,85 +1,92 @@
 @import "./../../libs/variables.scss";
 
 .main {
-    background-color: aqua;
-    overflow-y: auto;
-    padding-bottom: calc(100px + 30px);
-    .info{
-        position: relative;
-        color: #fff;
-        z-index: 2;
-        margin-top: 80px;
-        padding-left: 30px;
-        p{
-            font-weight: 400;
-            font-size: 12px;
-            line-height: 14px;
-            margin: 5px 0;
-        }
-        h3{
-            font-family: $paragraphFont;
-            font-weight: 700;
-            font-size: 14px;
-        }
+  overflow-y: auto;
+  padding-bottom: calc(100px + 30px);
+  .info {
+    position: relative;
+    color: #fff;
+    z-index: 2;
+    margin-top: 80px;
+    padding-left: 30px;
+    p {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      margin: 5px 0;
     }
-    .header{
-        width: 100vw;
-        height: 208px;
-        background-size: cover;
-        background-position: center;
-        position: relative;
-        margin-top: -160px;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-        &::before{
-            content: '';
-            position: absolute;
-            background: linear-gradient(180deg, rgba(72, 0, 48, 0.68) 0%, rgba(100, 0, 67, 0.15) 100%);
-            width: 100%;
-            height: 208px;
-        }
+    h3 {
+      font-family: $paragraphFont;
+      font-weight: 700;
+      font-size: 14px;
     }
-    .charTitle {
-        margin: 40px  0 20px 40px;
-        font-weight: 400;
-        font-size: 14px;
+  }
+  .header {
+    width: 100vw;
+    height: 208px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top: -160px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    &::before {
+      content: "";
+      position: absolute;
+      background: linear-gradient(
+        180deg,
+        rgba(72, 0, 48, 0.68) 0%,
+        rgba(100, 0, 67, 0.15) 100%
+      );
+      width: 100%;
+      height: 208px;
     }
-    .charSet{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        .char{
-            display: flex;
-            align-items: center;
-            width: 150px;
-            height: 40px;
-            font-weight: 400;
-            font-size: 12px;
-            cursor: pointer;
-            span {
-                color: #B9D1E0;
-                margin-right: 8px;
-                font-size: 20px;
-                &.active{
-                    color: $mainPink;
-                }
-            }
+  }
+  .charTitle {
+    margin: 40px 0 20px 40px;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .charSet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .char {
+      display: flex;
+      align-items: center;
+      width: 150px;
+      height: 40px;
+      font-weight: 400;
+      font-size: 12px;
+      cursor: pointer;
+      span {
+        color: #b9d1e0;
+        margin-right: 8px;
+        font-size: 20px;
+        &.active {
+          color: $mainPink;
         }
-        
-    }
-    .bottomContent{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 20px;
-        button {
-            background: linear-gradient(105.54deg, #B9D1E0 22.32%, rgba(185, 209, 224, 0.21) 107.38%);
-            color: $mainPink;
-            border: none;
-            border-radius: 100px;
-            padding: 10px 30px;
-            cursor: pointer;
-        }
+      }
     }
 
+  }
+  .bottomContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    button {
+      background: linear-gradient(
+        105.54deg,
+        #b9d1e0 22.32%,
+        rgba(185, 209, 224, 0.21) 107.38%
+      );
+      color: $mainPink;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 30px;
+      cursor: pointer;
+
+    }
+  }
 }

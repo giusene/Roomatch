@@ -1,8 +1,7 @@
-
+@import "./../../libs/variables.scss";
 .main {
-    height: calc(100vh - 100px) ;
-    background-color: aqua;
-    overflow-y: auto;
-    padding-bottom: calc(100px + 30px);
-
+  height: 100vh;
+  background-color: $background;
+  overflow-y: auto;
+  padding-bottom: calc(100px + 30px);
 }
