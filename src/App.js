@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route path="*" element={loginStatus ? <Main /> : <LandingPage />} />
         <Route path="/registration" element={<Registration />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={loginStatus ? <Main /> : <Login />} />
       </Routes>
     </>
   );
