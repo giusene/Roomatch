@@ -20,8 +20,11 @@ const MainNav = () => {
           <li>{url.pathname === "/rooms" ? <BsPersonFill /> : <BsPerson />}</li>
         </Link>
         <Link to={"/likes"}>
+          <li>{url.pathname === "/likes" ? <BsHeartFill /> : <BsHeart />}</li>
+        </Link>
+        <Link to={"/matches"}>
           <li>
-            {url.pathname === "/likes" ? (
+            {url.pathname === "/matches" ? (
               <BsChatRightDotsFill />
             ) : (
               <BsChatRightDots />
@@ -29,9 +32,6 @@ const MainNav = () => {
           </li>
         </Link>
 
-        <Link to={"/matches"}>
-          <li>{url.pathname === "/matches" ? <BsHeartFill /> : <BsHeart />}</li>
-        </Link>
         <Link to={"/profile"}>
           <li>
             {url.pathname === "/profile" ? <BsPersonFill /> : <BsPerson />}
