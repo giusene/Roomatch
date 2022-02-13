@@ -1,0 +1,87 @@
+@import "./../../libs/variables.scss";
+
+.slider {
+  width: 22rem;
+  margin: 0 auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  cursor: grab;
+  .sliderWrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
+}
+
+.cardContainer {
+  min-width: 20rem;
+  margin: 6rem 2rem 5rem 0.5rem;
+  height: 30rem;
+  position: relative;
+  border-radius: 21px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
+  .cardText {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    padding: 3rem 2rem 2rem;
+    color: white;
+    background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.884),
+      rgba(0, 0, 0, 0)
+    );
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .compatibility {
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem 0;
+        font-size: $superSmall;
+      }
+      .icon {
+        color: lighten($mainPink, 8);
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.infoCardContainer {
+  border: 1px solid blue;
+  min-width: 20rem;
+  max-width: 20rem;
+  margin: 6rem 2rem 5rem 0.5rem;
+  height: 30rem;
+  // position: relative;
+  border-radius: 21px;
+  margin-bottom: 25px;
+  padding: $sidePadding;
+  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
+  p {
+    font-size: $superSmall;
+  }
+  .roomDescription {
+    font-size: $superSmall;
+    margin-top: 1.5rem;
+  }
+  .details {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    p {
+      margin: 0.5rem 1rem 0.5rem 0;
+    }
+  }
+  .gallery {
+    margin: 42px 0;
+    p {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

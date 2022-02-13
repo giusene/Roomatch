@@ -6,6 +6,7 @@ import Rooms from "./../Rooms";
 import Likes from "../Likes";
 import Matches from "../Matches";
 import Profile from "../Profile";
+import Users from "../Users";
 
 const Main = () => {
   return (
@@ -16,6 +17,7 @@ const Main = () => {
         <Route path="/likes" element={<Likes />} />
         <Route path="/matches" element={<Matches />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/users" element={<Users />} />
       </Routes>
       <MainNav />
     </div>

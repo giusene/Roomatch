@@ -1,31 +1,42 @@
 @import "./../../libs/variables.scss";
 
 .main {
-  display: flex;
-  align-items: center;
   width: 100%;
-  .img {
-    width: 136px;
-    height: 136px;
-    border-radius: 17px;
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
-    margin-right: 10px;
-    .likes {
-      position: absolute;
-      bottom: 5px;
-      right: 5px;
-      font-size: 18px;
-      color: $mainPink;
-      display: flex;
-      align-items: center;
-      span {
-        font-weight: 700;
-        margin-right: 5px;
+  .roomComp {
+    display: flex;
+    align-items: center;
+    .img {
+      width: 136px;
+      height: 136px;
+      border-radius: 17px;
+      background-position: center;
+      background-size: cover;
+      overflow: hidden;
+      position: relative;
+      margin-right: 10px;
+      .likes {
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
         font-size: 18px;
+        color: $mainPink;
+        display: flex;
+        align-items: center;
+        span {
+          font-weight: 700;
+          margin-right: 5px;
+          font-size: 18px;
+        }
       }
+    }
+  }
+  .btnSet{
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    button {
+      width: 200px;
     }
   }
 }
