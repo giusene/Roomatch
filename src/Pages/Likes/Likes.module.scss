@@ -4,4 +4,11 @@
   background-color: $background;
   overflow-y: auto;
   padding-bottom: calc(100px + 30px);
+
+  .cardContainer {
+    padding-top: 10rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
 }
