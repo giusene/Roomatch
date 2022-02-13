@@ -11,11 +11,12 @@ import {
 
 import { backend_URL } from "../libs/functions";
 
-export const loginAction = (loginInput) => {
+export const loginAction = (loginInput, setRedirect) => {
   return async (dispatch) => {
     dispatch({ type: FETCH_LOGIN_REQUEST });
     try {
       const { data } = await axios.post(backend_URL + "/login", loginInput);
+      setRedirect('/rooms');
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
     } catch (e) {
       dispatch({ type: FETCH_LOGIN_ERROR, payload: e });

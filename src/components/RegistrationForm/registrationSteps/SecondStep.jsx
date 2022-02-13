@@ -46,7 +46,7 @@ const SecondStep = ({
             >
 
               <option value='Male'>Male</option>
-              <option value='Female'>Female</option>
+              <option value='Famale'>Female</option>
               <option value='Other'>Other</option>
             </select>
           </div>
@@ -67,7 +67,7 @@ const SecondStep = ({
                       type="checkbox"
                       name="action"
                       id="lgbtq"
-                      checked={values.iam.lqbtq === 1 ? true : false}
+                      checked={values.iam.lgbtq === 1 ? true : false}
                       onChange={(e) => handleInputPref("lgbtq", e)}
                     
                     />
@@ -76,14 +76,14 @@ const SecondStep = ({
                 </div>
 
                 <div>
-                  <label className={styles.labelContainer} htmlFor="pets">
+                  <label className={styles.labelContainer} htmlFor="pet_owner">
                     Pet owner
                     <input
-                      checked={values.iam.pets === 1 ? true : false}
-                      onChange={(e) => handleInputPref("pets", e)}
+                      checked={values.iam.pet_owner === 1 ? true : false}
+                      onChange={(e) => handleInputPref("pet_owner", e)}
                       type="checkbox"
                       name="action"
-                      id="pets"
+                      id="pet_owner"
                     />
                     <span className={styles.mark}></span>
                   </label>
@@ -119,14 +119,14 @@ const SecondStep = ({
                 </div>
 
                 <div>
-                  <label className={styles.labelContainer} htmlFor="musician">
-                    Musician
+                  <label className={styles.labelContainer} htmlFor="smooker">
+                    Smooker
                     <input
-                      checked={values.iam.musician === 1 ? true : false}
-                      onChange={(e) => handleInputPref("musician", e)}
+                      checked={values.iam.smooker === 1 ? true : false}
+                      onChange={(e) => handleInputPref("smooker", e)}
                       type="checkbox"
                       name="action"
-                      id="musician"
+                      id="smooker"
                     />
                     <span className={styles.mark}></span>
                   </label>

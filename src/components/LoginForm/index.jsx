@@ -1,10 +1,13 @@
-import { useState } from 'react';
-import {loginAction} from './../../store/actions';
+import { useNavigate } from 'react-router-dom'
+import { useState, useEffect } from 'react';
+import { loginAction } from './../../store/actions';
 import styles from './LoginForm.module.scss';
 import { useDispatch } from 'react-redux'
 
 
 const LoginForm = () => {
+    let url = useNavigate();
+    const [redirect, setRedirect] = useState('/login')
     const dispatch = useDispatch()
     const [loginForm, setLoginForm] = useState({
         email: '',
@@ -13,8 +16,12 @@ const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(loginAction(loginForm))
+        dispatch(loginAction(loginForm, setRedirect))
     }
+
+    useEffect(()=> {
+        url(redirect)
+    }, [url, redirect])
 
     return (
         <div className={styles.main}>

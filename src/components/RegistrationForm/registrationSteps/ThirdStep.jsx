@@ -1,13 +1,24 @@
+import { useNavigate } from "react-router-dom";
+import { useState, useEffect} from 'react'
 import { httpPOST } from "../../../libs/http";
 import styles from "./ThirdStep.module.scss";
 import { BsArrowLeftCircle } from "react-icons/bs";
 
 const ThirdStep = ({ values, prevStep }) => {
+  const [redirect, setRedirect] = useState('/registration')
+  let url = useNavigate();
   const { name, surname, age, city, gender, town, photo } = values;
 
   const hadleConfirm = (data) => {
-    httpPOST("/users", data).then((data) => window.location.href = "/");
+    httpPOST("/users", data).then((data) => {
+      setRedirect("/")
+    });
   };
+
+  useEffect(() => {
+    url(redirect)
+  }, [url, redirect])
+
 
   return (
     <>
@@ -49,14 +60,14 @@ const ThirdStep = ({ values, prevStep }) => {
                 </div>
 
                 <div>
-                  <label className={styles.labelContainer} htmlFor="pets">
+                  <label className={styles.labelContainer} htmlFor="pet_owner">
                     Pet owner
                     <input
                       readOnly
                       type="checkbox"
                       name="action"
-                      id="pets"
-                      checked={values.iam.pets === 1 ? true : false}
+                      id="pet_owner"
+                      checked={values.iam.pet_owner === 1 ? true : false}
                     />
                     <span className={styles.mark}></span>
                   </label>
@@ -92,14 +103,14 @@ const ThirdStep = ({ values, prevStep }) => {
                 </div>
 
                 <div>
-                  <label className={styles.labelContainer} htmlFor="musician">
-                    Musician
+                  <label className={styles.labelContainer} htmlFor="smooker">
+                  Smooker
                     <input
                       readOnly
                       type="checkbox"
                       name="action"
-                      id="musician"
-                      checked={values.iam.musician === 1 ? true : false}
+                      id="smooker"
+                      checked={values.iam.smooker === 1 ? true : false}
                     />
                     <span className={styles.mark}></span>
                   </label>
