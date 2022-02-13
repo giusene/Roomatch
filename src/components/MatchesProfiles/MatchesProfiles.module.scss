@@ -1,0 +1,33 @@
+@import "./../../libs/variables.scss";
+.container {
+  display: flex;
+  justify-content: center;
+
+  .matchesContainer {
+    height: 8rem;
+    margin: 5rem 4rem;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: flex-start;
+
+    .matches {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      height: 100%;
+      width: auto;
+      margin: 0.5rem;
+      padding: 0.5rem;
+      font-size: 15px;
+      border-radius: 50%;
+
+      .imgMatch {
+        width: 4rem;
+        height: 4rem;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+      }
+    }
+  }
+}
