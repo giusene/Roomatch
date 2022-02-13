@@ -6,7 +6,6 @@ const LikesCard = ({ user }) => {
       className={styles.cardContainer}
       style={{ backgroundImage: `url(${user.photo})` }}
     >
-      {console.log(user)}
       <div className={styles.info}>
         <p className={styles.name}>
           {user.name} {user.surname}

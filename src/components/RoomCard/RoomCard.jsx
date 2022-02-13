@@ -3,7 +3,7 @@ import { likeDislike } from "../../store/actions";
 import styles from "./RoomCard.module.scss";
 import { FiHeart } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
-import RoomAd from "../RoomAd";
+import PhotoGallery from "../PhotoGallery";
 
 const RoomCard = ({ room }) => {
   const dispatch = useDispatch();
@@ -89,7 +89,7 @@ const RoomCard = ({ room }) => {
           </section>
           <section className={styles.gallery}>
             <p>Gallery</p>
-            <RoomAd room={room} />
+            <PhotoGallery photos={room.roomPhotos}/>
           </section>
         </div>
       </div>

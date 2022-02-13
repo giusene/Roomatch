@@ -5,6 +5,7 @@ import { FaHeart } from "react-icons/fa";
 const RoomAd = ({ room }) => {
   return (
     <div className={styles.main}>
+    <Link to={'/roomdetails'}>
       <div className={styles.roomComp}>
         <div
           className={styles.img}
@@ -22,6 +23,7 @@ const RoomAd = ({ room }) => {
           </p>
         </div>
       </div>
+    </Link>
       <div className={styles.btnSet}>
         <Link to='/users'><button>Find People</button></Link>
       </div>

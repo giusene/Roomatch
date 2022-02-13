@@ -1,14 +1,16 @@
 import LikesCard from "../../components/LikesCard";
+import { useSelector } from "react-redux";
 import styles from "./Likes.module.scss";
-import { wholikesme } from "./users.js";
+// import { wholikesme } from "./users.js";
 
 const Likes = () => {
+  const user = useSelector(state => state.user)
+
   return (
     <div className={styles.main}>
-      <h3>Your likes</h3>
       <div className={styles.cardContainer}>
-        {wholikesme.map((user) => (
-          <LikesCard user={user} />
+        {user.wholikesme.map((user, index) => (
+          <LikesCard key={index} user={user} />
         ))}
       </div>
     </div>

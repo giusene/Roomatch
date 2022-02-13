@@ -7,6 +7,7 @@ import Likes from "../Likes";
 import Matches from "../Matches";
 import Profile from "../Profile";
 import Users from "../Users";
+import RoomDetails from '../RoomDetails'
 
 const Main = () => {
   return (
@@ -18,6 +19,7 @@ const Main = () => {
         <Route path="/matches" element={<Matches />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/users" element={<Users />} />
+        <Route path="/roomdetails" element={<RoomDetails />} />
       </Routes>
       <MainNav />
     </div>

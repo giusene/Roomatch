@@ -1,0 +1,11 @@
+@import "./../../libs/variables.scss";
+
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    img{
+        max-width: 100px;
+        margin: 10px;
+    }
+}
