@@ -14,12 +14,17 @@ const Profile = () => {
   const handleChar = (char) => {
     dispatch(
       changeChar(
-        [{
-          propName: 'iam',
-          value: {
-              ...user.iam, [char]: user.iam[char] === 0 ? 1 : 0
+        [
+          {
+            propName: "iam",
+            value: {
+              ...user.iam,
+              [char]: user.iam[char] === 0 ? 1 : 0,
+            },
           },
-        }], user._id)
+        ],
+        user._id
+      )
     );
   };
 
@@ -41,37 +46,55 @@ const Profile = () => {
       ></div>
       <p className={styles.charTitle}>I'm</p>
       <div className={styles.charSet}>
-        <div onClick={() => !loading && handleChar('lgbtq')} className={styles.char}>
+        <div
+          onClick={() => !loading && handleChar("lgbtq")}
+          className={styles.char}
+        >
           <span className={user.iam.lgbtq === 1 ? styles.active : ""}>
             <RiRainbowLine />
           </span>
           LGBTQ+
         </div>
-        <div onClick={() => !loading && handleChar('pet_owner')} className={styles.char}>
+        <div
+          onClick={() => !loading && handleChar("pet_owner")}
+          className={styles.char}
+        >
           <span className={user.iam.pet_owner === 1 ? styles.active : ""}>
             <GiCat />
           </span>
           Pet Owner
         </div>
-        <div onClick={() => !loading && handleChar('multicultural')} className={styles.char}>
+        <div
+          onClick={() => !loading && handleChar("multicultural")}
+          className={styles.char}
+        >
           <span className={user.iam.multicultural === 1 ? styles.active : ""}>
             <FaHandSpock />
           </span>
           Multicultural
         </div>
-        <div onClick={() => !loading && handleChar('veg')} className={styles.char}>
+        <div
+          onClick={() => !loading && handleChar("veg")}
+          className={styles.char}
+        >
           <span className={user.iam.veg === 1 ? styles.active : ""}>
             <RiPlantFill />
           </span>
           Veg
         </div>
-        <div onClick={() => !loading && handleChar('smooker')} className={styles.char}>
+        <div
+          onClick={() => !loading && handleChar("smooker")}
+          className={styles.char}
+        >
           <span className={user.iam.smooker === 1 ? styles.active : ""}>
             <FaSmoking />
           </span>
           Smoker
         </div>
-        <div onClick={() => !loading && handleChar('party_lover')} className={styles.char}>
+        <div
+          onClick={() => !loading && handleChar("party_lover")}
+          className={styles.char}
+        >
           <span className={user.iam.party_lover === 1 ? styles.active : ""}>
             <GiPartyPopper />
           </span>
@@ -79,7 +102,11 @@ const Profile = () => {
         </div>
       </div>
       <div className={styles.bottomContent}>
-        {user.roomId.roomId ? <RoomAd room={user.roomId} /> : <button>Find roommate</button>}
+        {user.roomId.roomId ? (
+          <RoomAd room={user.roomId} />
+        ) : (
+          <button>Find roommate</button>
+        )}
       </div>
     </div>
   );

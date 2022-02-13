@@ -51,13 +51,16 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    padding: 0 0.7rem;
+
     .char {
       display: flex;
       align-items: center;
-      width: 150px;
+      width: 100px;
       height: 40px;
       font-weight: 400;
       font-size: 12px;
+      margin: 0 0.5rem;
       cursor: pointer;
       span {
         color: #b9d1e0;
@@ -68,13 +71,13 @@
         }
       }
     }
-
   }
   .bottomContent {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 40px;
+    padding: 0 2rem;
     button {
       background: linear-gradient(
         105.54deg,
@@ -86,7 +89,6 @@
       border-radius: 100px;
       padding: 10px 30px;
       cursor: pointer;
-
     }
   }
 }
