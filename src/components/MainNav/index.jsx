@@ -1,6 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./MainNav.module.scss";
 
+import roomatch from "./../../libs/img/logo/roomatch.svg";
+import roomatchFill from "./../../libs/img/logo/roomatchFill.svg";
 import {
   BsChatRightDots,
   BsHeart,
@@ -17,7 +19,21 @@ const MainNav = () => {
     <div className={styles.main}>
       <ul>
         <Link to={"/rooms"}>
-          <li>{url.pathname === "/rooms" ? <BsPersonFill /> : <BsPerson />}</li>
+          <li>
+            {url.pathname === "/rooms" ? (
+              <img
+                src={roomatchFill}
+                style={{ height: 32, width: 32 }}
+                alt="logo fill"
+              />
+            ) : (
+              <img
+                src={roomatch}
+                style={{ height: 32, width: 32 }}
+                alt="logo"
+              />
+            )}
+          </li>
         </Link>
         <Link to={"/likes"}>
           <li>{url.pathname === "/likes" ? <BsHeartFill /> : <BsHeart />}</li>
