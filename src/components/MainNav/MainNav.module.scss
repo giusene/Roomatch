@@ -1,11 +1,10 @@
 @import "./../../libs/variables.scss";
 
 .main {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   bottom: 0;
   height: 20vw;
-  // background-color: beige;
   background: linear-gradient(180deg, #f4fbff, $mainLightBlue);
   display: flex;
   justify-content: center;
