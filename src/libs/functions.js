@@ -1,1 +1,1 @@
-export const backend_URL = 'https://roomatch-backend.herokuapp.com'
+export const backend_URL = 'https://roomatch-backend.herokuapp.com';

@@ -1,7 +1,6 @@
 import LikesCard from "../../components/LikesCard";
 import { useSelector } from "react-redux";
 import styles from "./Likes.module.scss";
-// import { wholikesme } from "./users.js";
 
 const Likes = () => {
   const user = useSelector(state => state.user)
