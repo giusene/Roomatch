@@ -3,23 +3,47 @@
 .slider {
   width: 22rem;
   margin: 0 auto;
-  overflow-x: hidden;
+  // position: absolute;
+  left: calc(50% - 11rem);
+  overflow-y: hidden;
   scroll-behavior: smooth;
-  cursor: grab;
+  cursor: pointer;
   .sliderWrapper {
     display: flex;
     justify-content: flex-start;
+    width: 100%;
+    position: relative;
+  }
+
+  .leftBtn {
+    bottom: 20rem;
+    right: 2.3rem;
+    position: relative;
+    color: rgba(202, 202, 202, 0.442);
+  }
+  .rightBtn {
+    bottom: 13rem;
+    left: 17rem;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.49);
+  }
+  .rightBtn,
+  .leftBtn {
+    // position: relative;
+    background-color: rgba(80, 80, 80, 0);
+    border: none;
+    font-size: 2rem;
   }
 }
 
 .cardContainer {
   min-width: 20rem;
-  margin: 6rem 2rem 5rem 0.5rem;
+  margin: 6rem 1.6rem 5rem 0.6rem;
   height: 30rem;
   position: relative;
   border-radius: 21px;
   margin-bottom: 25px;
-  overflow: hidden;
+  overflow-y: hidden;
   background-size: cover;
   background-position: center;
   box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
@@ -58,7 +82,6 @@
   max-width: 20rem;
   margin: 6rem 2rem 5rem 0.5rem;
   height: 30rem;
-  // position: relative;
   border-radius: 21px;
   margin-bottom: 25px;
   padding: $sidePadding;
