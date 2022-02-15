@@ -25,6 +25,7 @@ const initialForm = {
   city: "AG",
   town: "Agrigento",
   photo: "https://i.ibb.co/NNVky0R/profile-default.png",
+  messages: {}
 };
 
 // const initialForm = {
