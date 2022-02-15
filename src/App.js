@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     window.localStorage.getItem("roomatch") &&
       dispatch({
-        type: 'LOCAL_STORAGE_USER_UPDATE',
+        type: "LOCAL_STORAGE_USER_UPDATE",
         payload: JSON.parse(window.localStorage.getItem("roomatch")),
       });
   }, [dispatch]);

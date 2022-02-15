@@ -2,7 +2,7 @@
 .container {
   display: flex;
   align-items: center;
-  .img{
+  .img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
@@ -10,8 +10,8 @@
     background-position: center;
     margin-right: 10px;
   }
-  .info{
-    .infoCity{
+  .info {
+    .infoCity {
       margin-top: 5px;
     }
 
@@ -20,10 +20,9 @@
       font-weight: bold;
     }
   }
-  
 }
 
-fieldset {
+.fieldset {
   border: 2px solid $mainLightBlue;
   border-radius: 0.8rem;
   padding: 1rem;
@@ -73,7 +72,7 @@ fieldset {
 }
 // end checkbox style
 
-.btnSet{
+.btnSet {
   .prevStep {
     width: 32px;
     height: 32px;

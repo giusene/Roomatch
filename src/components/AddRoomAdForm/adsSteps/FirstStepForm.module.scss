@@ -1,0 +1,97 @@
+@import "./../../../libs/variables.scss";
+
+.containerForm {
+  width: 100vw;
+  // height: 100vh;
+  margin: 0 auto;
+  padding: 0 $sidePadding;
+  // position: relative;
+
+  .roomType {
+    display: flex;
+    flex-direction: column;
+    label {
+      margin-bottom: 5px;
+    }
+    select {
+      width: 120px;
+    }
+  }
+  fieldset {
+    border: 2px solid $mainLightBlue;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    margin: 50px auto;
+    legend {
+      font-weight: 500;
+    }
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    input {
+      width: 15px;
+    }
+  }
+  .flexColumn {
+    flex-direction: column;
+    margin: 0 1rem;
+    align-items: center;
+  }
+}
+
+.address {
+  margin-bottom: 10px;
+  input {
+    margin-left: 10px;
+    &::placeholder {
+      padding-left: 8px;
+    }
+  }
+}
+
+// Style checkbox
+.labelContainer {
+  display: block;
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  font-size: $labelSize;
+}
+
+// Hide the default checkbox
+.labelContainer input {
+  visibility: hidden;
+  cursor: pointer;
+}
+
+// Create new checkbox
+.mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1rem;
+  width: 1rem;
+  border: 3px solid $mainLightBlue;
+  border-radius: 3rem;
+}
+.labelContainer input:checked ~ .mark {
+  background-color: $mainLightBlue;
+}
+// end checkbox style
+
+.nextStep {
+  border: none;
+  background-color: rgba(80, 80, 80, 0);
+  position: absolute;
+  bottom: 1.5rem;
+  right: $sidePadding;
+  color: $mainPink;
+  font-size: 2rem;
+  .icon {
+    border-radius: 50px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.612);
+  }
+}

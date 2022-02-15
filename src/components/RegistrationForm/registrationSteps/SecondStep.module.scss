@@ -39,7 +39,7 @@ select {
   margin-bottom: 2rem;
 }
 
-fieldset {
+.fieldset {
   border: 2px solid $mainLightBlue;
   border-radius: 0.8rem;
   padding: 1rem;
@@ -49,6 +49,7 @@ fieldset {
   }
   section {
     display: flex;
+    justify-content: center;
   }
 
   .flexColumn {

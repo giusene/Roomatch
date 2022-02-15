@@ -1,20 +1,18 @@
-import CitiesSelector from "../../CitiesSelector";
-import styles from "./SecondStep.module.scss";
+import styles from "./SecondStepForm.module.scss";
 import { BsArrowRightCircleFill, BsArrowLeftCircle } from "react-icons/bs";
 
-const SecondStep = ({
+const SecondStepForm = ({
   nextStep,
   handleFormData,
   prevStep,
   values,
-  handleInputCities,
+  // handleInputCities,
   handleInputPref,
 }) => {
   const submitFormData = (e) => {
     e.preventDefault();
     nextStep();
   };
-
   return (
     <div className={styles.containerForm}>
       <form onSubmit={(e) => submitFormData(e)}>
@@ -41,6 +39,7 @@ const SecondStep = ({
               name="gender"
               id="gender"
               placeholder="Gender"
+              value={values.gender}
               required
             >
               <option value="Male">Male</option>
@@ -48,17 +47,8 @@ const SecondStep = ({
               <option value="Other">Other</option>
             </select>
           </div>
-
-          <div className={styles.city}>
-            <label htmlFor="City">City*</label>
-            <CitiesSelector
-              handleInputCities={handleInputCities}
-              values={values}
-            />
-          </div>
-
-          <fieldset className={styles.fieldset}>
-            <legend>I'm</legend>
+          <fieldset>
+            <legend>Frienfly for</legend>
             <section>
               <div className={styles.flexColumn}>
                 <div>
@@ -74,7 +64,6 @@ const SecondStep = ({
                     <span className={styles.mark}></span>
                   </label>
                 </div>
-
                 <div>
                   <label className={styles.labelContainer} htmlFor="pet_owner">
                     Pet owner
@@ -105,7 +94,6 @@ const SecondStep = ({
                   </label>
                 </div>
               </div>
-
               <div className={styles.flexColumn}>
                 <div>
                   <label className={styles.labelContainer} htmlFor="veg">
@@ -120,7 +108,6 @@ const SecondStep = ({
                     <span className={styles.mark}></span>
                   </label>
                 </div>
-
                 <div>
                   <label className={styles.labelContainer} htmlFor="smooker">
                     Smooker
@@ -134,7 +121,6 @@ const SecondStep = ({
                     <span className={styles.mark}></span>
                   </label>
                 </div>
-
                 <div>
                   <label className={styles.labelContainer} htmlFor="party">
                     Party lover
@@ -162,5 +148,4 @@ const SecondStep = ({
     </div>
   );
 };
-
-export default SecondStep;
+export default SecondStepForm;
