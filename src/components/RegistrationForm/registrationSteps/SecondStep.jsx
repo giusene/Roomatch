@@ -41,7 +41,6 @@ const SecondStep = ({
               name="gender"
               id="gender"
               placeholder="Gender"
-              value={values.gender}
               required
             >
 

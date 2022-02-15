@@ -18,7 +18,7 @@ const initialForm = {
   surname: "",
   email: "",
   password: "",
-  gender: "",
+  gender: "Male",
   age: 18,
   ilike: [],
   wholikesme: [],
