@@ -3,9 +3,10 @@
 .main{
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
     img{
-        max-width: 100px;
+        object-fit: cover;
+        width: 100px;
+        height: 100px;
         margin: 10px;
     }
 }
