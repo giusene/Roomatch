@@ -15,7 +15,7 @@ const UserCard = ({ userInfo }) => {
       peoplelikeDislike(
         {
           roomId: user.roomId.roomId,
-          roomilike: [...user.roomId.ilike, userInfo._id],
+          roomilike: userInfo._id,
         },
         userInfo._id,
         "addlike"
@@ -28,7 +28,7 @@ const UserCard = ({ userInfo }) => {
       peoplelikeDislike(
         {
           roomId: user.roomId.roomId,
-          roomilike: user.roomId.ilike.filter((like) => like !== userInfo._id),
+          roomilike: userInfo._id,
         },
         userInfo._id,
         "removelike"
@@ -56,7 +56,7 @@ const UserCard = ({ userInfo }) => {
                 <progress value={compatibility} max="100"></progress>
               </div>
               <div>
-                {user.roomId.ilike.filter((like) => like === userInfo._id).length >
+                {user.roomId.ilike.filter((like) => like.id === userInfo._id).length >
                 0 ? (
                   <FaHeart
                     onClick={() => !loading && dislikeFunc()}

@@ -19,7 +19,7 @@ const RoomCard = ({ room }) => {
       likeDislike(
         {
           userId: user._id,
-          ilike: [...user.ilike, room._id],
+          ilike: room._id,
         },
         room._id,
         "addlike"
@@ -32,7 +32,7 @@ const RoomCard = ({ room }) => {
       likeDislike(
         {
           userId: user._id,
-          ilike: user.ilike.filter((like) => like !== room._id),
+          ilike: room._id,
         },
         room._id,
         "removelike"
@@ -45,8 +45,6 @@ const RoomCard = ({ room }) => {
     if (dir === "right") el.current.style.right = `calc(100% - 1%)`;
     if (dir === "left") el.current.style.right = `0`;
     // if (el.current.style.right > 10) el.current.style.right = `0`;
-
-    console.log(swipe);
   };
   return (
     <div className={styles.main}>
@@ -71,7 +69,7 @@ const RoomCard = ({ room }) => {
                   <progress value={compatibility} max="100"></progress>
                 </div>
                 <div>
-                  {user.ilike.filter((like) => like === room._id).length > 0 ? (
+                  {user.ilike.filter((like) => like.roomId === room._id).length > 0 ? (
                     <FaHeart
                       onClick={() => !loading && dislikeFunc()}
                       className={`${styles.fillHeart} ${styles.icon}`}
