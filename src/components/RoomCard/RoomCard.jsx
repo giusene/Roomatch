@@ -1,3 +1,7 @@
+import { RiRainbowLine, RiPlantFill } from "react-icons/ri";
+import { GiCat, GiPartyPopper } from "react-icons/gi";
+import { FaHandSpock, FaSmoking } from "react-icons/fa";
+
 import { useSelector, useDispatch } from "react-redux";
 import { likeDislike } from "../../store/actions";
 import styles from "./RoomCard.module.scss";
@@ -69,7 +73,8 @@ const RoomCard = ({ room }) => {
                   <progress value={compatibility} max="100"></progress>
                 </div>
                 <div>
-                  {user.ilike.filter((like) => like.roomId === room._id).length > 0 ? (
+                  {user.ilike.filter((like) => like.roomId === room._id)
+                    .length > 0 ? (
                     <FaHeart
                       onClick={() => !loading && dislikeFunc()}
                       className={`${styles.fillHeart} ${styles.icon}`}
@@ -92,20 +97,91 @@ const RoomCard = ({ room }) => {
           </div>
 
           <div className={styles.infoCardContainer}>
-            <h3>Single room{room.type}</h3>
-            <p>
-              {room.town} ({room.city}) {room.Address}
-            </p>
-            <p className={styles.roomDescription}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. {room.description}
-            </p>
+            <div className={styles.headerCardInfo}>
+              <div className={styles.title}>
+                <h3>Single room{room.type}</h3>
+                <p>
+                  {room.town} ({room.city}) {room.Address}
+                </p>
+              </div>
+              <div className={styles.likeBtn}>
+                {user.ilike.filter((like) => like.roomId === room._id).length >
+                0 ? (
+                  <FaHeart
+                    onClick={() => !loading && dislikeFunc()}
+                    className={`${styles.fillHeart} ${styles.icon}`}
+                  />
+                ) : (
+                  <FiHeart
+                    onClick={() => !loading && likeFunc()}
+                    className={`${styles.outlineHeart} ${styles.icon}`}
+                  />
+                )}
+              </div>
+            </div>
             <section className={styles.details}>
-              <p>LOGTQ</p>
-              <p>Party Lover</p>
-              <p>Smoker</p>
+              {console.log(room)}
+              <p className={styles.charTitle}>Friendly for</p>
+              <div className={styles.charSet}>
+                <div className={styles.char}>
+                  <span
+                    className={
+                      room.friendlyWith.lgbtq === 1 ? styles.active : ""
+                    }
+                  >
+                    <RiRainbowLine />
+                  </span>
+                  LGBTQ+
+                </div>
+                <div className={styles.char}>
+                  <span
+                    className={
+                      room.friendlyWith.pet_owner === 1 ? styles.active : ""
+                    }
+                  >
+                    <GiCat />
+                  </span>
+                  Pet Owner
+                </div>
+                <div className={styles.char}>
+                  <span
+                    className={
+                      room.friendlyWith.multicultural === 1 ? styles.active : ""
+                    }
+                  >
+                    <FaHandSpock />
+                  </span>
+                  Multicultural
+                </div>
+                <div className={styles.char}>
+                  <span
+                    className={room.friendlyWith.veg === 1 ? styles.active : ""}
+                  >
+                    <RiPlantFill />
+                  </span>
+                  Veg
+                </div>
+                <div className={styles.char}>
+                  <span
+                    className={
+                      room.friendlyWith.smooker === 1 ? styles.active : ""
+                    }
+                  >
+                    <FaSmoking />
+                  </span>
+                  Smoker
+                </div>
+                <div className={styles.char}>
+                  <span
+                    className={
+                      room.friendlyWith.party_lover === 1 ? styles.active : ""
+                    }
+                  >
+                    <GiPartyPopper />
+                  </span>
+                  Party Lover
+                </div>
+              </div>
             </section>
             <section className={styles.gallery}>
               <p>Gallery</p>
@@ -119,18 +195,6 @@ const RoomCard = ({ room }) => {
             </button>
           </div>
         </div>
-        {/* <button
-          className={styles.leftBtn}
-          onClick={() => sliderCommands(swipe, "left")}
-        >
-          <BsArrowLeftCircle />
-        </button> */}
-        {/* <button
-          className={styles.rightBtn}
-          onClick={() => sliderCommands(swipe, "right")}
-        >
-          <BsArrowRightCircle />
-        </button> */}
       </div>
     </div>
   );

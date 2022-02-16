@@ -20,19 +20,14 @@ const LikesCardInfo = ({ user, showInfo, setShowInfo }) => {
             </h3>
             {console.log(user)}
             <p>Age: {user.age}</p>
-            <p>{user.city}</p>
+            <p>
+              {user.town} ({user.city})
+            </p>
           </div>
           <div className={styles.likeBtn}>
             <FiHeart className={styles.icon} />
           </div>
         </div>
-
-        <p className={styles.description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-          scelerisque dignissim orci vel gravida. Vestibulum ante ipsum primis
-          in faucibus orci luctus et ultrices posuere cubilia curae; Aenean
-          scelerisque dignissim.
-        </p>
 
         <fieldset className={styles.fieldset}>
           <legend>Friendly for</legend>
