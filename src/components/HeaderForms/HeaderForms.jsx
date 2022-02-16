@@ -27,7 +27,7 @@ const HeaderForms = ({ step }) => {
   return (
     <>
       <h1 className={styles.logo}>{logo}</h1>
-          <p className={styles.stepText}>{title}</p>
+      <p className={styles.stepText}>{title}</p>
       {step && (
         <>
           <div className={styles.stepperWrapper}>

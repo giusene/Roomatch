@@ -1,0 +1,116 @@
+@import "./../../libs/variables.scss";
+
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  background-color: #4e0134e1;
+  padding: $sidePadding;
+  .closeBtn {
+    border: none;
+    background-color: rgba(80, 80, 80, 0);
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: $mainLightBlue;
+    font-size: 2rem;
+  }
+
+  .flexHeaderInfo {
+    display: flex;
+    .modalInfo {
+      background-color: white;
+      padding: $sidePadding;
+      margin-top: 8rem;
+      border-radius: $radiusDiv;
+      box-shadow: 0 3px 21px rgba(0, 0, 0, 0.83);
+
+      .description {
+        font-size: $superSmall;
+        margin-bottom: 15px;
+      }
+    }
+    .likeBtn {
+      margin-left: 110px;
+      .icon {
+        color: lighten($mainPink, 8);
+        font-size: 2rem;
+      }
+    }
+  }
+}
+.modalInfo {
+  background-color: white;
+  padding: $sidePadding;
+  margin-top: 8rem;
+  border-radius: $radiusDiv;
+  box-shadow: 0 3px 21px rgba(0, 0, 0, 0.83);
+  .headerInfo {
+    font-size: $smallSize;
+    margin-bottom: 15px;
+  }
+  .description {
+    font-size: $superSmall;
+    margin-bottom: 15px;
+  }
+}
+.icon {
+  color: lighten($mainPink, 8);
+  font-size: 2rem;
+}
+
+p {
+  font-size: $superSmall;
+  margin: 2px auto;
+}
+.fieldset {
+  border: 2px solid $mainLightBlue;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin-top: 2rem;
+  legend {
+    font-weight: 500;
+  }
+  section {
+    display: flex;
+  }
+
+  .flexColumn {
+    flex-direction: column;
+    margin: 0 1rem;
+  }
+}
+
+// Style checkbox
+.labelContainer {
+  display: block;
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+  font-size: $labelSize;
+}
+
+// Hide the default checkbox
+.labelContainer input {
+  visibility: hidden;
+  cursor: pointer;
+}
+
+// Create new checkbox
+.mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1rem;
+  width: 1rem;
+  border: 3px solid $mainLightBlue;
+  border-radius: 3rem;
+}
+.labelContainer input:checked ~ .mark {
+  background-color: $mainLightBlue;
+}
+// end checkbox style

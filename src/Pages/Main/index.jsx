@@ -7,7 +7,7 @@ import Likes from "../Likes";
 import Matches from "../Matches";
 import Profile from "../Profile";
 import Users from "../Users";
-import RoomDetails from '../RoomDetails'
+import RoomDetails from "../RoomDetails";
 
 const Main = () => {
   return (
