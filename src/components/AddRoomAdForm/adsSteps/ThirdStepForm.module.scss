@@ -1,0 +1,50 @@
+@import "./../../../libs/variables.scss";
+
+.containerForm {
+  img {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+  }
+
+  .flexForm {
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+  
+    .img {
+      width: 136px;
+      height: 136px;
+      border-radius: 10%;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      margin-bottom: 20px;
+  
+      .uploadBtn {
+        position: absolute;
+        background-color: $mainLightBlue;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        bottom: 60px;
+        left: 125px;
+      }
+    }
+    .hidden {
+      display: none;
+    }
+  }
+}
+.prevStep {
+  border: none;
+  background-color: rgba(80, 80, 80, 0);
+  position: absolute;
+  bottom: 1.5rem;
+  left: $sidePadding;
+  color: $mainLightBlue;
+  font-size: 2rem;
+}

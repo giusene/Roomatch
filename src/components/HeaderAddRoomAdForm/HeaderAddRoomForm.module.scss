@@ -1,0 +1,71 @@
+@import "./../../libs/variables.scss";
+
+.logo {
+  text-align: left;
+  font-size: $logoSize;
+  font-family: $titleFont;
+  font-weight: 800;
+}
+
+.closeBtn {
+  border: none;
+  background-color: rgba(80, 80, 80, 0);
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: $mainLightBlue;
+  font-size: 2rem;
+}
+
+.stepText {
+  font-family: $paragraphFont;
+  text-align: left;
+  margin: 1.5rem 0;
+  font-size: $superSmall;
+}
+
+.stepperWrapper {
+  width: 280px;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem auto;
+  position: relative;
+}
+.stepCounter {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 3px solid $mainPink;
+  background-color: white;
+  border-radius: 5rem;
+  color: $mainLightBlue;
+  &::before {
+    position: absolute;
+    content: "";
+    border-bottom: 3px solid $mainPink;
+    width: 140px;
+    top: 10px;
+    z-index: -1;
+  }
+  &:last-child::before {
+    content: "";
+    display: none;
+  }
+}
+
+.completed {
+  background-color: $mainPink;
+}
+
+.active {
+  background-color: $mainPink;
+  border-color: $mainPink;
+  font-weight: bold;
+  color: white;
+}
+
+.stepperWrapper:first-child::before {
+  content: none;
+}
+.stepperWrapper:last-child::after {
+  content: none;
+}

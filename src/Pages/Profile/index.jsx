@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from 'react-router-dom';
 import { changeChar } from "../../store/actions";
 import styles from "./Profile.module.scss";
 import { RiRainbowLine, RiPlantFill } from "react-icons/ri";
@@ -106,7 +107,7 @@ const Profile = () => {
         {user.roomId.roomId ? (
           <RoomAd room={user.roomId} />
         ) : (
-          <button>Find roommate</button>
+          <Link to='/addroom'><button>Find roommate</button></Link>
         )}
       </div>
     </div>

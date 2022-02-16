@@ -6,40 +6,25 @@ const SecondStepForm = ({
   handleFormData,
   prevStep,
   values,
-  // handleInputCities,
   handleInputPref,
 }) => {
   const submitFormData = (e) => {
     e.preventDefault();
     nextStep();
   };
+
   return (
     <div className={styles.containerForm}>
       <form onSubmit={(e) => submitFormData(e)}>
         <div>
-          <div className={styles.age}>
-            <label htmlFor="age">Age*</label>
-            <input
-              className={styles.styledCheckbox}
-              value={values.age}
-              onChange={handleFormData("age")}
-              name="age"
-              id="age"
-              type="number"
-              placeholder="Your age"
-              min="18"
-              max="90"
-              required
-            />
-          </div>
           <div className={styles.gender}>
             <label htmlFor="gender">Gender*</label>
             <select
               onChange={handleFormData("gender")}
               name="gender"
               id="gender"
-              placeholder="Gender"
               value={values.gender}
+              placeholder="Gender"
               required
             >
               <option value="Male">Male</option>
@@ -47,8 +32,9 @@ const SecondStepForm = ({
               <option value="Other">Other</option>
             </select>
           </div>
-          <fieldset>
-            <legend>Frienfly for</legend>
+
+          <fieldset className={styles.fieldset}>
+            <legend>Friendly for</legend>
             <section>
               <div className={styles.flexColumn}>
                 <div>
@@ -58,17 +44,20 @@ const SecondStepForm = ({
                       type="checkbox"
                       name="action"
                       id="lgbtq"
-                      checked={values.iam.lgbtq === 1 ? true : false}
+                      checked={values.friendlyfor.lgbtq === 1 ? true : false}
                       onChange={(e) => handleInputPref("lgbtq", e)}
                     />
                     <span className={styles.mark}></span>
                   </label>
                 </div>
+
                 <div>
                   <label className={styles.labelContainer} htmlFor="pet_owner">
                     Pet owner
                     <input
-                      checked={values.iam.pet_owner === 1 ? true : false}
+                      checked={
+                        values.friendlyfor.pet_owner === 1 ? true : false
+                      }
                       onChange={(e) => handleInputPref("pet_owner", e)}
                       type="checkbox"
                       name="action"
@@ -84,7 +73,9 @@ const SecondStepForm = ({
                   >
                     Multicultural
                     <input
-                      checked={values.iam.multicultural === 1 ? true : false}
+                      checked={
+                        values.friendlyfor.multicultural === 1 ? true : false
+                      }
                       onChange={(e) => handleInputPref("multicultural", e)}
                       type="checkbox"
                       name="action"
@@ -94,12 +85,13 @@ const SecondStepForm = ({
                   </label>
                 </div>
               </div>
+
               <div className={styles.flexColumn}>
                 <div>
                   <label className={styles.labelContainer} htmlFor="veg">
                     Veg
                     <input
-                      checked={values.iam.veg === 1 ? true : false}
+                      checked={values.friendlyfor.veg === 1 ? true : false}
                       type="checkbox"
                       onChange={(e) => handleInputPref("veg", e)}
                       name="action"
@@ -108,11 +100,12 @@ const SecondStepForm = ({
                     <span className={styles.mark}></span>
                   </label>
                 </div>
+
                 <div>
                   <label className={styles.labelContainer} htmlFor="smooker">
                     Smooker
                     <input
-                      checked={values.iam.smooker === 1 ? true : false}
+                      checked={values.friendlyfor.smooker === 1 ? true : false}
                       onChange={(e) => handleInputPref("smooker", e)}
                       type="checkbox"
                       name="action"
@@ -121,11 +114,12 @@ const SecondStepForm = ({
                     <span className={styles.mark}></span>
                   </label>
                 </div>
+
                 <div>
                   <label className={styles.labelContainer} htmlFor="party">
                     Party lover
                     <input
-                      checked={values.iam.party === 1 ? true : false}
+                      checked={values.friendlyfor.party === 1 ? true : false}
                       onChange={(e) => handleInputPref("party", e)}
                       type="checkbox"
                       name="action"

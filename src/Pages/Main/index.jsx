@@ -8,6 +8,7 @@ import Matches from "../Matches";
 import Profile from "../Profile";
 import Users from "../Users";
 import RoomDetails from "../RoomDetails";
+import NewRoom from '../NewRoom'
 
 const Main = () => {
   return (
@@ -20,6 +21,7 @@ const Main = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/users" element={<Users />} />
         <Route path="/roomdetails" element={<RoomDetails />} />
+        <Route path="/addroom" element={<NewRoom />} />
       </Routes>
       <MainNav />
     </div>
