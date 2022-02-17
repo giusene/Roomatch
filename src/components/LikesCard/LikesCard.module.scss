@@ -1,14 +1,17 @@
 @import "./../../libs/variables.scss";
 
+.mainContent {
+  border: 2px solid green;
+}
 .cardContainer {
-  width: 10rem;
-  margin: 0.5rem;
-  height: 14rem;
+  min-width: 110px;
+  height: 150px;
   position: relative;
-  margin-bottom: 1.5rem;
+  margin: 20px 0 0 20px;
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  border-radius: $radiusDiv;
 
   .info {
     position: absolute;

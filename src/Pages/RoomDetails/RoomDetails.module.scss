@@ -1,14 +1,16 @@
 @import "./../../libs/variables.scss";
 
 .main {
+  width: 100%;
   overflow-y: auto;
   padding-bottom: calc(100px + 30px);
+
   .info {
     position: relative;
     color: #fff;
     z-index: 2;
     margin-top: 80px;
-    padding-left: 30px;
+    padding-left: 45px;
     p {
       font-weight: 400;
       font-size: 12px;
@@ -41,48 +43,73 @@
       height: 208px;
     }
   }
-  .roommatesTitle{
-    margin: 40px 0 20px 40px;
+  .roommatesTitle {
+    margin: 40px 0 20px 50px;
     font-weight: 400;
     font-size: 14px;
-    span{
+    span {
       margin: 0 10px;
       align-items: center;
-      svg{
+      svg {
         font-size: 14px;
       }
     }
   }
+  .charsetContainer {
+    border: 2px solid $mainLightBlue;
+    border-radius: $radiusDiv;
+    width: 80%;
+    margin: 50px auto;
+    padding: 50px 0;
+    box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
 
-  .charTitle {
-    margin: 40px 0 20px 40px;
-    font-weight: 400;
-    font-size: 14px;
-  }
-  .charSet {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0 0.7rem;
-
-    .char {
-      display: flex;
-      align-items: center;
-      width: 100px;
-      height: 40px;
+    .charTitle {
       font-weight: 400;
-      font-size: 12px;
-      margin: 0 0.5rem;
-      cursor: pointer;
-      span {
-        color: #b9d1e0;
-        margin-right: 8px;
-        font-size: 20px;
-        &.active {
-          color: $mainPink;
+      font-size: 14px;
+      margin-left: 10%;
+    }
+    .charSet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .char {
+        display: flex;
+        align-items: center;
+        // width: 100px;
+        height: 40px;
+        font-weight: 400;
+        font-size: 12px;
+        margin: 10px 20px;
+        cursor: pointer;
+        span {
+          color: #b9d1e0;
+          margin-right: 8px;
+          font-size: 20px;
+          &.active {
+            color: $mainPink;
+          }
         }
       }
+    }
+  }
+  .gallery {
+    width: 77%;
+    margin: 100px auto;
+    p {
+      margin-bottom: 10px;
+    }
+  }
+  .likes {
+    .likesTitle {
+      margin: 20px 0 0 30px;
+
+      // margin-bottom: 30px;
+    }
+    .likesContainer {
+      display: flex;
+      flex-wrap: wrap;
     }
   }
   .bottomContent {

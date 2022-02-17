@@ -19,63 +19,42 @@
     font-size: 2rem;
   }
 
+  .modalInfo {
+    min-width: 60%;
+    margin: 8rem auto;
+    background-color: white;
+    padding: $sidePadding;
+    border-radius: $radiusDiv;
+    box-shadow: 0 3px 21px rgba(0, 0, 0, 0.83);
+  }
   .flexHeaderInfo {
     display: flex;
-    .modalInfo {
-      background-color: white;
-      padding: $sidePadding;
-      margin-top: 8rem;
-      border-radius: $radiusDiv;
-      box-shadow: 0 3px 21px rgba(0, 0, 0, 0.83);
+    justify-content: space-between;
 
-      .description {
-        font-size: $superSmall;
-        margin-bottom: 15px;
-      }
+    .subHeader {
+      font-size: $superSmall;
     }
-    .likeBtn {
-      margin-left: 110px;
-      .icon {
-        color: lighten($mainPink, 8);
-        font-size: 2rem;
-      }
+    .icon {
+      color: lighten($mainPink, 8);
+      font-size: 2rem;
     }
   }
 }
-.modalInfo {
-  background-color: white;
-  padding: $sidePadding;
-  margin-top: 8rem;
-  border-radius: $radiusDiv;
-  box-shadow: 0 3px 21px rgba(0, 0, 0, 0.83);
-  .headerInfo {
-    font-size: $smallSize;
-    margin-bottom: 15px;
-  }
-  .description {
-    font-size: $superSmall;
-    margin-bottom: 15px;
-  }
-}
-.icon {
-  color: lighten($mainPink, 8);
-  font-size: 2rem;
-}
 
-p {
-  font-size: $superSmall;
-  margin: 2px auto;
-}
 .fieldset {
+  // width: 100px;
   border: 2px solid $mainLightBlue;
   border-radius: 0.8rem;
   padding: 1rem;
   margin-top: 2rem;
   legend {
     font-weight: 500;
+    font-size: $superSmall;
   }
   section {
     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
 
   .flexColumn {

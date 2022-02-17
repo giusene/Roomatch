@@ -5,20 +5,24 @@ import { useState, useEffect } from "react";
 import { httpGET } from "../../libs/http";
 
 const Likes = () => {
-  const user = useSelector(state => state.user)
+  const user = useSelector((state) => state.user);
 
   const [dataRoomLikes, setDataRoomLikes] = useState({ data: [], isRoom: 0 });
 
   useEffect(() => {
     httpGET(`/users/${user._id}/wholikesmyroom`).then((data) => {
       setDataRoomLikes({ data: data, isRoom: 0 }); // sono persone interessate alla stanza roomId
-    })
+    });
   }, [user]);
 
-  const dataLikes = user.roomId.roomId !== '' ? dataRoomLikes : { data: user.wholikesme, isRoom: 1 };
+  const dataLikes =
+    user.roomId.roomId !== ""
+      ? dataRoomLikes
+      : { data: user.wholikesme, isRoom: 1 };
 
   return (
     <div className={styles.main}>
+      <h3 className={styles.title}>These people like you!</h3>
       <div className={styles.cardContainer}>
         {dataLikes.data.map((user, index) => (
           <LikesCard key={index} user={user} isRoom={dataLikes.isRoom} />

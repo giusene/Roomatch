@@ -1,12 +1,13 @@
 @import "./../../libs/variables.scss";
 
-.main{
-    display: flex;
-    flex-wrap: wrap;
-    img{
-        object-fit: cover;
-        width: 100px;
-        height: 100px;
-        margin: 10px;
-    }
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  img {
+    border-radius: $radiusDiv;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+  }
 }

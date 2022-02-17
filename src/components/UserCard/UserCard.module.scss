@@ -1,7 +1,8 @@
 @import "./../../libs/variables.scss";
 
 .slider {
-  width: 22rem;
+  // border: 1px solid blue;
+  width: 320px;
   margin: 0 auto;
   left: calc(50% - 11rem);
   overflow-y: hidden;
@@ -20,7 +21,7 @@
 }
 
 .cardContainer {
-  min-width: 20rem;
+  min-width: 300px;
   margin: 6rem 1.6rem 5rem 0.6rem;
   height: 30rem;
   position: relative;
@@ -29,7 +30,7 @@
   overflow-y: hidden;
   background-size: cover;
   background-position: center;
-  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
   .cardText {
     position: absolute;
     width: 100%;
@@ -61,8 +62,7 @@
 
 .infoCardContainer {
   border: 1px solid blue;
-  min-width: 20rem;
-  max-width: 20rem;
+  min-width: 300px;
   margin: 6rem 2rem 5rem 0.5rem;
   height: 30rem;
   border-radius: 21px;

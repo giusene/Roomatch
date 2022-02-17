@@ -1,13 +1,8 @@
-// import { useSelector, useDispatch } from "react-redux";
-// import { likeDislike } from "../../store/actions";
-
 import styles from "./LikesCardInfo.module.scss";
 import { IoIosCloseCircle } from "react-icons/io";
 import { FiHeart } from "react-icons/fi";
-// import { FaHeart } from "react-icons/fa";
 
 const LikesCardInfo = ({ user, showInfo, setShowInfo, isRoom }) => {
-
   const dataDetails = isRoom ? user.friendlyWith : user.iam;
 
   return (
@@ -21,11 +16,13 @@ const LikesCardInfo = ({ user, showInfo, setShowInfo, isRoom }) => {
             <h3>
               {user.name} {user.surname}
             </h3>
-            {console.log(user)}
-            {!isRoom && <p>Age: {user.age}</p>}
-            <p>
-              {user.town} ({user.city})
-            </p>
+            <div className={styles.subHeader}>
+              {console.log(user)}
+              {!isRoom && <p>Age: {user.age}</p>}
+              <p>
+                {user.town} ({user.city})
+              </p>
+            </div>
           </div>
           <div className={styles.likeBtn}>
             <FiHeart className={styles.icon} />

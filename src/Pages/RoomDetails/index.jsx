@@ -9,7 +9,6 @@ import { FaHandSpock, FaSmoking } from "react-icons/fa";
 import LikesCard from "../../components/LikesCard";
 import PhotoGallery from "../../components/PhotoGallery";
 
-
 const RoomDetails = () => {
   const user = useSelector((state) => state.user);
 
@@ -49,73 +48,117 @@ const RoomDetails = () => {
     });
   }, [user.roomId.roomId]);
 
-
   return (
     <div className={styles.main}>
       <div className={styles.info}>
         <h3>{roomDetails.roomType}</h3>
-        <p>{roomDetails.town} ({roomDetails.city})</p>
+        <p>
+          {roomDetails.town} ({roomDetails.city})
+        </p>
         <p>{roomDetails.roomAddress}</p>
       </div>
       <div
         className={styles.header}
         style={{ backgroundImage: `url(${roomDetails.roomPhotos[0]})` }}
       ></div>
-      <p className={styles.roommatesTitle}>Roommates: 
-      <span><AiOutlineMan />{roomDetails.roommates.males}</span>
-      <span><AiOutlineWoman />{roomDetails.roommates.females}</span>
-      <span><RiRainbowLine />{roomDetails.roommates.others}</span>  
+      <p className={styles.roommatesTitle}>
+        Roommates:
+        <span>
+          <AiOutlineMan />
+          {roomDetails.roommates.males}
+        </span>
+        <span>
+          <AiOutlineWoman />
+          {roomDetails.roommates.females}
+        </span>
+        <span>
+          <RiRainbowLine />
+          {roomDetails.roommates.others}
+        </span>
       </p>
-      
-  
-      <p className={styles.charTitle}>Friendly With</p>
-      <div className={styles.charSet}>
-        <div className={styles.char}>
-          <span className={roomDetails.friendlyWith.lgbtq === 1 ? styles.active : ""}>
-            <RiRainbowLine />
-          </span>
-          LGBTQ+
+      <div>
+        <div className={styles.charsetContainer}>
+          <p className={styles.charTitle}>Friendly for</p>
+          <div className={styles.charSet}>
+            <div className={styles.char}>
+              <span
+                className={
+                  roomDetails.friendlyWith.lgbtq === 1 ? styles.active : ""
+                }
+              >
+                <RiRainbowLine />
+              </span>
+              LGBTQ+
+            </div>
+            <div className={styles.char}>
+              <span
+                className={
+                  roomDetails.friendlyWith.pet_owner === 1 ? styles.active : ""
+                }
+              >
+                <GiCat />
+              </span>
+              Pet Owner
+            </div>
+            <div className={styles.char}>
+              <span
+                className={
+                  roomDetails.friendlyWith.multicultural === 1
+                    ? styles.active
+                    : ""
+                }
+              >
+                <FaHandSpock />
+              </span>
+              Multicultural
+            </div>
+            <div className={styles.char}>
+              <span
+                className={
+                  roomDetails.friendlyWith.veg === 1 ? styles.active : ""
+                }
+              >
+                <RiPlantFill />
+              </span>
+              Veg
+            </div>
+            <div className={styles.char}>
+              <span
+                className={
+                  roomDetails.friendlyWith.smooker === 1 ? styles.active : ""
+                }
+              >
+                <FaSmoking />
+              </span>
+              Smoker
+            </div>
+            <div className={styles.char}>
+              <span
+                className={
+                  roomDetails.friendlyWith.party_lover === 1
+                    ? styles.active
+                    : ""
+                }
+              >
+                <GiPartyPopper />
+              </span>
+              Party Lover
+            </div>
+          </div>
         </div>
-        <div className={styles.char}>
-          <span className={roomDetails.friendlyWith.pet_owner === 1 ? styles.active : ""}>
-            <GiCat />
-          </span>
-          Pet Owner
+
+        <div className={styles.gallery}>
+          <p>Gallery</p>
+          <PhotoGallery photos={roomDetails.roomPhotos} />
         </div>
-        <div className={styles.char}>
-          <span className={roomDetails.friendlyWith.multicultural === 1 ? styles.active : ""}>
-            <FaHandSpock />
-          </span>
-          Multicultural
+        <div className={styles.likes}>
+          <p className={styles.likesTitle}>Likes</p>
+          <div className={styles.likesContainer}>
+            {roomLikes.map((user, index) => (
+              <LikesCard key={index} user={user} />
+            ))}
+          </div>
         </div>
-        <div className={styles.char}>
-          <span className={roomDetails.friendlyWith.veg === 1 ? styles.active : ""}>
-            <RiPlantFill />
-          </span>
-          Veg
-        </div>
-        <div className={styles.char}>
-          <span className={roomDetails.friendlyWith.smooker === 1 ? styles.active : ""}>
-            <FaSmoking />
-          </span>
-          Smoker
-        </div>
-        <div className={styles.char}>
-          <span className={roomDetails.friendlyWith.party_lover === 1 ? styles.active : ""}>
-            <GiPartyPopper />
-          </span>
-          Party Lover
-        </div>
-      </div>
-      <div className={styles.gallery}>
-        <p className={styles.charTitle}>Gallery</p>
-        <PhotoGallery photos={roomDetails.roomPhotos}/>
-      </div>
-      <div className={styles.likes}>
-        <p className={styles.charTitle}>Likes</p>
-        {roomLikes.map((user, index) => (
-          <LikesCard key={index} user={user} />
-        ))}
       </div>
     </div>
   );

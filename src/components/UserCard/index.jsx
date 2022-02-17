@@ -56,8 +56,8 @@ const UserCard = ({ userInfo }) => {
                 <progress value={compatibility} max="100"></progress>
               </div>
               <div>
-                {user.roomId.ilike.filter((like) => like.id === userInfo._id).length >
-                0 ? (
+                {user.roomId.ilike.filter((like) => like.id === userInfo._id)
+                  .length > 0 ? (
                   <FaHeart
                     onClick={() => !loading && dislikeFunc()}
                     className={`${styles.fillHeart} ${styles.icon}`}
@@ -74,7 +74,9 @@ const UserCard = ({ userInfo }) => {
         </div>
 
         <div className={styles.infoCardContainer}>
-          <h3>{userInfo.name} {userInfo.surname}</h3>
+          <h3>
+            {userInfo.name} {userInfo.surname}
+          </h3>
           <p>
             {userInfo.town} ({userInfo.city})
           </p>
