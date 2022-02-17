@@ -18,9 +18,9 @@ const MainNav = () => {
   return (
     <div className={styles.main}>
       <ul>
-        <Link to={"/rooms"}>
+        <Link to={"/list"}>
           <li>
-            {url.pathname === "/rooms" ? (
+            {url.pathname === "/list" ? (
               <img
                 src={roomatchFill}
                 style={{ height: 32, width: 32 }}

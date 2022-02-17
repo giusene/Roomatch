@@ -7,14 +7,18 @@ import Likes from "../Likes";
 import Matches from "../Matches";
 import Profile from "../Profile";
 import Users from "../Users";
-import RoomDetails from "../RoomDetails";
+import RoomDetails from '../RoomDetails'
+import { useSelector } from "react-redux";
 import NewRoom from '../NewRoom'
 
 const Main = () => {
+  const user = useSelector(state => state.user)
+
   return (
     <div className={styles.main}>
       <Header />
       <Routes>
+        <Route path="/list" element={user.roomId.roomId === '' ? <Rooms /> : <Users />} />
         <Route path="/rooms" element={<Rooms />} />
         <Route path="/likes" element={<Likes />} />
         <Route path="/matches" element={<Matches />} />
@@ -29,3 +33,4 @@ const Main = () => {
 };
 
 export default Main;
+

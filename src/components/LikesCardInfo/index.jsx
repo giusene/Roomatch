@@ -6,7 +6,10 @@ import { IoIosCloseCircle } from "react-icons/io";
 import { FiHeart } from "react-icons/fi";
 // import { FaHeart } from "react-icons/fa";
 
-const LikesCardInfo = ({ user, showInfo, setShowInfo }) => {
+const LikesCardInfo = ({ user, showInfo, setShowInfo, isRoom }) => {
+
+  const dataDetails = isRoom ? user.friendlyWith : user.iam;
+
   return (
     <div className={styles.background}>
       <div className={styles.closeBtn} to="/">
@@ -19,7 +22,7 @@ const LikesCardInfo = ({ user, showInfo, setShowInfo }) => {
               {user.name} {user.surname}
             </h3>
             {console.log(user)}
-            <p>Age: {user.age}</p>
+            {!isRoom && <p>Age: {user.age}</p>}
             <p>
               {user.town} ({user.city})
             </p>
@@ -41,7 +44,7 @@ const LikesCardInfo = ({ user, showInfo, setShowInfo }) => {
                     type="checkbox"
                     name="action"
                     id="lgbtq"
-                    checked={user.iam.lgbtq === 1 ? true : false}
+                    checked={dataDetails.lgbtq === 1 ? true : false}
                   />
                   <span className={styles.mark}></span>
                 </label>
@@ -54,7 +57,7 @@ const LikesCardInfo = ({ user, showInfo, setShowInfo }) => {
                     readOnly
                     type="checkbox"
                     name="action"
-                    checked={user.iam.pet_owner === 1 ? true : false}
+                    checked={dataDetails.pet_owner === 1 ? true : false}
                     id="pet_owner"
                   />
                   <span className={styles.mark}></span>
@@ -71,7 +74,7 @@ const LikesCardInfo = ({ user, showInfo, setShowInfo }) => {
                     type="checkbox"
                     name="action"
                     id="multicultural"
-                    checked={user.iam.multicultural === 1 ? true : false}
+                    checked={dataDetails.multicultural === 1 ? true : false}
                   />
                   <span className={styles.mark}></span>
                 </label>
@@ -87,7 +90,7 @@ const LikesCardInfo = ({ user, showInfo, setShowInfo }) => {
                     type="checkbox"
                     name="action"
                     id="veg"
-                    checked={user.iam.veg === 1 ? true : false}
+                    checked={dataDetails.veg === 1 ? true : false}
                   />
                   <span className={styles.mark}></span>
                 </label>
@@ -101,7 +104,7 @@ const LikesCardInfo = ({ user, showInfo, setShowInfo }) => {
                     type="checkbox"
                     name="action"
                     id="smooker"
-                    checked={user.iam.smooker === 1 ? true : false}
+                    checked={dataDetails.smooker === 1 ? true : false}
                   />
                   <span className={styles.mark}></span>
                 </label>
@@ -115,7 +118,7 @@ const LikesCardInfo = ({ user, showInfo, setShowInfo }) => {
                     type="checkbox"
                     name="action"
                     id="party"
-                    checked={user.iam.party_lover === 1 ? true : false}
+                    checked={dataDetails.party_lover === 1 ? true : false}
                   />
                   <span className={styles.mark}></span>
                 </label>
