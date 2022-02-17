@@ -2,9 +2,9 @@
 
 .main {
   position: fixed;
-  width: 100vw;
+  width: 100%;
   bottom: 0;
-  height: 20vw;
+  height: 80px;
   background: linear-gradient(180deg, #f4fbff, $mainLightBlue);
   display: flex;
   justify-content: center;
@@ -12,9 +12,8 @@
   ul {
     list-style: none;
     display: flex;
-    padding: 0;
     li {
-      margin: 0 1.7rem;
+      margin: 13px 30px 0;
       font-size: 33px;
       color: $iconcolor;
       &:hover {

@@ -9,7 +9,7 @@
       display: flex;
       align-items: center;
       .img {
-        width: 136px;
+        min-width: 136px;
         height: 136px;
         border-radius: 17px;
         background-position: center;
@@ -36,7 +36,7 @@
   }
   .btnSet {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
     button {

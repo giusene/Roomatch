@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { changeChar } from "../../store/actions";
 import styles from "./Profile.module.scss";
 import { RiRainbowLine, RiPlantFill } from "react-icons/ri";
@@ -32,7 +32,7 @@ const Profile = () => {
   return (
     <div className={styles.main}>
       <div className={styles.info}>
-      {console.log(user)}
+        {console.log(user)}
         <h3>
           {user.name} {user.surname}
         </h3>
@@ -46,68 +46,72 @@ const Profile = () => {
         className={styles.header}
         style={{ backgroundImage: `url(${user.photo})` }}
       ></div>
-      <p className={styles.charTitle}>I'm</p>
-      <div className={styles.charSet}>
-        <div
-          onClick={() => !loading && handleChar("lgbtq")}
-          className={styles.char}
-        >
-          <span className={user.iam.lgbtq === 1 ? styles.active : ""}>
-            <RiRainbowLine />
-          </span>
-          LGBTQ+
-        </div>
-        <div
-          onClick={() => !loading && handleChar("pet_owner")}
-          className={styles.char}
-        >
-          <span className={user.iam.pet_owner === 1 ? styles.active : ""}>
-            <GiCat />
-          </span>
-          Pet Owner
-        </div>
-        <div
-          onClick={() => !loading && handleChar("multicultural")}
-          className={styles.char}
-        >
-          <span className={user.iam.multicultural === 1 ? styles.active : ""}>
-            <FaHandSpock />
-          </span>
-          Multicultural
-        </div>
-        <div
-          onClick={() => !loading && handleChar("veg")}
-          className={styles.char}
-        >
-          <span className={user.iam.veg === 1 ? styles.active : ""}>
-            <RiPlantFill />
-          </span>
-          Veg
-        </div>
-        <div
-          onClick={() => !loading && handleChar("smooker")}
-          className={styles.char}
-        >
-          <span className={user.iam.smooker === 1 ? styles.active : ""}>
-            <FaSmoking />
-          </span>
-          Smoker
-        </div>
-        <div
-          onClick={() => !loading && handleChar("party_lover")}
-          className={styles.char}
-        >
-          <span className={user.iam.party_lover === 1 ? styles.active : ""}>
-            <GiPartyPopper />
-          </span>
-          Party Lover
+      <div className={styles.charsetContainer}>
+        <p className={styles.charTitle}>Friendly for</p>
+        <div className={styles.charSet}>
+          <div
+            onClick={() => !loading && handleChar("lgbtq")}
+            className={styles.char}
+          >
+            <span className={user.iam.lgbtq === 1 ? styles.active : ""}>
+              <RiRainbowLine />
+            </span>
+            LGBTQ+
+          </div>
+          <div
+            onClick={() => !loading && handleChar("pet_owner")}
+            className={styles.char}
+          >
+            <span className={user.iam.pet_owner === 1 ? styles.active : ""}>
+              <GiCat />
+            </span>
+            Pet Owner
+          </div>
+          <div
+            onClick={() => !loading && handleChar("multicultural")}
+            className={styles.char}
+          >
+            <span className={user.iam.multicultural === 1 ? styles.active : ""}>
+              <FaHandSpock />
+            </span>
+            Multicultural
+          </div>
+          <div
+            onClick={() => !loading && handleChar("veg")}
+            className={styles.char}
+          >
+            <span className={user.iam.veg === 1 ? styles.active : ""}>
+              <RiPlantFill />
+            </span>
+            Veg
+          </div>
+          <div
+            onClick={() => !loading && handleChar("smooker")}
+            className={styles.char}
+          >
+            <span className={user.iam.smooker === 1 ? styles.active : ""}>
+              <FaSmoking />
+            </span>
+            Smoker
+          </div>
+          <div
+            onClick={() => !loading && handleChar("party_lover")}
+            className={styles.char}
+          >
+            <span className={user.iam.party_lover === 1 ? styles.active : ""}>
+              <GiPartyPopper />
+            </span>
+            Party Lover
+          </div>
         </div>
       </div>
       <div className={styles.bottomContent}>
         {user.roomId.roomId ? (
           <RoomAd room={user.roomId} />
         ) : (
-          <Link to='/addroom'><button>Find roommate</button></Link>
+          <Link to="/addroom">
+            <button>Find roommate</button>
+          </Link>
         )}
       </div>
     </div>
