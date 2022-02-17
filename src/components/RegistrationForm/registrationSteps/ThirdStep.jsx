@@ -5,13 +5,16 @@ import styles from "./ThirdStep.module.scss";
 import { BsArrowLeftCircle } from "react-icons/bs";
 
 const ThirdStep = ({ values, prevStep }) => {
+  const [message, setMessage] = useState("");
   const [redirect, setRedirect] = useState("/registration");
   let url = useNavigate();
   const { name, surname, age, city, gender, town, photo } = values;
 
   const hadleConfirm = (data) => {
     httpPOST("/users", data).then((data) => {
-      setRedirect("/");
+      data.message === "email already present in our system"
+        ? setMessage(data.message)
+        : setRedirect("/");
     });
   };
 
@@ -129,7 +132,7 @@ const ThirdStep = ({ values, prevStep }) => {
           </div>
         </section>
       </fieldset>
-
+      {message && <p className={styles.error}>{message}</p>}
       <div className={styles.btnSet}>
         <button className={styles.prevStep} onClick={prevStep}>
           <BsArrowLeftCircle />
