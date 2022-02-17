@@ -10,7 +10,7 @@ import {
 
 import { backend_URL } from "../libs/functions";
 
-export const loginAction = (loginInput, setRedirect) => {
+export const loginAction = (loginInput, setRedirect, setMessage) => {
   return async (dispatch) => {
     dispatch({ type: FETCH_LOGIN_REQUEST });
     try {
@@ -20,6 +20,7 @@ export const loginAction = (loginInput, setRedirect) => {
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
     } catch (e) {
       dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
+      setMessage(e.response.data.message)
     }
   };
 };

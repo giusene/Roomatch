@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 
 
 const LoginForm = () => {
+    const [message, setMessage] = useState('')
     let url = useNavigate();
     const [redirect, setRedirect] = useState('/login')
     const dispatch = useDispatch()
@@ -16,7 +17,7 @@ const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        dispatch(loginAction(loginForm, setRedirect))
+        dispatch(loginAction(loginForm, setRedirect, setMessage))
     }
 
     useEffect(()=> {
@@ -30,6 +31,9 @@ const LoginForm = () => {
             <input id='email' name='email' onChange={(e) => setLoginForm({...loginForm, email: e.target.value})} type='email' placeholder="email" required/>
             <label htmlFor='password'>Password*</label>
             <input id='password' name='password' onChange={(e) => setLoginForm({...loginForm, password: e.target.value})}  type='password' placeholder="password" required/>
+            {message &&
+            <p className={styles.errorMessage}>{message}</p>
+            }
             <button>Entra</button>
         </form>
         </div>
