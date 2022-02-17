@@ -15,8 +15,8 @@ export const loginAction = (loginInput, setRedirect, setMessage) => {
     dispatch({ type: FETCH_LOGIN_REQUEST });
     try {
       const { data } = await axios.post(backend_URL + "/login", loginInput);
-      setRedirect("/rooms");
-      window.localStorage.setItem("roomatch", JSON.stringify(data));
+      setRedirect("/list");
+      window.localStorage.setItem("roomatch", JSON.stringify({myId: data._id, token: data.token}));
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
     } catch (e) {
       dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
@@ -24,6 +24,37 @@ export const loginAction = (loginInput, setRedirect, setMessage) => {
     }
   };
 };
+
+export const restoreSession = (body, setRedirect) => {
+  return async (dispatch) => {
+    dispatch({ type: FETCH_LOGIN_REQUEST });
+    try {
+      const { data } = await axios.post(backend_URL + "/update", body);
+      window.localStorage.setItem("roomatch", JSON.stringify({myId: data._id, token: data.token}));
+      setRedirect("/list");
+      console.log(data)
+      dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
+    } catch (e) {
+      console.log(e)
+      dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
+    }
+  };
+};
+
+export const updateAction = (body) => {
+  return async (dispatch) => {
+    dispatch({ type: FETCH_LOGIN_REQUEST });
+    try {
+      const { data } = await axios.post(backend_URL + "/update", body);
+      window.localStorage.setItem("roomatch", JSON.stringify({myId: data._id, token: data.token}));
+      dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
+    } catch (e) {
+      dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
+    }
+  };
+};
+
+
 
 export const likeDislike = (body, roomId, type) => {
   return async (dispatch) => {
@@ -33,7 +64,6 @@ export const likeDislike = (body, roomId, type) => {
         backend_URL + `/rooms/${roomId}/${type}`,
         body
       );
-      window.localStorage.setItem("roomatch", JSON.stringify(data));
       dispatch({ type: USER_UPDATE_SUCCESS, payload: data });
     } catch (e) {
       dispatch({ type: USER_UPDATE_ERROR, payload: e });
@@ -49,7 +79,6 @@ export const peoplelikeDislike = (body, userId, type) => {
         backend_URL + `/users/${userId}/${type}`,
         body
       );
-      window.localStorage.setItem("roomatch", JSON.stringify(data));
       dispatch({ type: USER_UPDATE_SUCCESS, payload: data });
     } catch (e) {
       dispatch({ type: USER_UPDATE_ERROR, payload: e });
@@ -65,7 +94,6 @@ export const changeChar = (body, userId) => {
         backend_URL + `/users/${userId}`,
         body
       );
-      window.localStorage.setItem("roomatch", JSON.stringify(data));
       dispatch({ type: USER_UPDATE_SUCCESS, payload: data });
     } catch (e) {
       dispatch({ type: USER_UPDATE_ERROR, payload: e });

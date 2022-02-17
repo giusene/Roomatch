@@ -5,7 +5,6 @@ import {
   USER_UPDATE_REQUEST,
   USER_UPDATE_SUCCESS,
   USER_UPDATE_ERROR,
-  LOCAL_STORAGE_USER_UPDATE,
 } from "./constants";
 
 const defaultStore = {
@@ -53,13 +52,6 @@ const loginReducer = (state = defaultStore, action) => {
         ...state,
         logged: true,
         loading: false,
-      };
-
-    case LOCAL_STORAGE_USER_UPDATE:
-      return {
-        logged: true,
-        loading: false,
-        user: action.payload,
       };
 
     default:
