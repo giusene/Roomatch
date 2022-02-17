@@ -1,36 +1,70 @@
 import styles from "./SecondStepForm.module.scss";
 import { BsArrowRightCircleFill, BsArrowLeftCircle } from "react-icons/bs";
+import { uploadImg } from "../../../libs/http";
 
 const SecondStepForm = ({
+  handleRoommates,
   nextStep,
   handleFormData,
   prevStep,
   values,
   handleInputPref,
+  setImage,
 }) => {
   const submitFormData = (e) => {
     e.preventDefault();
     nextStep();
   };
 
+  const photoGallery = (e) => {
+    uploadImg(e.target.files[0]).then((result) => {
+      setImage(result.data.display_url);
+    });
+  };
+
   return (
     <div className={styles.containerForm}>
       <form onSubmit={(e) => submitFormData(e)}>
         <div>
-          <div className={styles.gender}>
-            <label htmlFor="gender">Gender*</label>
-            <select
-              onChange={handleFormData("gender")}
-              name="gender"
-              id="gender"
-              value={values.gender}
-              placeholder="Gender"
-              required
-            >
-              <option value="Male">Male</option>
-              <option value="Famale">Female</option>
-              <option value="Other">Other</option>
-            </select>
+          <div className={styles.roommates}>
+            Roomates:
+            <div className={styles.roommatesWrapper}>
+              <>
+                <label htmlFor="Males">Males:</label>
+                <input
+                  value={values.roommates.males}
+                  onChange={(e) => handleRoommates("males", e)}
+                  name="Males"
+                  id="Males"
+                  type="number"
+                  required
+                />
+              </>
+
+              <>
+                <label htmlFor="Females">Females:</label>
+                <input
+                  value={values.roommates.females}
+                  onChange={(e) => handleRoommates("females", e)}
+                  name="Females"
+                  id="Females"
+                  type="number"
+                  required
+                />
+              </>
+
+              <>
+                <label htmlFor="Others">Others:</label>
+                <input
+                  value={values.roommates.others}
+                  onChange={(e) => handleRoommates("others", e)}
+                  name="Others"
+                  id="Others"
+                  type="number"
+                  required
+                />
+              </>
+            </div>
           </div>
 
           <fieldset className={styles.fieldset}>
@@ -44,7 +78,7 @@ const SecondStepForm = ({
                       type="checkbox"
                       name="action"
                       id="lgbtq"
-                      checked={values.friendlyfor.lgbtq === 1 ? true : false}
+                      checked={values.friendlyWith.lgbtq === '1' ? true : false}
                       onChange={(e) => handleInputPref("lgbtq", e)}
                     />
                     <span className={styles.mark}></span>
@@ -56,7 +90,7 @@ const SecondStepForm = ({
                     Pet owner
                     <input
                       checked={
-                        values.friendlyfor.pet_owner === 1 ? true : false
+                        values.friendlyWith.pet_owner === '1' ? true : false
                       }
                       onChange={(e) => handleInputPref("pet_owner", e)}
                       type="checkbox"
@@ -74,7 +108,7 @@ const SecondStepForm = ({
                     Multicultural
                     <input
                       checked={
-                        values.friendlyfor.multicultural === 1 ? true : false
+                        values.friendlyWith.multicultural === '1' ? true : false
                       }
                       onChange={(e) => handleInputPref("multicultural", e)}
                       type="checkbox"
@@ -91,7 +125,7 @@ const SecondStepForm = ({
                   <label className={styles.labelContainer} htmlFor="veg">
                     Veg
                     <input
-                      checked={values.friendlyfor.veg === 1 ? true : false}
+                      checked={values.friendlyWith.veg === '1' ? true : false}
                       type="checkbox"
                       onChange={(e) => handleInputPref("veg", e)}
                       name="action"
@@ -105,7 +139,7 @@ const SecondStepForm = ({
                   <label className={styles.labelContainer} htmlFor="smooker">
                     Smooker
                     <input
-                      checked={values.friendlyfor.smooker === 1 ? true : false}
+                      checked={values.friendlyWith.smooker === '1' ? true : false}
                       onChange={(e) => handleInputPref("smooker", e)}
                       type="checkbox"
                       name="action"
@@ -119,7 +153,7 @@ const SecondStepForm = ({
                   <label className={styles.labelContainer} htmlFor="party">
                     Party lover
                     <input
-                      checked={values.friendlyfor.party === 1 ? true : false}
+                      checked={values.friendlyWith.party === '1' ? true : false}
                       onChange={(e) => handleInputPref("party", e)}
                       type="checkbox"
                       name="action"
@@ -133,10 +167,37 @@ const SecondStepForm = ({
           </fieldset>
         </div>
       </form>
+      <div className={styles.imagesWrapper}>
+        Upload min1/max4 pics
+        <form className={styles.flexForm} onSubmit={(e) => submitFormData(e)}>
+          {values.roomPhotos.map((photo, index) => (
+            <img src={photo} key={index} alt="roomatch" />
+          ))}
+          {values.roomPhotos.length < 4 && (
+            <label htmlFor="upload" className={styles.uploadBtn}>
+              +
+            </label>
+          )}
+          <input
+            type="file"
+            onChange={(e) => photoGallery(e)}
+            accept=".jpg, .jpeg, .png"
+            placeholder="carica"
+            name="upload"
+            id="upload"
+            title="Carica"
+            className={styles.hidden}
+          />
+        </form>
+      </div>
       <button className={styles.prevStep} onClick={prevStep}>
         <BsArrowLeftCircle />
       </button>
-      <button className={styles.nextStep} onClick={nextStep}>
+      <button
+        className={styles.nextStep}
+        disabled={values.roomPhotos.length > 0 ? false : true}
+        onClick={nextStep}
+      >
         <BsArrowRightCircleFill />
       </button>
     </div>

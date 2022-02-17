@@ -4,33 +4,44 @@ import FirstStepForm from "./adsSteps/FirstStepForm";
 import SecondStepForm from "./adsSteps/SecondStepForm";
 import ThirdStepForm from "./adsSteps/ThirdStepForm";
 import HeaderAddRoomForm from "../HeaderAddRoomAdForm/HeaderAddRoomForm";
-
-const initialForm = {
-  roomType: "Single",
-  rent: '0',
-  gender: 'Male',
-  roomPhotos: [],
-  aboutFlat: {
-    bedrooms: 0,
-    bathrooms: 0,
-    kitchen: 0,
-    airCond: false,
-    billsIncl: false,
-    wifi: false,
-  },
-  address: "",
-  friendlyfor: {
-    lgbtq: 0,
-    multicultural: 0,
-    pet_owner: 0,
-    veg: 0,
-    party_lover: 0,
-    smooker: 0,
-  },
-};
+import { useSelector } from "react-redux";
 
 const AddRoomAdForm = () => {
+  const user = useSelector(state => state.user)
   const [step, setStep] = useState(1);
+
+  const initialForm = {
+    roomOwner: user._id,
+    roomType: "Single",
+    rentPrice: '0',
+    roommates: {
+      females: '0',
+      males: '0',
+      others: '0'
+    },
+    roomPhotos: [],
+    aboutFlat: {
+      bedrooms: '0',
+      bathrooms: '0',
+      kitchen: '0',
+      airCond: false,
+      billsIncl: false,
+      wifi: false,
+    },
+    roomAddress: "",
+    city: "AG",
+    town: "Agrigento",
+    friendlyWith: {
+      lgbtq: '0',
+      multicultural: '0',
+      pet_owner: '0',
+      veg: '0',
+      party_lover: '0',
+      smooker: '0',
+    },
+  };
+
+
   const [formData, setFormData] = useState(initialForm);
   const nextStep = () => {
     setStep(step + 1);
@@ -55,11 +66,17 @@ const AddRoomAdForm = () => {
     });
   };
 
-  const handleInputPref = (input, e) => {
-    // console.log(input, e.target.checked)
+  const handleInputCities = (input, value) => {
     setFormData({
       ...formData,
-      friendlyfor: { ...formData.friendlyfor, [input]: e.target.checked ? 1 : 0 },
+      [input]: value,
+    });
+  };
+
+  const handleInputPref = (input, e) => {
+    setFormData({
+      ...formData,
+      friendlyWith: { ...formData.friendlyWith, [input]: e.target.checked ? '1' : '0' },
     });
   };
 
@@ -67,6 +84,13 @@ const AddRoomAdForm = () => {
     setFormData({
       ...formData,
       aboutFlat: { ...formData.aboutFlat, [input]: e.target.value }
+    });
+  };
+
+  const handleRoommates = (input, e) => {
+    setFormData({
+      ...formData,
+      roommates: { ...formData.roommates, [input]: e.target.value }
     });
   };
 
@@ -85,7 +109,7 @@ const AddRoomAdForm = () => {
           <FirstStepForm
             nextStep={nextStep}
             handleFormData={handleInputData}
-            handleInputPref={handleInputPref}
+            handleInputCities={handleInputCities}
             handleAbout={handleAbout}
             handleAboutCheck={handleAboutCheck}
             values={formData}
@@ -101,6 +125,8 @@ const AddRoomAdForm = () => {
             nextStep={nextStep}
             handleFormData={handleInputData}
             handleInputPref={handleInputPref}
+            handleRoommates={handleRoommates}
+            setImage={setImage}
             values={formData}
           />
         </div>

@@ -3,6 +3,7 @@
 // import { uploadImg } from "../../../libs/http";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import styles from "./FirstStepForm.module.scss";
+import CitiesSelector from './../../CitiesSelector'
 
 const FirstStepForm = ({
   handleFormData,
@@ -10,7 +11,7 @@ const FirstStepForm = ({
   handleAboutCheck,
   values,
   nextStep,
-  handleInputPref,
+  handleInputCities,
 }) => {
   const submitFormData = (e) => {
     e.preventDefault();
@@ -18,21 +19,21 @@ const FirstStepForm = ({
   };
   
   return (
-    <div>
+    <div className={styles.main}>
       <div className={styles.containerForm}>
         <form className={styles.flexForm} onSubmit={(e) => submitFormData(e)}>
           <div className={styles.roomType}>
           <div className={styles.rent}>
-            <label htmlFor="rent">Monthly Rent</label>
+            <label htmlFor="rentPrice">Monthly Rent</label>
             <input
-              value={values.rent}
-              onChange={handleFormData("rent")}
+              value={values.rentPrice}
+              onChange={handleFormData("rentPrice")}
               name="rent"
-              id="rent"
+              id="rentPrice"
               type="number"
               placeholder="price/month"
               required
-            />
+            /><span>,00 €/month</span>
           </div>
             <label htmlFor="roomtype">Room type*</label>
             <select
@@ -134,14 +135,21 @@ const FirstStepForm = ({
               </div>
             </section>
           </fieldset>
+          <div className={styles.city}>
+            <label htmlFor="City">City*</label>
+            <CitiesSelector
+              handleInputCities={handleInputCities}
+              values={values}
+            />
+          </div>
 
           <div className={styles.address}>
             <label htmlFor="address">Address</label>
             <input
-              value={values.address}
-              onChange={handleFormData("address")}
-              name="address"
-              id="address"
+              value={values.roomAddress}
+              onChange={handleFormData("roomAddress")}
+              name="roomAddress"
+              id="roomAddress"
               type="text"
               placeholder="via della felicità"
               required
