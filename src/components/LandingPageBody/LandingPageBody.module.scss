@@ -1,0 +1,58 @@
+@import "./../../libs/variables.scss";
+
+.bodyWrapper {
+  background-color: $background;
+  text-align: center;
+  font-family: $titleFont;
+  margin: 150px auto;
+
+  .sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 100px auto;
+
+    .place,
+    .price,
+    .match {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 50px auto;
+      width: 250px;
+
+      h2 {
+        font-family: $titleFont;
+        font-weight: 700;
+        font-size: 26px;
+        margin: 10px auto;
+      }
+
+      p {
+        font-family: $paragraphFont;
+        font-size: 13px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .getBtn {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    a {
+      border-radius: 100px;
+      background-color: $mainLightBlue;
+      font-family: $titleFont;
+      font-weight: 700;
+      font-size: 20px;
+      text-decoration: none;
+      color: $mainPink;
+      width: 300px;
+      padding: 13px 60px;
+      margin: 20px;
+    }
+  }
+}
