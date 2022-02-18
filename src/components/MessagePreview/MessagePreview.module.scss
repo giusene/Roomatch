@@ -1,0 +1,52 @@
+@import "./../../libs/variables.scss";
+
+.main {
+  border: 2px solid $mainLightBlue;
+  width: 100%;
+  height: auto;
+  display: flex;
+  position: relative;
+  margin: 8px 0;
+  .img {
+    min-width: 80px;
+    height: 80px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    margin-right: 10px;
+    .likes {
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      font-size: 18px;
+      color: $mainPink;
+      display: flex;
+      align-items: center;
+    }
+  }
+  .text {
+    margin-left: 10px;
+    .nameSurname {
+      font-size: 18px;
+      align-items: center;
+      font-size: $smallSize;
+      font-weight: bold;
+      margin: 10px 0 3px 0;
+    }
+    .details {
+      font-size: $superSmall;
+      width: 80%;
+    }
+  }
+  .icon {
+    font-size: 33px;
+    color: $iconcolor;
+    position: absolute;
+    right: 5%;
+    top: 25px;
+    &:hover {
+      color: $mainLightBlue;
+    }
+  }
+}

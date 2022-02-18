@@ -3,5 +3,12 @@
   height: 100vh;
   background-color: $background;
   overflow-y: auto;
-  padding-bottom: calc(100px + 30px);
+  padding-bottom: calc(150px + 30px);
+  .title {
+    margin-top: 30px;
+    margin-left: 10%;
+  }
+  .text {
+    margin-left: 10%;
+  }
 }

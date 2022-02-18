@@ -1,11 +1,12 @@
 @import "./../../libs/variables.scss";
 .container {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
 
   .matchesContainer {
     height: 8rem;
-    margin: 5rem 4rem;
+    margin: 10px 0 50px 10px;
     overflow-y: hidden;
     display: flex;
     justify-content: flex-start;
