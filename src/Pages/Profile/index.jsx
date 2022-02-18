@@ -32,7 +32,6 @@ const Profile = () => {
   return (
     <div className={styles.main}>
       <div className={styles.info}>
-        {console.log(user)}
         <h3>
           {user.name} {user.surname}
         </h3>

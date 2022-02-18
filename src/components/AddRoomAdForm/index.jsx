@@ -7,23 +7,23 @@ import HeaderAddRoomForm from "../HeaderAddRoomAdForm/HeaderAddRoomForm";
 import { useSelector } from "react-redux";
 
 const AddRoomAdForm = () => {
-  const user = useSelector(state => state.user)
+  const user = useSelector((state) => state.user);
   const [step, setStep] = useState(1);
 
   const initialForm = {
     roomOwner: user._id,
     roomType: "Single",
-    rentPrice: '0',
+    rentPrice: "0",
     roommates: {
-      females: '0',
-      males: '0',
-      others: '0'
+      females: "0",
+      males: "0",
+      others: "0",
     },
     roomPhotos: [],
     aboutFlat: {
-      bedrooms: '0',
-      bathrooms: '0',
-      kitchen: '0',
+      bedrooms: "0",
+      bathrooms: "0",
+      kitchen: "0",
       airCond: false,
       billsIncl: false,
       wifi: false,
@@ -32,15 +32,14 @@ const AddRoomAdForm = () => {
     city: "AG",
     town: "Agrigento",
     friendlyWith: {
-      lgbtq: '0',
-      multicultural: '0',
-      pet_owner: '0',
-      veg: '0',
-      party_lover: '0',
-      smooker: '0',
+      lgbtq: "0",
+      multicultural: "0",
+      pet_owner: "0",
+      veg: "0",
+      party_lover: "0",
+      smooker: "0",
     },
   };
-
 
   const [formData, setFormData] = useState(initialForm);
   const nextStep = () => {
@@ -59,7 +58,7 @@ const AddRoomAdForm = () => {
   };
 
   const setImage = (input) => {
-    let newPhotos = [...formData.roomPhotos, input]
+    let newPhotos = [...formData.roomPhotos, input];
     setFormData({
       ...formData,
       roomPhotos: newPhotos,
@@ -76,28 +75,34 @@ const AddRoomAdForm = () => {
   const handleInputPref = (input, e) => {
     setFormData({
       ...formData,
-      friendlyWith: { ...formData.friendlyWith, [input]: e.target.checked ? '1' : '0' },
+      friendlyWith: {
+        ...formData.friendlyWith,
+        [input]: e.target.checked ? "1" : "0",
+      },
     });
   };
 
   const handleAbout = (input, e) => {
     setFormData({
       ...formData,
-      aboutFlat: { ...formData.aboutFlat, [input]: e.target.value }
+      aboutFlat: { ...formData.aboutFlat, [input]: e.target.value },
     });
   };
 
   const handleRoommates = (input, e) => {
     setFormData({
       ...formData,
-      roommates: { ...formData.roommates, [input]: e.target.value }
+      roommates: { ...formData.roommates, [input]: e.target.value },
     });
   };
 
   const handleAboutCheck = (input, e) => {
     setFormData({
       ...formData,
-      aboutFlat: { ...formData.aboutFlat, [input]: e.target.checked  ? true : false }
+      aboutFlat: {
+        ...formData.aboutFlat,
+        [input]: e.target.checked ? true : false,
+      },
     });
   };
 

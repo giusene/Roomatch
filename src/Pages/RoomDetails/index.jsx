@@ -5,6 +5,7 @@ import styles from "./RoomDetails.module.scss";
 import { RiRainbowLine, RiPlantFill } from "react-icons/ri";
 import { AiOutlineMan, AiOutlineWoman } from "react-icons/ai";
 import { GiCat, GiPartyPopper } from "react-icons/gi";
+import { BsWifi, BsSnow, BsCash } from "react-icons/bs";
 import { FaHandSpock, FaSmoking } from "react-icons/fa";
 import LikesCard from "../../components/LikesCard";
 import PhotoGallery from "../../components/PhotoGallery";
@@ -17,6 +18,14 @@ const RoomDetails = () => {
     roommates: {
       females: 0,
       males: 0,
+    },
+    aboutFlat: {
+      airCond: true,
+      bathrooms: 0,
+      bedrooms: "",
+      billsIncl: true,
+      kitchen: "",
+      wifi: true,
     },
     friendlyWith: {
       lgbtq: 0,
@@ -50,6 +59,7 @@ const RoomDetails = () => {
 
   return (
     <div className={styles.main}>
+      {console.log.roomDetails}
       <div className={styles.info}>
         <h3>{roomDetails.roomType}</h3>
         <p>
@@ -81,9 +91,10 @@ const RoomDetails = () => {
           <p className={styles.charTitle}>Friendly for</p>
           <div className={styles.charSet}>
             <div className={styles.char}>
+              {console.log(roomDetails)}
               <span
                 className={
-                  roomDetails.friendlyWith.lgbtq === 1 ? styles.active : ""
+                  roomDetails.friendlyWith.lgbtq === "1" ? styles.active : ""
                 }
               >
                 <RiRainbowLine />
@@ -93,7 +104,9 @@ const RoomDetails = () => {
             <div className={styles.char}>
               <span
                 className={
-                  roomDetails.friendlyWith.pet_owner === 1 ? styles.active : ""
+                  roomDetails.friendlyWith.pet_owner === "1"
+                    ? styles.active
+                    : ""
                 }
               >
                 <GiCat />
@@ -103,7 +116,7 @@ const RoomDetails = () => {
             <div className={styles.char}>
               <span
                 className={
-                  roomDetails.friendlyWith.multicultural === 1
+                  roomDetails.friendlyWith.multicultural === "1"
                     ? styles.active
                     : ""
                 }
@@ -115,7 +128,7 @@ const RoomDetails = () => {
             <div className={styles.char}>
               <span
                 className={
-                  roomDetails.friendlyWith.veg === 1 ? styles.active : ""
+                  roomDetails.friendlyWith.veg === "1" ? styles.active : ""
                 }
               >
                 <RiPlantFill />
@@ -125,7 +138,7 @@ const RoomDetails = () => {
             <div className={styles.char}>
               <span
                 className={
-                  roomDetails.friendlyWith.smooker === 1 ? styles.active : ""
+                  roomDetails.friendlyWith.smooker === "1" ? styles.active : ""
                 }
               >
                 <FaSmoking />
@@ -135,7 +148,7 @@ const RoomDetails = () => {
             <div className={styles.char}>
               <span
                 className={
-                  roomDetails.friendlyWith.party_lover === 1
+                  roomDetails.friendlyWith.party_lover === "1"
                     ? styles.active
                     : ""
                 }
@@ -143,6 +156,56 @@ const RoomDetails = () => {
                 <GiPartyPopper />
               </span>
               Party Lover
+            </div>
+          </div>
+        </div>
+
+        <div className={styles.charsetContainer}>
+          <p className={styles.charTitle}>About Flat</p>
+          <div className={styles.charSet}>
+            <div className={styles.char}>
+              <p className={styles.charNum}>
+                {roomDetails.aboutFlat.bathrooms}
+              </p>
+              Bathrooms
+            </div>
+            <div className={styles.char}>
+              <span
+                className={
+                  roomDetails.aboutFlat.airCond === true ? styles.active : ""
+                }
+              >
+                <BsSnow />
+              </span>
+              Air Conditioning
+            </div>
+            <div className={styles.char}>
+              <p className={styles.charNum}>{roomDetails.aboutFlat.bedrooms}</p>
+              Bedrooms
+            </div>
+            <div className={styles.char}>
+              <span
+                className={
+                  roomDetails.aboutFlat.billsIncl === true ? styles.active : ""
+                }
+              >
+                <BsCash />
+              </span>
+              Bills included
+            </div>
+            <div className={styles.char}>
+              <p className={styles.charNum}>{roomDetails.aboutFlat.bedrooms}</p>
+              Kitchen
+            </div>
+            <div className={styles.char}>
+              <span
+                className={
+                  roomDetails.aboutFlat.wifi === "1" ? styles.active : ""
+                }
+              >
+                <BsWifi />
+              </span>
+              Wi-Fi
             </div>
           </div>
         </div>

@@ -15,11 +15,6 @@ const ThirdStepForm = ({ formData, prevStep }) => {
     dispatch(
       newRoom(formData, setRedirect)
     );
-
-    // httpPOST("/rooms", formData).then((data) => {
-    //   console.log(data);
-    //   url("/profile");
-    // });
   };
 
   useEffect(()=> {

@@ -78,7 +78,7 @@ const SecondStepForm = ({
                       type="checkbox"
                       name="action"
                       id="lgbtq"
-                      checked={values.friendlyWith.lgbtq === '1' ? true : false}
+                      checked={values.friendlyWith.lgbtq === "1" ? true : false}
                       onChange={(e) => handleInputPref("lgbtq", e)}
                     />
                     <span className={styles.mark}></span>
@@ -90,7 +90,7 @@ const SecondStepForm = ({
                     Pet owner
                     <input
                       checked={
-                        values.friendlyWith.pet_owner === '1' ? true : false
+                        values.friendlyWith.pet_owner === "1" ? true : false
                       }
                       onChange={(e) => handleInputPref("pet_owner", e)}
                       type="checkbox"
@@ -108,7 +108,7 @@ const SecondStepForm = ({
                     Multicultural
                     <input
                       checked={
-                        values.friendlyWith.multicultural === '1' ? true : false
+                        values.friendlyWith.multicultural === "1" ? true : false
                       }
                       onChange={(e) => handleInputPref("multicultural", e)}
                       type="checkbox"
@@ -125,7 +125,7 @@ const SecondStepForm = ({
                   <label className={styles.labelContainer} htmlFor="veg">
                     Veg
                     <input
-                      checked={values.friendlyWith.veg === '1' ? true : false}
+                      checked={values.friendlyWith.veg === "1" ? true : false}
                       type="checkbox"
                       onChange={(e) => handleInputPref("veg", e)}
                       name="action"
@@ -139,7 +139,9 @@ const SecondStepForm = ({
                   <label className={styles.labelContainer} htmlFor="smooker">
                     Smooker
                     <input
-                      checked={values.friendlyWith.smooker === '1' ? true : false}
+                      checked={
+                        values.friendlyWith.smooker === "1" ? true : false
+                      }
                       onChange={(e) => handleInputPref("smooker", e)}
                       type="checkbox"
                       name="action"
@@ -153,7 +155,7 @@ const SecondStepForm = ({
                   <label className={styles.labelContainer} htmlFor="party">
                     Party lover
                     <input
-                      checked={values.friendlyWith.party === '1' ? true : false}
+                      checked={values.friendlyWith.party === "1" ? true : false}
                       onChange={(e) => handleInputPref("party", e)}
                       type="checkbox"
                       name="action"

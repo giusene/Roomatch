@@ -56,17 +56,17 @@
     }
   }
   .charsetContainer {
+    width: 80%;
+    margin: 0 auto;
     border: 2px solid $mainLightBlue;
     border-radius: $radiusDiv;
-    width: 80%;
-    margin: 50px auto;
-    padding: 50px 0;
+    margin: 60px auto;
     box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
 
     .charTitle {
+      margin: 30px 0 20px 30px;
       font-weight: 400;
       font-size: 14px;
-      margin-left: 10%;
     }
     .charSet {
       display: flex;
@@ -77,11 +77,11 @@
       .char {
         display: flex;
         align-items: center;
-        // width: 100px;
+        width: 100px;
         height: 40px;
         font-weight: 400;
         font-size: 12px;
-        margin: 10px 20px;
+        margin: 10px 0.5rem;
         cursor: pointer;
         span {
           color: #b9d1e0;
@@ -92,8 +92,15 @@
           }
         }
       }
+      .charNum {
+        margin-right: 5px;
+        color: $mainLightBlue;
+        font-size: $smallSize;
+        font-weight: bold;
+      }
     }
   }
+
   .gallery {
     width: 77%;
     margin: 100px auto;

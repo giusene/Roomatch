@@ -3,7 +3,7 @@
 // import { uploadImg } from "../../../libs/http";
 import { BsArrowRightCircleFill } from "react-icons/bs";
 import styles from "./FirstStepForm.module.scss";
-import CitiesSelector from './../../CitiesSelector'
+import CitiesSelector from "./../../CitiesSelector";
 
 const FirstStepForm = ({
   handleFormData,
@@ -17,24 +17,25 @@ const FirstStepForm = ({
     e.preventDefault();
     nextStep();
   };
-  
+
   return (
     <div className={styles.main}>
       <div className={styles.containerForm}>
         <form className={styles.flexForm} onSubmit={(e) => submitFormData(e)}>
           <div className={styles.roomType}>
-          <div className={styles.rent}>
-            <label htmlFor="rentPrice">Monthly Rent</label>
-            <input
-              value={values.rentPrice}
-              onChange={handleFormData("rentPrice")}
-              name="rent"
-              id="rentPrice"
-              type="number"
-              placeholder="price/month"
-              required
-            /><span>,00 €/month</span>
-          </div>
+            <div className={styles.rent}>
+              <label htmlFor="rentPrice">Monthly Rent</label>
+              <input
+                value={values.rentPrice}
+                onChange={handleFormData("rentPrice")}
+                name="rent"
+                id="rentPrice"
+                type="number"
+                placeholder="price/month"
+                required
+              />
+              <span>,00 €/month</span>
+            </div>
             <label htmlFor="roomtype">Room type*</label>
             <select
               onChange={handleFormData("roomType")}
@@ -56,7 +57,7 @@ const FirstStepForm = ({
                   <input
                     className={styles.styledCheckbox}
                     value={values.aboutFlat.bedrooms}
-                    onChange={(e) => handleAbout('bedrooms', e)}
+                    onChange={(e) => handleAbout("bedrooms", e)}
                     name="bedrooms"
                     id="bedrooms"
                     type="number"
@@ -69,7 +70,7 @@ const FirstStepForm = ({
                   <input
                     className={styles.styledCheckbox}
                     value={values.aboutFlat.bathrooms}
-                    onChange={(e) => handleAbout('bathrooms', e)}
+                    onChange={(e) => handleAbout("bathrooms", e)}
                     name="bathrooms"
                     id="bathrooms"
                     type="number"
@@ -82,7 +83,7 @@ const FirstStepForm = ({
                   <input
                     className={styles.styledCheckbox}
                     value={values.aboutFlat.kitchen}
-                    onChange={(e) => handleAbout('kitchen', e)}
+                    onChange={(e) => handleAbout("kitchen", e)}
                     name="kitchen"
                     id="kitchen"
                     type="number"
