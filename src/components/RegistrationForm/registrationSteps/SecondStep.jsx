@@ -44,7 +44,7 @@ const SecondStep = ({
               required
             >
               <option value="Male">Male</option>
-              <option value="Famale">Female</option>
+              <option value="Female">Female</option>
               <option value="Other">Other</option>
             </select>
           </div>
@@ -136,14 +136,14 @@ const SecondStep = ({
                 </div>
 
                 <div>
-                  <label className={styles.labelContainer} htmlFor="party">
+                  <label className={styles.labelContainer} htmlFor="party_lover">
                     Party lover
                     <input
-                      checked={values.iam.party === 1 ? true : false}
-                      onChange={(e) => handleInputPref("party", e)}
+                      checked={values.iam.party_lover === 1 ? true : false}
+                      onChange={(e) => handleInputPref("party_lover", e)}
                       type="checkbox"
                       name="action"
-                      id="party"
+                      id="party_lover"
                     />
                     <span className={styles.mark}></span>
                   </label>

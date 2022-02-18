@@ -117,14 +117,14 @@ const ThirdStep = ({ values, prevStep }) => {
             </div>
 
             <div>
-              <label className={styles.labelContainer} htmlFor="party">
+              <label className={styles.labelContainer} htmlFor="party_lover">
                 Party lover
                 <input
                   readOnly
                   type="checkbox"
                   name="action"
-                  id="party"
-                  checked={values.iam.party === 1 ? true : false}
+                  id="party_lover"
+                  checked={values.iam.party_lover === 1 ? true : false}
                 />
                 <span className={styles.mark}></span>
               </label>
