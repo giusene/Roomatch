@@ -1,17 +1,30 @@
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { useState, useEffect } from "react";
 import { BsArrowRightCircleFill, BsArrowLeftCircle } from "react-icons/bs";
 import styles from "./ThirdStepForm.module.scss";
-import { httpPOST } from "../../../libs/http";
+import { newRoom } from "../../../store/actions";
+// import { httpPOST } from "../../../libs/http";
 
 const ThirdStepForm = ({ formData, prevStep }) => {
   let url = useNavigate();
+  const [redirect, setRedirect] = useState('/addroom')
+  const dispatch = useDispatch()
 
   const formSubmit = () => {
-    httpPOST('/rooms', formData).then((data) => { 
-      console.log(data);
-      url('/profile')
-    })
+    dispatch(
+      newRoom(formData, setRedirect)
+    );
+
+    // httpPOST("/rooms", formData).then((data) => {
+    //   console.log(data);
+    //   url("/profile");
+    // });
   };
+
+  useEffect(()=> {
+    url(redirect)
+}, [url, redirect])
 
   return (
     <div className={styles.containerForm}>
@@ -136,7 +149,7 @@ const ThirdStepForm = ({ formData, prevStep }) => {
                   type="checkbox"
                   name="action"
                   id="lgbtq"
-                  checked={formData.friendlyWith.lgbtq === '1' ? true : false}
+                  checked={formData.friendlyWith.lgbtq === "1" ? true : false}
                   readOnly
                 />
                 <span className={styles.mark}></span>
@@ -147,7 +160,9 @@ const ThirdStepForm = ({ formData, prevStep }) => {
               <label className={styles.labelContainer} htmlFor="pet_owner">
                 Pet owner
                 <input
-                  checked={formData.friendlyWith.pet_owner === '1' ? true : false}
+                  checked={
+                    formData.friendlyWith.pet_owner === "1" ? true : false
+                  }
                   readOnly
                   type="checkbox"
                   name="action"
@@ -161,7 +176,7 @@ const ThirdStepForm = ({ formData, prevStep }) => {
                 Multicultural
                 <input
                   checked={
-                    formData.friendlyWith.multicultural === '1' ? true : false
+                    formData.friendlyWith.multicultural === "1" ? true : false
                   }
                   readOnly
                   type="checkbox"
@@ -178,7 +193,7 @@ const ThirdStepForm = ({ formData, prevStep }) => {
               <label className={styles.labelContainer} htmlFor="veg">
                 Veg
                 <input
-                  checked={formData.friendlyWith.veg === '1' ? true : false}
+                  checked={formData.friendlyWith.veg === "1" ? true : false}
                   type="checkbox"
                   readOnly
                   name="action"
@@ -192,7 +207,7 @@ const ThirdStepForm = ({ formData, prevStep }) => {
               <label className={styles.labelContainer} htmlFor="smooker">
                 Smooker
                 <input
-                  checked={formData.friendlyWith.smooker === '1' ? true : false}
+                  checked={formData.friendlyWith.smooker === "1" ? true : false}
                   readOnly
                   type="checkbox"
                   name="action"
@@ -206,7 +221,7 @@ const ThirdStepForm = ({ formData, prevStep }) => {
               <label className={styles.labelContainer} htmlFor="party">
                 Party lover
                 <input
-                  checked={formData.friendlyWith.party === '1' ? true : false}
+                  checked={formData.friendlyWith.party === "1" ? true : false}
                   type="checkbox"
                   name="action"
                   id="party"

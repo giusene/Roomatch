@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import styles from "./RoomAd.module.scss";
 import { FaHeart } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { deleteRoom } from "../../store/actions";
 
 const RoomAd = ({ room }) => {
+  const dispatch = useDispatch()
+
+  const removeRoom = () => {
+    dispatch(deleteRoom(room.roomId));
+    }
+
   return (
     <div className={styles.main}>
       <Link to={"/roomdetails"}>
@@ -25,9 +33,7 @@ const RoomAd = ({ room }) => {
         </div>
       </Link>
       <div className={styles.btnSet}>
-        <Link to="/users">
-          <button>Find People</button>
-        </Link>
+          <button onClick={() => removeRoom()}>Remove Room</button>
       </div>
     </div>
   );

@@ -54,6 +54,33 @@ export const updateAction = (body) => {
   };
 };
 
+export const newRoom = (body, setRedirect) => {
+  return async (dispatch) => {
+    dispatch({ type: FETCH_LOGIN_REQUEST });
+    try {
+      const { data } = await axios.post(backend_URL + "/rooms", body);
+      window.localStorage.setItem("roomatch", JSON.stringify({myId: data._id, token: data.token}));
+      setRedirect("/profile");
+      dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
+    } catch (e) {
+      dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
+    }
+  };
+};
+
+export const deleteRoom = (roomId) => {
+  return async (dispatch) => {
+    dispatch({ type: FETCH_LOGIN_REQUEST });
+    try {
+      const { data } = await axios.delete(backend_URL + "/rooms/" + roomId);
+      window.localStorage.setItem("roomatch", JSON.stringify({myId: data._id, token: data.token}));
+      dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
+    } catch (e) {
+      dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
+    }
+  };
+};
+
 
 
 export const likeDislike = (body, roomId, type) => {
