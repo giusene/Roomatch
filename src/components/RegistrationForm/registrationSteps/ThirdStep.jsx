@@ -10,8 +10,8 @@ const ThirdStep = ({ values, prevStep }) => {
   let url = useNavigate();
   const { name, surname, age, city, gender, town, photo } = values;
 
-  const hadleConfirm = (data) => {
-    httpPOST("/users", data).then((data) => {
+  const hadleConfirm = () => {
+    httpPOST("/users", values).then((data) => {
       data.message === "email already present in our system"
         ? setMessage(data.message)
         : setRedirect("/");
@@ -139,7 +139,7 @@ const ThirdStep = ({ values, prevStep }) => {
         </button>
         <button
           className={styles.nextStep}
-          onClick={() => hadleConfirm(values)}
+          onClick={() => hadleConfirm()}
         >
           Go!
         </button>
