@@ -1,32 +1,41 @@
 @import "./../../libs/variables.scss";
 
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
 .main {
   border: 2px solid $mainLightBlue;
   width: 100%;
   height: auto;
   display: flex;
   position: relative;
-  margin: 8px 0;
+  margin: 8px 0 20px;
   .img {
     min-width: 80px;
     height: 80px;
     background-position: center;
     background-size: cover;
-    overflow: hidden;
     position: relative;
     margin-right: 10px;
-    .likes {
+    .room {
       position: absolute;
-      bottom: 5px;
-      right: 5px;
+      bottom: -15px;
+      right: -15px;
       font-size: 18px;
       color: $mainPink;
       display: flex;
       align-items: center;
+      width: 50px;
+      height: 50px;
     }
   }
   .text {
     margin-left: 10px;
+    flex-grow: 1;
+    width: 60%;
     .nameSurname {
       font-size: 18px;
       align-items: center;
@@ -35,16 +44,41 @@
       margin: 10px 0 3px 0;
     }
     .details {
+      display: block;
       font-size: $superSmall;
-      width: 80%;
+      width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      .author{
+        display: inline-block;
+        font-weight: bold;
+        color: $mainLightBlue;
+        margin-right: 5px;
+      }
+      span{
+        display: inline-block;
+        margin-right: 5px;
+        margin-bottom: 1px;
+        width: 6px;
+        height: 6px;
+        background-color: $mainPink;
+        border-radius: 50%;
+      }
     }
+  }
+  .date{
+    font-size: 12px;
+    color: $mainLightBlue;
+    margin-bottom: 5px;
   }
   .icon {
     font-size: 33px;
     color: $iconcolor;
-    position: absolute;
-    right: 5%;
-    top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
     &:hover {
       color: $mainLightBlue;
     }

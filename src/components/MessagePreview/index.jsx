@@ -1,26 +1,49 @@
-import styles from "./MessagePreview.module.scss";
-import { FaHeart } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom'
+import { formatDistance } from 'date-fns';
+import { it } from 'date-fns/locale';
 import { BsChatRightDots } from "react-icons/bs";
+import styles from "./MessagePreview.module.scss";
 
-const MessagePreview = () => {
+const MessagePreview = ({message}) => {
+  const user = useSelector(state => state.user)
+
   return (
+    <Link to='/messages' state={message}>
     <div className={styles.main}>
       <div
         className={styles.img}
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80')`,
+          backgroundImage: `url(${message.user.photo})`,
         }}
       >
-        <div className={styles.likes}>
-          <FaHeart />
-        </div>
+        {
+          message.user.room.roomId &&
+          <div className={styles.room} style={{
+          backgroundImage: `url(${message.user.room.photo})`,
+        }}></div>
+        }
+
       </div>
       <div className={styles.text}>
-        <p className={styles.nameSurname}>Name Surname</p>
-        <p className={styles.details}>Anteprima messaggio o dettagli user</p>
+        <p className={styles.nameSurname}>{message.user.name} {message.user.surname}</p>
+        <p className={styles.date}>
+        {formatDistance(new Date(message.discussion[message.discussion.length - 1].date), new Date(), { addSuffix: true, locale: it })} 
+        </p>
+        <p className={styles.details}>
+        {!message.discussion[message.discussion.length - 1].read &&
+          <span></span>}
+          {
+            message.discussion[message.discussion.length - 1].author === user._id ?
+            <p className={styles.author}>Tu: </p> :
+            <p className={styles.author}>{message.user.name}: </p>
+          }
+        {message.discussion[message.discussion.length - 1].text}
+        </p>
       </div>
-      <BsChatRightDots className={styles.icon} />
+      <div className={styles.icon}><BsChatRightDots /></div>
     </div>
+    </Link>
   );
 };
 export default MessagePreview;

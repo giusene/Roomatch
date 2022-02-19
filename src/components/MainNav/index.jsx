@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
 import styles from "./MainNav.module.scss";
 
 import roomatch from "./../../libs/img/logo/roomatch.svg";
@@ -13,6 +14,7 @@ import {
 } from "react-icons/bs";
 
 const MainNav = () => {
+  const user = useSelector((state) => state.user);
   const url = useLocation();
 
   return (
@@ -36,10 +38,14 @@ const MainNav = () => {
           </li>
         </Link>
         <Link to={"/likes"}>
-          <li>{url.pathname === "/likes" ? <BsHeartFill /> : <BsHeart />}</li>
+          <li>
+            {user.newLike.length > 0 && <span>{user.newLike.length}</span>}
+            {url.pathname === "/likes" ? <BsHeartFill /> : <BsHeart />}
+          </li>
         </Link>
         <Link to={"/matches"}>
           <li>
+            {user.newMatch.length > 0 && <span>{user.newMatch.length}</span>}
             {url.pathname === "/matches" ? (
               <BsChatRightDotsFill />
             ) : (

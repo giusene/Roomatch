@@ -10,6 +10,7 @@ import Users from "../Users";
 import RoomDetails from '../RoomDetails'
 import { useSelector } from "react-redux";
 import NewRoom from '../NewRoom'
+import Messages from '../Messages'
 
 const Main = () => {
   const user = useSelector(state => state.user)
@@ -19,13 +20,14 @@ const Main = () => {
       <Header />
       <Routes>
         <Route path="/list" element={user.roomId.roomId === '' ? <Rooms /> : <Users />} />
-        <Route path="/rooms" element={<Rooms />} />
+        {/* <Route path="/rooms" element={<Rooms />} /> */}
         <Route path="/likes" element={<Likes />} />
         <Route path="/matches" element={<Matches />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/users" element={<Users />} />
         <Route path="/roomdetails" element={<RoomDetails />} />
         <Route path="/addroom" element={<NewRoom />} />
+        <Route path="/messages" element={<Messages />} />
       </Routes>
       <MainNav />
     </div>

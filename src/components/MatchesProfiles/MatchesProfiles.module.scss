@@ -1,7 +1,6 @@
 @import "./../../libs/variables.scss";
 .container {
   display: flex;
-  justify-content: center;
 
   .matchesContainer {
     height: 8rem;
@@ -9,6 +8,7 @@
     overflow-y: hidden;
     display: flex;
     justify-content: flex-start;
+    flex-direction: row-reverse;
 
     .matches {
       display: flex;
@@ -20,13 +20,29 @@
       padding: 0.5rem;
       font-size: 15px;
       border-radius: 50%;
-
+      position: relative;
+      span{
+        position: absolute;
+        z-index: 2;
+        background-color: $mainPink;
+        width: 30px;
+        height: 30px;
+        color: #fff;
+        line-height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 12px;
+        font-weight: bold;
+        right: 10px;
+        top: 15px;
+      }
       .imgMatch {
-        width: 4rem;
-        height: 4rem;
         position: relative;
         overflow: hidden;
         border-radius: 50%;
+        object-fit: cover;
+        width: 100px;
+        height: 100px;
       }
     }
   }
