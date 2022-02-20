@@ -30,37 +30,46 @@ const SecondStepForm = ({
             Roomates:
             <div className={styles.roommatesWrapper}>
               <>
-                <label htmlFor="Males">Males:</label>
+                <label className={styles.label} htmlFor="Males">
+                  Males:
+                </label>
                 <input
                   value={values.roommates.males}
                   onChange={(e) => handleRoommates("males", e)}
                   name="Males"
                   id="Males"
                   type="number"
+                  min={1}
                   required
                 />
               </>
 
               <>
-                <label htmlFor="Females">Females:</label>
+                <label className={styles.label} htmlFor="Females">
+                  Females:
+                </label>
                 <input
                   value={values.roommates.females}
                   onChange={(e) => handleRoommates("females", e)}
                   name="Females"
                   id="Females"
                   type="number"
+                  min={1}
                   required
                 />
               </>
 
               <>
-                <label htmlFor="Others">Others:</label>
+                <label className={styles.label} htmlFor="Others">
+                  Others:
+                </label>
                 <input
                   value={values.roommates.others}
                   onChange={(e) => handleRoommates("others", e)}
                   name="Others"
                   id="Others"
                   type="number"
+                  min={1}
                   required
                 />
               </>
@@ -170,7 +179,7 @@ const SecondStepForm = ({
         </div>
       </form>
       <div className={styles.imagesWrapper}>
-        Upload min1/max4 pics
+        <p className={styles.uploadPics}>Upload min1/max4 pics</p>
         <form className={styles.flexForm} onSubmit={(e) => submitFormData(e)}>
           {values.roomPhotos.map((photo, index) => (
             <img src={photo} key={index} alt="roomatch" />
@@ -193,14 +202,14 @@ const SecondStepForm = ({
         </form>
       </div>
       <button className={styles.prevStep} onClick={prevStep}>
-        <BsArrowLeftCircle />
+        <BsArrowLeftCircle className={styles.icon} />
       </button>
       <button
         className={styles.nextStep}
         disabled={values.roomPhotos.length > 0 ? false : true}
         onClick={nextStep}
       >
-        <BsArrowRightCircleFill />
+        <BsArrowRightCircleFill className={styles.icon} />
       </button>
     </div>
   );

@@ -20,7 +20,9 @@ const SecondStep = ({
       <form onSubmit={(e) => submitFormData(e)}>
         <div>
           <div className={styles.age}>
-            <label htmlFor="age">Age*</label>
+            <label className={styles.selectorLabel} htmlFor="age">
+              Age*
+            </label>
             <input
               className={styles.styledCheckbox}
               value={values.age}
@@ -35,7 +37,9 @@ const SecondStep = ({
             />
           </div>
           <div className={styles.gender}>
-            <label htmlFor="gender">Gender*</label>
+            <label className={styles.selectorLabel} htmlFor="gender">
+              Gender*
+            </label>
             <select
               onChange={handleFormData("gender")}
               name="gender"
@@ -50,7 +54,9 @@ const SecondStep = ({
           </div>
 
           <div className={styles.city}>
-            <label htmlFor="City">City*</label>
+            <label className={styles.selectorLabel} htmlFor="City">
+              City*
+            </label>
             <CitiesSelector
               handleInputCities={handleInputCities}
               values={values}
@@ -136,7 +142,10 @@ const SecondStep = ({
                 </div>
 
                 <div>
-                  <label className={styles.labelContainer} htmlFor="party_lover">
+                  <label
+                    className={styles.labelContainer}
+                    htmlFor="party_lover"
+                  >
                     Party lover
                     <input
                       checked={values.iam.party_lover === 1 ? true : false}
@@ -154,10 +163,10 @@ const SecondStep = ({
         </div>
       </form>
       <button className={styles.prevStep} onClick={prevStep}>
-        <BsArrowLeftCircle />
+        <BsArrowLeftCircle className={styles.icon} />
       </button>
       <button className={styles.nextStep} onClick={nextStep}>
-        <BsArrowRightCircleFill />
+        <BsArrowRightCircleFill className={styles.icon} />
       </button>
     </div>
   );

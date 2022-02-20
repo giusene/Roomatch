@@ -1,153 +1,159 @@
 @import "./../../libs/variables.scss";
 
-.slider {
-  width: 22rem;
-  margin: 0 auto;
-  left: calc(50% - 11rem);
-  overflow-y: hidden;
-  cursor: pointer;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  .sliderWrapper {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 50px;
+.main {
+  margin-top: 50px;
 
-    width: 100%;
+  .slider {
+    width: 22rem;
+    margin: 0 auto;
+    left: calc(50% - 11rem);
+    overflow-y: hidden;
+    cursor: pointer;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .sliderWrapper {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 50px;
+
+      width: 100%;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+  }
+
+  .cardContainer {
+    min-width: 19rem;
+    margin: 0 1.6rem 0 1.5rem;
+    height: 30rem;
     position: relative;
-    transition: all 0.2s ease;
-  }
-}
-
-.cardContainer {
-  min-width: 20rem;
-  margin: 6rem 1.6rem 5rem 0.6rem;
-  height: 30rem;
-  position: relative;
-  border-radius: 21px;
-  margin-bottom: 25px;
-  overflow-y: hidden;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
-  .rightBtn {
-    top: calc(50% - 33px);
-    right: 5px;
-    position: absolute;
-    color: rgba(255, 255, 255, 0.49);
-    background-color: rgba(80, 80, 80, 0);
-    border: none;
-    font-size: 2rem;
-  }
-  .cardText {
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
-    padding: 3rem 2rem 2rem;
-    color: white;
-    background-image: linear-gradient(
-      0deg,
-      rgba(0, 0, 0, 0.884),
-      rgba(0, 0, 0, 0)
-    );
-    .flex {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      .compatibility {
+    border-radius: 21px;
+    margin-bottom: 25px;
+    overflow-y: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
+    .rightBtn {
+      top: calc(50% - 33px);
+      right: 5px;
+      position: absolute;
+      color: rgba(255, 255, 255, 0.49);
+      background-color: rgba(80, 80, 80, 0);
+      border: none;
+      font-size: 2rem;
+    }
+    .cardText {
+      position: absolute;
+      width: 100%;
+      bottom: 0px;
+      padding: 3rem 2rem 2rem;
+      color: white;
+      background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.884),
+        rgba(0, 0, 0, 0)
+      );
+      .flex {
         display: flex;
-        flex-direction: column;
-        margin: 0.5rem 0;
-        font-size: $superSmall;
+        align-items: center;
+        justify-content: space-between;
+        .compatibility {
+          display: flex;
+          flex-direction: column;
+          margin: 0.5rem 0;
+          font-size: $superSmall;
+        }
+        .icon {
+          color: lighten($mainPink, 8);
+          font-size: 2rem;
+        }
       }
-      .icon {
-        color: lighten($mainPink, 8);
-        font-size: 2rem;
-      }
-    }
-  }
-}
-
-.infoCardContainer {
-  border: 1px solid $mainLightBlue;
-  min-width: 20rem;
-  max-width: 20rem;
-  margin: 6rem 2rem 5rem 0.5rem;
-  height: 30rem;
-  border-radius: 21px;
-  margin-bottom: 25px;
-  padding: $sidePadding;
-  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
-  position: relative;
-  .leftBtn {
-    top: calc(50% - 33px);
-    left: 5px;
-    position: absolute;
-    color: rgba(202, 202, 202, 0.442);
-    background-color: rgba(80, 80, 80, 0);
-    border: none;
-    font-size: 2rem;
-  }
-  .headerCardInfo {
-    display: flex;
-    .title {
-      flex-grow: 1;
-    }
-    .likeBtn {
-      .icon {
-        color: lighten($mainPink, 8);
-        font-size: 2rem;
-      }
-    }
-  }
-  p {
-    font-size: $superSmall;
-  }
-  .roomDescription {
-    font-size: $superSmall;
-    margin-top: 1.5rem;
-  }
-  .details {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-    p {
-      margin: 0.5rem 1rem 0.5rem 0;
-    }
-  }
-  .gallery {
-    margin: 42px 0;
-    p {
-      margin-bottom: 0.5rem;
     }
   }
 
-  .charTitle {
-    margin: 40px 0 20px 40px;
-    font-weight: 400;
-    font-size: 14px;
-  }
-  .charSet {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    .char {
+  .infoCardContainer {
+    border: 1px solid $mainLightBlue;
+    min-width: 19rem;
+    max-width: 20rem;
+    margin: 0 1.6rem 0 1.2rem;
+    height: 30rem;
+    border-radius: 21px;
+    margin-bottom: 25px;
+    padding: $sidePadding;
+    box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
+    position: relative;
+    .leftBtn {
+      top: calc(50% - 33px);
+      left: 5px;
+      position: absolute;
+      color: rgba(202, 202, 202, 0.442);
+      background-color: rgba(80, 80, 80, 0);
+      border: none;
+      font-size: 2rem;
+    }
+    .headerCardInfo {
       display: flex;
-      align-items: center;
-      width: 100px;
-      height: 40px;
+      .title {
+        flex-grow: 1;
+      }
+      .likeBtn {
+        .icon {
+          color: lighten($mainPink, 8);
+          font-size: 2rem;
+        }
+      }
+    }
+    p {
+      font-size: $superSmall;
+    }
+    .roomDescription {
+      font-size: $superSmall;
+      margin-top: 1.5rem;
+    }
+    .details {
+      // border: 1px solid blue;
+      width: 240px;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 40px;
+      p {
+        margin: 0.5rem 1rem 0.5rem 0;
+      }
+    }
+    .gallery {
+      margin: 42px 0;
+      p {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .charTitle {
+      margin: 40px 0 20px 40px;
       font-weight: 400;
-      font-size: 12px;
-      margin: 0 0.5rem;
-      cursor: pointer;
-      span {
-        color: #b9d1e0;
-        margin-right: 8px;
-        font-size: 20px;
-        &.active {
-          color: $mainPink;
+      font-size: 14px;
+    }
+    .charSet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      .char {
+        display: flex;
+        align-items: center;
+        width: 100px;
+        height: 40px;
+        font-weight: 400;
+        font-size: 12px;
+        margin: 0 0.5rem;
+        cursor: pointer;
+        span {
+          color: #b9d1e0;
+          margin-right: 8px;
+          font-size: 20px;
+          &.active {
+            color: $mainPink;
+          }
         }
       }
     }

@@ -1,9 +1,11 @@
 @import "./../../libs/variables.scss";
+
 .logo {
   margin: 1.5rem $sideMargin 0.5rem $sideMargin;
   text-align: left;
   font-size: $logoSize;
 }
+
 .closeBtn {
   width: 2rem;
   height: 2rem;

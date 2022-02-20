@@ -25,7 +25,7 @@ const initialForm = {
   city: "AG",
   town: "Agrigento",
   photo: "https://i.ibb.co/NNVky0R/profile-default.png",
-  messages: {}
+  messages: {},
 };
 
 const RegistrationForm = () => {
@@ -62,7 +62,6 @@ const RegistrationForm = () => {
   };
 
   const handleInputPref = (input, e) => {
-    // console.log(input, e.target.checked)
     setFormData({
       ...formData,
       iam: { ...formData.iam, [input]: e.target.checked ? 1 : 0 },

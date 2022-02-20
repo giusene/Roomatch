@@ -25,7 +25,7 @@ const HeaderForms = ({ step }) => {
   }, [step]);
 
   return (
-    <>
+    <div className={styles.main}>
       <h1 className={styles.logo}>{logo}</h1>
       <p className={styles.stepText}>{title}</p>
       {step && (
@@ -48,7 +48,7 @@ const HeaderForms = ({ step }) => {
           <IoIosCloseCircle />
         </Link>
       </div>
-    </>
+    </div>
   );
 };
 export default HeaderForms;

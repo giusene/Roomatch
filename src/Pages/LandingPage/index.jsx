@@ -16,8 +16,12 @@ const LandingPage = () => {
             <h1>FIND YOUR PERFECT ROOMMATE</h1>
           </div>
           <div className={styles.btnSet}>
-            <Link to={"/registration"}>Registrati</Link>
-            <Link to={"/login"}>Login</Link>
+            <Link className={styles.signInBtn} to={"/login"}>
+              Sign in!
+            </Link>
+            <Link className={styles.registerLink} to={"/registration"}>
+              Don’t have an account? Register!
+            </Link>
           </div>
         </div>
       </div>

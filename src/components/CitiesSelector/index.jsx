@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { cities } from "./../../libs/cities";
 import { provData } from "./../../libs/prov";
-
-const CitiesSelector = ({handleInputCities, values}) => {
+import styles from "./CitiesSelector.module.scss";
+const CitiesSelector = ({ handleInputCities, values }) => {
   const [prov, setProv] = useState(values.city);
   const [filteredCities, setFilteredCities] = useState([]);
 
@@ -12,10 +12,15 @@ const CitiesSelector = ({handleInputCities, values}) => {
 
   return (
     <>
-      <select name='city' value={values.city} onChange={(e) => {
-          setProv(e.target.value)
-          handleInputCities('city', e.target.value)
-          }}>
+      <select
+        className={styles.select}
+        name="city"
+        value={values.city}
+        onChange={(e) => {
+          setProv(e.target.value);
+          handleInputCities("city", e.target.value);
+        }}
+      >
         {provData.map((item, index) => (
           <option value={item.sigla} key={index}>
             {item.nome}
@@ -23,9 +28,14 @@ const CitiesSelector = ({handleInputCities, values}) => {
         ))}
       </select>
 
-      <select name='town' value={values.town} onChange={(e) => {
-          handleInputCities('town', e.target.value)
-          }} >
+      <select
+        className={styles.select}
+        name="town"
+        value={values.town}
+        onChange={(e) => {
+          handleInputCities("town", e.target.value);
+        }}
+      >
         {filteredCities.map((city, index) => (
           <option value={city.nome} key={index}>
             {city.nome}

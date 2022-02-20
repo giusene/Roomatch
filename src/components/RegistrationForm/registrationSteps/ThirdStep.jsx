@@ -23,7 +23,7 @@ const ThirdStep = ({ values, prevStep }) => {
   }, [url, redirect]);
 
   return (
-    <>
+    <div className={styles.containerForm}>
       <div className={styles.container}>
         <div
           className={styles.img}
@@ -137,14 +137,11 @@ const ThirdStep = ({ values, prevStep }) => {
         <button className={styles.prevStep} onClick={prevStep}>
           <BsArrowLeftCircle />
         </button>
-        <button
-          className={styles.nextStep}
-          onClick={() => hadleConfirm()}
-        >
+        <button className={styles.nextStep} onClick={() => hadleConfirm()}>
           Go!
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

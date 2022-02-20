@@ -1,72 +1,77 @@
 @import "./../../libs/variables.scss";
 
-.logo {
-  // margin: 2rem $sideMargin 0.5rem $sideMargin;
-  text-align: left;
-  font-size: $logoSize;
-  font-family: $titleFont;
-  font-weight: 800;
-}
+.main {
+  margin: 40px 0;
 
-.closeBtn {
-  border: none;
-  background-color: rgba(80, 80, 80, 0);
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  color: $mainLightBlue;
-  font-size: 2rem;
-}
+  .logo {
+    text-align: left;
+    font-size: $logoSize;
+    font-family: $titleFont;
+    font-weight: 800;
+    color: black;
+    margin: 0 0 10px 20px;
+  }
 
-.stepText {
-  font-family: $paragraphFont;
-  text-align: left;
-  margin: 1.5rem 0;
-  font-size: $superSmall;
-}
+  .stepText {
+    font-family: $paragraphFont;
+    text-align: left;
+    font-size: $superSmall;
+    margin: 0 0 10px 20px;
+  }
 
-.stepperWrapper {
-  width: 280px;
-  display: flex;
-  justify-content: space-between;
-  margin: 2rem auto;
-  position: relative;
-}
-.stepCounter {
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 3px solid $mainPink;
-  background-color: white;
-  border-radius: 5rem;
-  color: $mainLightBlue;
-  &::before {
+  .closeBtn {
+    border: none;
+    background-color: rgba(80, 80, 80, 0);
     position: absolute;
-    content: "";
-    border-bottom: 3px solid $mainPink;
-    width: 140px;
-    top: 10px;
-    z-index: -1;
+    top: 2rem;
+    right: 2rem;
+    color: $mainLightBlue;
+    font-size: 2rem;
   }
-  &:last-child::before{
-    content: '';
-    display: none;
+
+  .stepperWrapper {
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px auto 50px;
+    position: relative;
   }
-}
+  .stepCounter {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 3px solid $mainPink;
+    background-color: white;
+    border-radius: 5rem;
+    color: $mainLightBlue;
+    &::before {
+      position: absolute;
+      content: "";
+      border-bottom: 3px solid $mainPink;
+      width: 140px;
+      top: 10px;
+      z-index: -1;
+    }
+    &:last-child::before {
+      content: "";
+      display: none;
+    }
+  }
 
-.completed {
-  background-color: $mainPink;
-}
+  .completed {
+    background-color: $mainPink;
+  }
 
-.active {
-  background-color: $mainPink;
-  border-color: $mainPink;
-  font-weight: bold;
-  color: white;
-}
+  .active {
+    background-color: $mainPink;
+    border-color: $mainPink;
+    font-weight: bold;
+    color: white;
+  }
 
-.stepperWrapper:first-child::before {
-  content: none;
-}
-.stepperWrapper:last-child::after {
-  content: none;
+  .stepperWrapper:first-child::before {
+    content: none;
+  }
+  .stepperWrapper:last-child::after {
+    content: none;
+  }
 }

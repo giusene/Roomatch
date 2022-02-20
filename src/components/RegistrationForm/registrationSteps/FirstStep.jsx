@@ -14,8 +14,9 @@ const FirstStep = ({ handleFormData, values, nextStep, setImage }) => {
   };
 
   const selectPhoto = (e) => {
-    uploadImg(e.target.files[0])
-    .then(result => setImage(result.data.display_url))
+    uploadImg(e.target.files[0]).then((result) =>
+      setImage(result.data.display_url)
+    );
   };
 
   return (
@@ -95,7 +96,7 @@ const FirstStep = ({ handleFormData, values, nextStep, setImage }) => {
         />
         {message}
         <button className={styles.nextStep} onSubmit={nextStep}>
-          <BsArrowRightCircleFill />
+          <BsArrowRightCircleFill className={styles.icon} />
         </button>
       </form>
     </div>

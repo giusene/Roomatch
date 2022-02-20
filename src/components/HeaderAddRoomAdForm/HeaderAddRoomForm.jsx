@@ -2,7 +2,6 @@ import styles from "./HeaderAddRoomForm.module.scss";
 import { useState, useEffect } from "react";
 
 const HeaderAddRoomForm = ({ step }) => {
-  const logo = "ROOMATCH";
   const [title, setTitle] = useState("");
 
   useEffect(() => {
@@ -12,19 +11,21 @@ const HeaderAddRoomForm = ({ step }) => {
         break;
       case 2:
         setTitle("Roomate Info & Photos");
+
         break;
       case 3:
         setTitle("Summary");
         break;
+
       default:
         setTitle("Login");
     }
   }, [step]);
 
   return (
-    <>
-      <h1 className={styles.logo}>{logo}</h1>
-          <p className={styles.stepText}>{title}</p>
+    <div className={styles.main}>
+      <p className={styles.stepText}>{title}</p>
+
       {step && (
         <>
           <div className={styles.stepperWrapper}>
@@ -40,7 +41,7 @@ const HeaderAddRoomForm = ({ step }) => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 export default HeaderAddRoomForm;

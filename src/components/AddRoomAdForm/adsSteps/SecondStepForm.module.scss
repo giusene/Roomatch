@@ -1,37 +1,42 @@
 @import "./../../../libs/variables.scss";
 
 .containerForm {
-  width: 100vw;
+  color: darken($mainLightBlue, 13);
+  width: 260px;
   margin: 0 auto;
-  padding: 0 $sidePadding;
-  .roommates{
+  .roommates {
     margin-top: 20px;
-    .roommatesWrapper{
+    .roommatesWrapper {
       margin-top: 10px;
       display: flex;
-      input{
-        width: 20px;
+      align-items: center;
+      .label {
+        font-weight: normal;
+        font-size: $superSmall;
+      }
+      input {
+        width: 25px;
+        height: 30px;
         margin: 0 20px 0 5px;
         text-align: center;
       }
     }
   }
 
-  label {
-    font-size: $labelSize;
-    font-weight: bold;
-  }
-
   input {
     border: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid darken($mainLightBlue, 13);
     margin-bottom: 0.8rem;
     &::placeholder {
       font-size: $labelSize;
     }
   }
-  .imagesWrapper{
+  .imagesWrapper {
     margin-top: 20px;
+    .uploadPics {
+      font-size: $superSmall;
+      font-style: italic;
+    }
     img {
       object-fit: cover;
       width: 100px;
@@ -53,7 +58,7 @@
         text-align: center;
         line-height: 100px;
       }
-    
+
       .hidden {
         display: none;
       }
@@ -61,34 +66,17 @@
   }
 }
 
-select {
-  background-color: white;
-  border: 2px solid $mainLightBlue;
-  border-radius: 4px;
-  display: inline-block;
-  font: inherit;
-  line-height: 1.5em;
-  padding: 0.5em 3.5em 0.5em 1em;
-  color: darken($mainLightBlue, 20);
-  margin-left: 10px;
-  
-  .gender {
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-  }
-}
-
-
 .fieldset {
+  width: 250px;
   border: 2px solid $mainLightBlue;
   border-radius: 0.8rem;
-  padding: 1rem;
-  margin: 40px 0;
+  margin: 40px auto;
+  padding: 20px 0 0 0;
   legend {
-    font-weight: 500;
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: $superSmall;
   }
-
   section {
     display: flex;
     align-items: center;
@@ -98,7 +86,7 @@ select {
   .flexColumn {
     flex-direction: column;
     align-items: center;
-    margin: 0 1rem;
+    margin: 0 0.8rem;
   }
 }
 
@@ -137,18 +125,24 @@ select {
   border: none;
   background-color: rgba(80, 80, 80, 0);
   position: absolute;
-  bottom: 100px;
+  bottom: -30px;
   right: $sidePadding;
-  color: $mainLightBlue;
+  color: $mainPink;
   font-size: 2rem;
+  .icon {
+    border-radius: 50px;
+  }
 }
 
 .prevStep {
   border: none;
   background-color: rgba(80, 80, 80, 0);
   position: absolute;
-  bottom: 100px;
+  bottom: -30px;
   left: $sidePadding;
-  color: $mainLightBlue;
+  color: $mainPink;
   font-size: 2rem;
+  .icon {
+    border-radius: 50px;
+  }
 }

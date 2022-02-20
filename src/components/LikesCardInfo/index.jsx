@@ -17,7 +17,6 @@ const LikesCardInfo = ({ user, showInfo, setShowInfo, isRoom }) => {
               {user.name} {user.surname}
             </h3>
             <div className={styles.subHeader}>
-              {console.log(user)}
               {!isRoom && <p>Age: {user.age}</p>}
               <p>
                 {user.town} ({user.city})

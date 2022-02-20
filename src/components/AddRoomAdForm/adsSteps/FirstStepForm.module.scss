@@ -1,90 +1,140 @@
 @import "./../../../libs/variables.scss";
 
-.main{
-  padding-bottom: 100px;
-  .containerForm {
+.main {
+  color: darken($mainLightBlue, 8);
+  height: 100%;
+  padding-bottom: 75px;
+  .select {
+    background-color: white;
+    border: 2px solid $mainLightBlue;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 0.5em 3.5em 0.5em 1em;
+    font-size: $labelSize;
+    color: darken($mainLightBlue, 20);
+  }
+  .flexForm {
     width: 100vw;
-    // height: 100vh;
     margin: 0 auto;
     padding: 0 $sidePadding;
-    // position: relative;
-    .rent{
-      input {
+    .label {
+      font-size: $superSmall;
+      margin: 40px 0 5px 0;
+    }
+    .rent {
+      margin: 20px 0 0;
+      .rentInput {
+        height: 30px;
+        width: 50px;
         margin-left: 10px;
-        width: 40px;
         text-align: right;
+
+        border: none;
+        border-bottom: 2px solid $mainLightBlue;
+        padding-top: 8px;
+        &::placeholder {
+          color: darken($mainLightBlue, 8);
+          font-size: $labelSize;
+        }
       }
-      span{
+      span {
         color: #ccc;
         font-size: 14px;
         margin-left: 5px;
       }
     }
-  
+
+    .rentType {
+      display: flex;
+      flex-direction: column;
+    }
     .roomType {
       display: flex;
       flex-direction: column;
-      label {
-        margin-bottom: 5px;
-      }
     }
-    fieldset {
+    .fieldset {
       border: 2px solid $mainLightBlue;
       border-radius: 0.8rem;
-      padding: 1rem;
-      margin: 20px auto;
+      padding: 0.6rem 0;
+      // width: 250px;
+      margin: 50px auto;
       legend {
-        font-weight: 500;
+        font-weight: bold;
+        font-size: $superSmall;
+        margin-left: 10px;
       }
       section {
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      input {
-        width: 15px;
-      }
     }
     .flexColumn {
       flex-direction: column;
       margin: 0 1rem;
       align-items: center;
+      .flatInput {
+        height: 30px;
+        width: 30px;
+        margin-left: 10px;
+        text-align: center;
+        border: none;
+        border-bottom: 2px solid $mainLightBlue;
+        padding-top: 8px;
+        &::placeholder {
+          color: darken($mainLightBlue, 8);
+          font-size: $labelSize;
+        }
+      }
     }
-  }
-  .city{
-    display: flex;
-    flex-direction: column;
-    select{
-      margin-top: 10px;
+    .flexColumn2 {
+      margin: 15px 0 0 10px;
     }
-  }
-  
-  .address {
-    margin: 20px 10px 0 0;
-    input {
-      margin-left: 10px;
-      &::placeholder {
-        padding-left: 8px;
+    .labelIcon {
+      margin-left: 8px;
+      .icon {
+        font-size: 20px;
       }
     }
   }
-  
+  .city {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .address {
+    margin: 20px 0 15px 0;
+    .adressInput {
+      text-align: center;
+      margin-left: 10px;
+      border: none;
+      border-bottom: 2px solid $mainLightBlue;
+      padding-top: 8px;
+      &::placeholder {
+        color: darken($mainLightBlue, 8);
+        font-size: $labelSize;
+      }
+    }
+  }
+
   // Style checkbox
   .labelContainer {
     display: block;
     position: relative;
     padding-left: 1.5rem;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
     cursor: pointer;
     font-size: $labelSize;
   }
-  
+
   // Hide the default checkbox
   .labelContainer input {
     visibility: hidden;
     cursor: pointer;
   }
-  
+
   // Create new checkbox
   .mark {
     position: absolute;
@@ -99,18 +149,18 @@
     background-color: $mainLightBlue;
   }
   // end checkbox style
-  
+
   .nextStep {
     border: none;
     background-color: rgba(80, 80, 80, 0);
     position: absolute;
-    bottom: 100px;
+    top: 150%;
     right: $sidePadding;
     color: $mainPink;
     font-size: 2rem;
     .icon {
       border-radius: 50px;
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.612);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
   }
 }

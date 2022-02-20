@@ -120,13 +120,12 @@ const RoomCard = ({ room }) => {
               </div>
             </div>
             <section className={styles.details}>
-              {console.log(room)}
               <p className={styles.charTitle}>Friendly for</p>
               <div className={styles.charSet}>
                 <div className={styles.char}>
                   <span
                     className={
-                      room.friendlyWith.lgbtq === 1 ? styles.active : ""
+                      room.friendlyWith.lgbtq === "1" ? styles.active : ""
                     }
                   >
                     <RiRainbowLine />
@@ -136,7 +135,7 @@ const RoomCard = ({ room }) => {
                 <div className={styles.char}>
                   <span
                     className={
-                      room.friendlyWith.pet_owner === 1 ? styles.active : ""
+                      room.friendlyWith.pet_owner === "1" ? styles.active : ""
                     }
                   >
                     <GiCat />
@@ -146,7 +145,9 @@ const RoomCard = ({ room }) => {
                 <div className={styles.char}>
                   <span
                     className={
-                      room.friendlyWith.multicultural === 1 ? styles.active : ""
+                      room.friendlyWith.multicultural === "1"
+                        ? styles.active
+                        : ""
                     }
                   >
                     <FaHandSpock />
@@ -155,7 +156,9 @@ const RoomCard = ({ room }) => {
                 </div>
                 <div className={styles.char}>
                   <span
-                    className={room.friendlyWith.veg === 1 ? styles.active : ""}
+                    className={
+                      room.friendlyWith.veg === "1" ? styles.active : ""
+                    }
                   >
                     <RiPlantFill />
                   </span>
@@ -164,7 +167,7 @@ const RoomCard = ({ room }) => {
                 <div className={styles.char}>
                   <span
                     className={
-                      room.friendlyWith.smooker === 1 ? styles.active : ""
+                      room.friendlyWith.smooker === "1" ? styles.active : ""
                     }
                   >
                     <FaSmoking />
@@ -174,7 +177,7 @@ const RoomCard = ({ room }) => {
                 <div className={styles.char}>
                   <span
                     className={
-                      room.friendlyWith.party_lover === 1 ? styles.active : ""
+                      room.friendlyWith.party_lover === "1" ? styles.active : ""
                     }
                   >
                     <GiPartyPopper />
