@@ -20,7 +20,7 @@ const RoomAd = ({ room }) => {
             style={{ backgroundImage: `url(${room.roomPhotos})` }}
           >
             <div className={styles.likes}>
-              <span>{room.wholikesme.length}</span>
+              <span>{room.wholikesme.filter(user => user.room?.roomId === '').length}</span>
               <FaHeart />
             </div>
           </div>

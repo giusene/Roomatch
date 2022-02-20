@@ -57,6 +57,18 @@ const RoomDetails = () => {
     });
   }, [user.roomId.roomId]);
 
+
+  const getLikes = () => (
+    <div className={styles.likes}>
+      <p className={styles.likesTitle}>Likes</p>
+      <div className={styles.likesContainer}>
+        {roomLikes.map((user, index) => (
+          <LikesCard key={index} data={user} />
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     <div className={styles.main}>
       {console.log.roomDetails}
@@ -214,16 +226,9 @@ const RoomDetails = () => {
           <p>Gallery</p>
           <PhotoGallery photos={roomDetails.roomPhotos} />
         </div>
-        <div className={styles.likes}>
-          <p className={styles.likesTitle}>Likes</p>
-          <div className={styles.likesContainer}>
-            {roomLikes.map((user, index) => (
-              <LikesCard key={index} user={user} />
-            ))}
-          </div>
-        </div>
+        {roomLikes.length ? getLikes() : null}
       </div>
-    </div>
+    </div >
   );
 };
 

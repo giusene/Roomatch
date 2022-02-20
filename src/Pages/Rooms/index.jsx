@@ -14,10 +14,11 @@ const Rooms = () => {
 
   return (
     <div className={styles.main}>
-      {console.log(roomsList)}
       {roomsList.map(
         (room) =>
-          room.roomOwner !== user._id && <RoomCard room={room} key={room._id} />
+          !user.matches.map(item => item.roomId).includes(room._id)
+          && room.roomOwner !== user._id
+          && <RoomCard room={room} key={room._id} />
       )}
     </div>
   );

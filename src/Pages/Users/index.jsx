@@ -14,10 +14,13 @@ const Users = () => {
 
   return (
     <div className={styles.main}>
-      {peopleList.map((user) => (
-        myData._id !== user._id && user.roomId.roomId === '' &&
-        <UserCard userInfo={user} key={user._id} />
-      ))}
+      {peopleList.map(
+        (user) => (
+          !myData.roomId.matches.map(item => item.id).includes(user._id)
+          && myData._id !== user._id
+          && user.roomId.roomId === ''
+          && <UserCard userInfo={user} key={user._id} />
+        ))}
     </div>
   );
 };

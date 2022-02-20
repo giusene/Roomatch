@@ -2,30 +2,26 @@ import LikesCard from "../../components/LikesCard";
 import { useSelector } from "react-redux";
 import styles from "./Likes.module.scss";
 import { useState, useEffect } from "react";
-import { httpGET } from "../../libs/http";
 
 const Likes = () => {
   const user = useSelector((state) => state.user);
 
-  const [dataRoomLikes, setDataRoomLikes] = useState({ data: [], isRoom: 0 });
+  const [dataLikes, setDataLikes] = useState({ data: [], isRoom: null });
 
   useEffect(() => {
-    httpGET(`/users/${user._id}/wholikesmyroom`).then((data) => {
-      setDataRoomLikes({ data: data, isRoom: 0 }); // sono persone interessate alla stanza roomId
-    });
-  }, [user]);
+    user.roomId.roomId !== ''
+      ? setDataLikes({ data: user.roomId.wholikesme, isRoom: 0 })
+      : setDataLikes({ data: user.wholikesme, isRoom: 1 });
+  }, [user.roomId.roomId, user.roomId.wholikesme, user.wholikesme]);
 
-  const dataLikes =
-    user.roomId.roomId !== ""
-      ? dataRoomLikes
-      : { data: user.wholikesme, isRoom: 1 };
-
+  console.log(user)
+  console.log("dataLikes ", dataLikes)
   return (
     <div className={styles.main}>
       <h3 className={styles.title}>These people like you!</h3>
       <div className={styles.cardContainer}>
-        {dataLikes.data.map((user, index) => (
-          <LikesCard key={index} user={user} isRoom={dataLikes.isRoom} />
+        {dataLikes.data.map((currentData, index) => (
+          <LikesCard key={index} data={currentData} isRoom={dataLikes.isRoom} />
         ))}
       </div>
     </div>
