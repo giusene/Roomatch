@@ -13,7 +13,7 @@ const RoomAd = ({ room }) => {
 
   return (
     <div className={styles.main}>
-      <Link to={"/roomdetails"}>
+      <Link to={"/roomdetails"} state={room.roomId}>
         <div className={styles.roomComp}>
           <div
             className={styles.img}

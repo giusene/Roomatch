@@ -1,0 +1,30 @@
+@import "./../../libs/variables.scss";
+
+.main {
+    flex-grow: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    .chatBaloon{
+        width: 70%;
+        background-color: $mainPink;
+        padding: 10px 20px;
+        border-radius: 20px;
+        color: white;
+        margin-bottom: 20px;
+        &.mine{
+            background-color: #C4C4C4;
+            align-self: flex-end;
+            color: black;
+        }
+        .author{
+            font-weight: bold;
+        }
+        .date{
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+    }
+}

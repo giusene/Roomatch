@@ -16,7 +16,6 @@ const Matches = () => {
           {Object.keys(user.messages).length > 0 ? (
             <>
               {Object.keys(user.messages)
-                .reverse()
                 .map((message, index) => (
                   <MessagePreview message={user.messages[message]} key={index} />
                 ))}
@@ -24,8 +23,6 @@ const Matches = () => {
           ) : (
             <p>no message available</p>
           )}
-
-          
         </div>
       </div>
     </>

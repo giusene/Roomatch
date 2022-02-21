@@ -9,7 +9,7 @@ const MessagePreview = ({message}) => {
   const user = useSelector(state => state.user)
 
   return (
-    <Link to='/messages' state={message}>
+    <Link to='/messages' state={message.user}>
     <div className={styles.main}>
       <div
         className={styles.img}

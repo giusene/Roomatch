@@ -84,6 +84,18 @@ export const newRoom = (body, setRedirect) => {
   };
 };
 
+export const newMessage = (body) => {
+  return async (dispatch) => {
+    dispatch({ type: FETCH_LOGIN_REQUEST });
+    try {
+      const { data } = await axios.post(backend_URL + "/message", body);
+      dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
+    } catch (e) {
+      dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
+    }
+  };
+};
+
 export const deleteRoom = (roomId) => {
   return async (dispatch) => {
     dispatch({ type: FETCH_LOGIN_REQUEST });

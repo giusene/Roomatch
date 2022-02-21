@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { httpGET } from "../../libs/http";
 import styles from "./RoomDetails.module.scss";
@@ -7,13 +6,13 @@ import { AiOutlineMan, AiOutlineWoman } from "react-icons/ai";
 import { GiCat, GiPartyPopper } from "react-icons/gi";
 import { BsWifi, BsSnow, BsCash } from "react-icons/bs";
 import { FaHandSpock, FaSmoking } from "react-icons/fa";
-import LikesCard from "../../components/LikesCard";
 import PhotoGallery from "../../components/PhotoGallery";
+import { useLocation } from "react-router-dom";
 
 const RoomDetails = () => {
-  const user = useSelector((state) => state.user);
+  const roomInfo = useLocation()
 
-  const [roomLikes, setRoomLikes] = useState([]);
+  // const [roomLikes, setRoomLikes] = useState([]);
   const [roomDetails, setRoomDetails] = useState({
     roommates: {
       females: 0,
@@ -48,26 +47,10 @@ const RoomDetails = () => {
   });
 
   useEffect(() => {
-    httpGET(`/rooms/${user.roomId.roomId}`).then((data) => {
+    httpGET(`/rooms/${roomInfo.state}`).then((data) => {
       setRoomDetails(data);
     });
-
-    httpGET(`/rooms/${user.roomId.roomId}/getlikes`).then((data) => {
-      setRoomLikes(data);
-    });
-  }, [user.roomId.roomId]);
-
-
-  const getLikes = () => (
-    <div className={styles.likes}>
-      <p className={styles.likesTitle}>Likes</p>
-      <div className={styles.likesContainer}>
-        {roomLikes.map((user, index) => (
-          <LikesCard key={index} data={user} />
-        ))}
-      </div>
-    </div>
-  );
+  }, [roomInfo.state]);
 
   return (
     <div className={styles.main}>
@@ -226,9 +209,9 @@ const RoomDetails = () => {
           <p>Gallery</p>
           <PhotoGallery photos={roomDetails.roomPhotos} />
         </div>
-        {roomLikes.length ? getLikes() : null}
+        {/* {roomLikes.length ? getLikes() : null} */}
       </div>
-    </div >
+    </div>
   );
 };
 

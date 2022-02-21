@@ -1,0 +1,141 @@
+@import "./../../libs/variables.scss";
+
+.main {
+  width: 100%;
+  overflow-y: auto;
+  padding-bottom: calc(100px + 30px);
+
+  .info {
+    position: relative;
+    color: #fff;
+    z-index: 2;
+    margin-top: 80px;
+    padding-left: 45px;
+    p {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 14px;
+      margin: 5px 0;
+    }
+    h3 {
+      font-family: $paragraphFont;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+  .header {
+    width: 100vw;
+    height: 208px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-top: -160px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    &::before {
+      content: "";
+      position: absolute;
+      background: linear-gradient(
+        180deg,
+        rgba(72, 0, 48, 0.68) 0%,
+        rgba(100, 0, 67, 0.15) 100%
+      );
+      width: 100%;
+      height: 208px;
+    }
+  }
+  .roommatesTitle {
+    margin: 40px 0 20px 50px;
+    font-weight: 400;
+    font-size: 14px;
+    span {
+      margin: 0 10px;
+      align-items: center;
+      svg {
+        font-size: 14px;
+      }
+    }
+  }
+  .charsetContainer {
+    width: 80%;
+    margin: 0 auto;
+    border: 2px solid $mainLightBlue;
+    border-radius: $radiusDiv;
+    margin: 60px auto;
+    box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
+
+    .charTitle {
+      margin: 30px 0 20px 30px;
+      font-weight: 400;
+      font-size: 14px;
+    }
+    .charSet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .char {
+        display: flex;
+        align-items: center;
+        width: 100px;
+        height: 40px;
+        font-weight: 400;
+        font-size: 12px;
+        margin: 10px 0.5rem;
+        cursor: pointer;
+        span {
+          color: #b9d1e0;
+          margin-right: 8px;
+          font-size: 20px;
+          &.active {
+            color: $mainPink;
+          }
+        }
+      }
+      .charNum {
+        margin-right: 5px;
+        color: $mainLightBlue;
+        font-size: $smallSize;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .gallery {
+    width: 77%;
+    margin: 100px auto;
+    p {
+      margin-bottom: 10px;
+    }
+  }
+  .likes {
+    .likesTitle {
+      margin: 20px 0 0 30px;
+
+      // margin-bottom: 30px;
+    }
+    .likesContainer {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  .bottomContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 0 2rem;
+    button {
+      background: linear-gradient(
+        105.54deg,
+        #b9d1e0 22.32%,
+        rgba(185, 209, 224, 0.21) 107.38%
+      );
+      color: $mainPink;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 30px;
+      cursor: pointer;
+    }
+  }
+}

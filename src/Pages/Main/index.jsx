@@ -8,6 +8,7 @@ import Matches from "../Matches";
 import Profile from "../Profile";
 import Users from "../Users";
 import RoomDetails from '../RoomDetails'
+import UserDetails from '../UserDetails'
 import { useSelector } from "react-redux";
 import NewRoom from '../NewRoom'
 import Messages from '../Messages'
@@ -26,6 +27,7 @@ const Main = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/users" element={<Users />} />
         <Route path="/roomdetails" element={<RoomDetails />} />
+        <Route path="/userdetails" element={<UserDetails />} />
         <Route path="/addroom" element={<NewRoom />} />
         <Route path="/messages" element={<Messages />} />
       </Routes>

@@ -2,6 +2,6 @@
 .main {
     height: calc(100vh - 100px) ;
     overflow-y: auto;
-    padding-bottom: calc(100px + 30px);
-
+    display: flex;
+    flex-direction: column;
 }
