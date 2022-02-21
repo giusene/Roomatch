@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Users.module.scss";
 import UserCard from "../../components/UserCard";
-import { httpGET } from "../../libs/http";
+import { httpPOST } from "../../libs/http";
 import { useSelector } from "react-redux";
 
 const Users = () => {
@@ -9,8 +9,8 @@ const Users = () => {
   const [peopleList, setPeopleList] = useState([]);
 
   useEffect(() => {
-    httpGET("/users").then((data) => setPeopleList(data));
-  }, []);
+    httpPOST("/getusers", myData.roomId.friendlyWith).then((data) => setPeopleList(data));
+  }, [myData.roomId.friendlyWith]);
 
   return (
     <div className={styles.main}>

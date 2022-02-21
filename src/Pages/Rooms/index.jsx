@@ -2,15 +2,15 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import styles from "./Rooms.module.scss";
 import RoomCard from "../../components/RoomCard/RoomCard";
-import { httpGET } from "../../libs/http";
+import { httpPOST } from "../../libs/http";
 
 const Rooms = () => {
   const user = useSelector((state) => state.user);
   const [roomsList, setRoomList] = useState([]);
 
   useEffect(() => {
-    httpGET("/rooms").then((data) => setRoomList(data));
-  }, []);
+    httpPOST("/getrooms", user.iam).then((data) => setRoomList(data));
+  }, [user.iam]);
 
   return (
     <div className={styles.main}>

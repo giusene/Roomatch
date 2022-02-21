@@ -8,7 +8,6 @@ const UserCard = ({ userInfo }) => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const loading = useSelector((store) => store.loading);
-  const compatibility = Math.floor(Math.random() * 100) + 1;
 
   const likeFunc = () => {
     dispatch(
@@ -52,8 +51,8 @@ const UserCard = ({ userInfo }) => {
             </p>
             <div className={styles.flex}>
               <div className={styles.compatibility}>
-                <label htmlFor=""> Compatibility {compatibility}%</label>
-                <progress value={compatibility} max="100"></progress>
+                <label htmlFor=""> Compatibility {userInfo.compatibility}%</label>
+                <progress value={userInfo.compatibility} max="100"></progress>
               </div>
               <div>
                 {user.roomId.ilike.filter((like) => like.id === userInfo._id)

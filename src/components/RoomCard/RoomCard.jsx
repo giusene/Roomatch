@@ -16,7 +16,6 @@ const RoomCard = ({ room }) => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const loading = useSelector((store) => store.loading);
-  const compatibility = Math.floor(Math.random() * 100) + 1;
 
   const likeFunc = () => {
     dispatch(
@@ -69,8 +68,8 @@ const RoomCard = ({ room }) => {
               </p>
               <div className={styles.flex}>
                 <div className={styles.compatibility}>
-                  <label htmlFor=""> Compatibility {compatibility}%</label>
-                  <progress value={compatibility} max="100"></progress>
+                  <label htmlFor=""> Compatibility {room.compatibility}%</label>
+                  <progress value={room.compatibility} max="100"></progress>
                 </div>
                 <div>
                   {user.ilike.filter((like) => like.roomId === room._id)
