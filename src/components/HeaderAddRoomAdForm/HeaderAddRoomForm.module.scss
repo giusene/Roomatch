@@ -3,19 +3,12 @@
 .main {
   margin-top: 110px;
 
-  .logo {
-    text-align: left;
-    font-size: $logoSize;
-    font-family: $titleFont;
-    font-weight: 800;
-  }
-
   .closeBtn {
     border: none;
     background-color: rgba(80, 80, 80, 0);
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: -10px;
+    right: 0;
     color: $mainLightBlue;
     font-size: 2rem;
   }
@@ -23,12 +16,12 @@
   .stepText {
     font-family: $paragraphFont;
     text-align: left;
-    margin: 30px;
+    margin: 30px auto;
     font-size: $superSmall;
   }
 
   .stepperWrapper {
-    width: 280px;
+    width: 250px;
     display: flex;
     justify-content: space-between;
     margin: 30px auto 50px;
@@ -45,7 +38,7 @@
       position: absolute;
       content: "";
       border-bottom: 3px solid $mainPink;
-      width: 140px;
+      width: 130px;
       top: 10px;
       z-index: -1;
     }

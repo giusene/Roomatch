@@ -41,8 +41,11 @@ const FirstStep = ({ handleFormData, values, nextStep, setImage }) => {
           className={styles.hidden}
         />
 
-        <label htmlFor="fullname">Name / Surname*</label>
+        <label className={styles.label} htmlFor="fullname">
+          Name / Surname*
+        </label>
         <input
+          className={styles.inputNameSur}
           value={values.name}
           onChange={handleFormData("name")}
           name="name"
@@ -53,6 +56,7 @@ const FirstStep = ({ handleFormData, values, nextStep, setImage }) => {
         />
 
         <input
+          className={styles.inputNameSur}
           value={values.surname}
           onChange={handleFormData("surname")}
           name="surname"
@@ -61,8 +65,11 @@ const FirstStep = ({ handleFormData, values, nextStep, setImage }) => {
           placeholder="Surname"
           required
         />
-        <label htmlFor="email">Email*</label>
+        <label className={styles.label} htmlFor="email">
+          Email*
+        </label>
         <input
+          className={styles.input}
           value={values.email}
           onChange={handleFormData("email")}
           name="email"
@@ -72,8 +79,11 @@ const FirstStep = ({ handleFormData, values, nextStep, setImage }) => {
           required
         />
 
-        <label htmlFor="password">Password</label>
+        <label className={styles.label} htmlFor="password">
+          Password
+        </label>
         <input
+          className={styles.input}
           value={values.password}
           onChange={handleFormData("password")}
           onClick={() => setMessage("")}
@@ -84,8 +94,11 @@ const FirstStep = ({ handleFormData, values, nextStep, setImage }) => {
           required
         />
 
-        <label htmlFor="matchpwd">Confirm password</label>
+        <label className={styles.label} htmlFor="matchpwd">
+          Confirm password
+        </label>
         <input
+          className={styles.input}
           value={values.matchPwd}
           onChange={() => setMessage("")}
           name="matchpwd"

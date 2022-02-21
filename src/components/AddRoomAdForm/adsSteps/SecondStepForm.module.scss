@@ -4,6 +4,7 @@
   color: darken($mainLightBlue, 13);
   width: 260px;
   margin: 0 auto;
+  padding-bottom: 180px;
   .roommates {
     margin-top: 20px;
     .roommatesWrapper {
@@ -125,8 +126,8 @@
   border: none;
   background-color: rgba(80, 80, 80, 0);
   position: absolute;
-  bottom: -30px;
-  right: $sidePadding;
+  top: 580px;
+  right: 0;
   color: $mainPink;
   font-size: 2rem;
   .icon {
@@ -138,8 +139,8 @@
   border: none;
   background-color: rgba(80, 80, 80, 0);
   position: absolute;
-  bottom: -30px;
-  left: $sidePadding;
+  top: 580px;
+  left: 0;
   color: $mainPink;
   font-size: 2rem;
   .icon {

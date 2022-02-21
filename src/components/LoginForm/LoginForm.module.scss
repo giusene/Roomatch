@@ -1,29 +1,44 @@
-@import './../../libs/variables.scss';
-
+@import "./../../libs/variables.scss";
 
 .main {
   form {
     display: flex;
     flex-direction: column;
-    max-width: 300px;
+    max-width: 250px;
     margin: auto;
     margin-top: 50px;
 
-    input {
+    .input {
       margin-bottom: 40px;
       margin-top: 10px;
+      height: 30px;
+      width: 250px;
+      text-align: left;
+
+      border: none;
+      border-bottom: 2px solid $mainLightBlue;
+      padding-top: 8px;
+      &::placeholder {
+        color: darken($mainLightBlue, 8);
+        font-size: $labelSize;
+      }
+    }
+    .label {
+      font-size: $labelSize;
+      font-weight: bold;
+      color: darken($mainLightBlue, 13);
     }
     button {
-        text-decoration: none;
-        background-color: $mainPink;
-        color: #fff;
-        font-weight: bold;
-        padding: 8px 25px;
-        border-radius: 15px;
-        margin: 20px;
-        border: none;
+      text-decoration: none;
+      background-color: $mainPink;
+      color: #fff;
+      font-weight: bold;
+      padding: 8px 25px;
+      border-radius: 15px;
+      margin: 20px;
+      border: none;
     }
-    .errorMessage{
+    .errorMessage {
       text-align: center;
       color: $mainPink;
       text-transform: uppercase;

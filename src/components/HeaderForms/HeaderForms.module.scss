@@ -1,7 +1,7 @@
 @import "./../../libs/variables.scss";
 
 .main {
-  margin: 40px 0;
+  margin: 50px 0 60px 0;
 
   .logo {
     text-align: left;
@@ -9,28 +9,28 @@
     font-family: $titleFont;
     font-weight: 800;
     color: black;
-    margin: 0 0 10px 20px;
+    margin-bottom: 10px;
   }
 
   .stepText {
     font-family: $paragraphFont;
     text-align: left;
     font-size: $superSmall;
-    margin: 0 0 10px 20px;
+    margin-bottom: 10px;
   }
 
   .closeBtn {
     border: none;
     background-color: rgba(80, 80, 80, 0);
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 0;
+    right: 0;
     color: $mainLightBlue;
     font-size: 2rem;
   }
 
   .stepperWrapper {
-    width: 280px;
+    width: 250px;
     display: flex;
     justify-content: space-between;
     margin: 30px auto 50px;
@@ -47,7 +47,7 @@
       position: absolute;
       content: "";
       border-bottom: 3px solid $mainPink;
-      width: 140px;
+      width: 130px;
       top: 10px;
       z-index: -1;
     }

@@ -2,13 +2,15 @@
 
 .main {
   color: darken($mainLightBlue, 8);
-  height: 100%;
-  padding-bottom: 75px;
+  width: 260px;
+  margin: 0 auto;
+  padding-bottom: 150px;
   .select {
+    width: 245px;
+    margin: 0 auto;
     background-color: white;
     border: 2px solid $mainLightBlue;
     border-radius: 4px;
-    display: inline-block;
     font: inherit;
     line-height: 1.5em;
     padding: 0.5em 3.5em 0.5em 1em;
@@ -16,9 +18,9 @@
     color: darken($mainLightBlue, 20);
   }
   .flexForm {
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
     margin: 0 auto;
-    padding: 0 $sidePadding;
     .label {
       font-size: $superSmall;
       margin: 40px 0 5px 0;
@@ -58,7 +60,7 @@
       border: 2px solid $mainLightBlue;
       border-radius: 0.8rem;
       padding: 0.6rem 0;
-      // width: 250px;
+      width: 240px;
       margin: 50px auto;
       legend {
         font-weight: bold;
@@ -154,13 +156,12 @@
     border: none;
     background-color: rgba(80, 80, 80, 0);
     position: absolute;
-    top: 150%;
-    right: $sidePadding;
+    top: 990px;
+    right: 0;
     color: $mainPink;
     font-size: 2rem;
     .icon {
       border-radius: 50px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     }
   }
 }

@@ -1,5 +1,7 @@
 import styles from "./HeaderAddRoomForm.module.scss";
 import { useState, useEffect } from "react";
+import { IoIosCloseCircle } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const HeaderAddRoomForm = ({ step }) => {
   const [title, setTitle] = useState("");
@@ -41,6 +43,11 @@ const HeaderAddRoomForm = ({ step }) => {
           </div>
         </>
       )}
+      <div>
+        <Link className={styles.closeBtn} to="/">
+          <IoIosCloseCircle />
+        </Link>
+      </div>
     </div>
   );
 };

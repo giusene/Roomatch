@@ -1,9 +1,8 @@
-@import './../../libs/variables.scss';
+@import "./../../libs/variables.scss";
 
 .main {
-    width: 100vw;
-    height: 100vh;
-    margin: 0 auto;
-    padding: $sidePadding;
-    position: relative;
+  width: 250px;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
 }

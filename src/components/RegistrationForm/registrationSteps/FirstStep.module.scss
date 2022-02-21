@@ -2,9 +2,10 @@
 
 .containerForm {
   color: darken($mainLightBlue, 8);
-  height: 100%;
   width: 260px;
+  // height: 100vh;
   margin: 0 auto;
+  padding-bottom: 100px;
   .flexForm {
     display: flex;
     flex-direction: column;
@@ -35,15 +36,16 @@
       display: none;
     }
 
-    label {
+    .label {
       color: darken($mainLightBlue, 8);
       font-size: $labelSize;
       font-weight: bold;
-      margin: 15px 0 5px;
+      margin-top: 35px;
     }
 
-    input {
-      height: 30px;
+    .input,
+    .inputNameSur {
+      height: 35px;
       border: none;
       border-bottom: 2px solid $mainLightBlue;
       padding-top: 8px;
@@ -52,18 +54,20 @@
         font-size: $labelSize;
       }
     }
+    .inputNameSur {
+      margin-bottom: 10px;
+    }
 
     .nextStep {
       border: none;
       background-color: rgba(80, 80, 80, 0);
       position: absolute;
-      bottom: 0;
-      right: $sidePadding;
+      bottom: -80px;
+      right: 0;
       color: $mainPink;
       font-size: 2rem;
       .icon {
         border-radius: 50px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
       }
     }
   }
