@@ -8,15 +8,17 @@ const MatchesProfiles = () => {
   const user = useSelector(state => state.user);
 
   useEffect(() => {
-    dispatch(
-      changeChar(
-        [{
-            propName: "newMatch",
-            value: [],
-          }],
-        user._id
-      )
-    );
+    setTimeout(() => {
+      dispatch(
+        changeChar(
+          [{
+              propName: "newMatch",
+              value: [],
+            }],
+          user._id
+        )
+      );
+    }, 500)
   }, [dispatch, user._id]);
 
   return (
@@ -25,8 +27,8 @@ const MatchesProfiles = () => {
         {user.roomId.roomId
           ? (
             user.roomId.matches.length > 0 ?
-            user.roomId.matches.map(userMatch => (
-              <div className={styles.matches}>
+            user.roomId.matches.map((userMatch, index) => (
+              <div key={index} className={styles.matches}>
                 {user.newMatch.filter(item => item === userMatch.id).length >
                   0 && <span>New</span>}
                 <img

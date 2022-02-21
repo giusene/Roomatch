@@ -1,19 +1,17 @@
 import styles from "./LikesCard.module.scss";
 import { useState } from "react";
 import LikesCardInfo from "./../LikesCardInfo";
+import { useSelector } from "react-redux";
 
 const LikesCard = ({ data, isRoom }) => {
+  const user = useSelector(state => state.user)
   const [showInfo, setShowInfo] = useState(false);
-  console.log("LIKES CARD - data = ", data)
+  // console.log("LIKES CARD - data = ", data);
 
   const roomDataCard = () => (
     <>
-      <p className={styles.name}>
-        {data.roomType} Room
-      </p>
-      <p className={styles.name}>
-        in {data.roomAddress}
-      </p>
+      <p className={styles.name}>{data.roomType} Room</p>
+      <p className={styles.name}>in {data.roomAddress}</p>
       <p className={styles.city}>
         {data.town} ({data.city})
       </p>
@@ -46,11 +44,11 @@ const LikesCard = ({ data, isRoom }) => {
         style={{ backgroundImage: `url(${data.photo})` }}
         onClick={() => setShowInfo(!showInfo)}
       >
+        {user.newLike.filter(item => item === data.id).length > 0 && (
+          <span>New</span>
+        )}
         <div className={styles.info}>
-          {isRoom
-            ? roomDataCard()
-            : userDataCard()
-          }
+          {isRoom ? roomDataCard() : userDataCard()}
         </div>
       </div>
     </>

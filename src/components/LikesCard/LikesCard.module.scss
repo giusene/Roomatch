@@ -12,6 +12,22 @@
   background-size: cover;
   background-position: center;
   border-radius: $radiusDiv;
+  position: relative;
+  span{
+    position: absolute;
+    z-index: 2;
+    background-color: $mainPink;
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    right: 10px;
+    top: 15px;
+  }
 
   .info {
     position: absolute;
