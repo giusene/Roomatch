@@ -5,6 +5,9 @@ import {
   USER_UPDATE_REQUEST,
   USER_UPDATE_SUCCESS,
   USER_UPDATE_ERROR,
+  FETCH_LOGOUT_REQUEST,
+  FETCH_LOGOUT_SUCCESS,
+  FETCH_LOGOUT_ERROR
 } from "./constants";
 
 const defaultStore = {
@@ -52,6 +55,25 @@ const loginReducer = (state = defaultStore, action) => {
         ...state,
         logged: true,
         loading: false,
+      };
+
+    case FETCH_LOGOUT_REQUEST:
+      return {
+        logged: false,
+        loading: false,
+      };
+
+    case FETCH_LOGOUT_SUCCESS:
+      return {
+        logged: false,
+        loading: false,
+      };
+
+    case FETCH_LOGOUT_ERROR:
+      return {
+        logged: true,
+        loading: false,
+        error: action.payload,
       };
 
     default:

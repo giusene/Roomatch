@@ -7,10 +7,22 @@ import { GiCat, GiPartyPopper } from "react-icons/gi";
 import { FaHandSpock, FaSmoking } from "react-icons/fa";
 import RoomAd from "../../components/RoomAd";
 
+import { logoutAction } from './../../store/actions';
+
 const Profile = () => {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const loading = useSelector((state) => state.loading);
+
+  const logoutData = {
+    email: user.email,
+    token: user.token
+  };
+
+  const handleLogout = (e) => {
+    e.preventDefault()
+    dispatch(logoutAction(logoutData))
+  };
 
   const handleChar = (char) => {
     dispatch(
@@ -113,7 +125,13 @@ const Profile = () => {
           </Link>
         )}
       </div>
-    </div>
+      <div className={styles.actions}>
+        <button>Modify your profile</button>
+        <button onClick={(e) => handleLogout(e)}>
+          Logout
+        </button>
+      </div>
+    </div >
   );
 };
 
