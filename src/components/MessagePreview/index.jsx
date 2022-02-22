@@ -17,7 +17,6 @@ const MessagePreview = ({ message }) => {
         roomPhoto: message.user.room.roomPhotos,
       }}
     >
-      {console.log(message.user)}
       <div className={styles.main}>
         <div
           className={styles.img}

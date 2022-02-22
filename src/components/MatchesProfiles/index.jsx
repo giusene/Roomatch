@@ -27,7 +27,6 @@ const MatchesProfiles = () => {
   return (
     <div className={styles.container}>
       <div className={styles.matchesContainer}>
-        {console.log(user.matches)}
         {user.roomId.roomId ? (
           user.roomId.matches.length > 0 ? (
             user.roomId.matches.map((userMatch, index) => (

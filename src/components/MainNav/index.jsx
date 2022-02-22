@@ -12,10 +12,31 @@ import {
   BsHeartFill,
   BsChatRightDotsFill,
 } from "react-icons/bs";
+import { useEffect, useState } from "react";
 
 const MainNav = () => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector(state => state.user);
   const url = useLocation();
+  const [notifies, setNotifies] = useState([]);
+
+  useEffect(() => {
+    if (Object.keys(user.messages).length > 0) {
+      setNotifies(
+        Object.keys(user.messages).filter(
+          message =>
+            !user.messages[message].discussion[
+              user.messages[message].discussion.length - 1
+            ].read
+        )
+      );
+    }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user.newMatch.length, user.newLike.length, user.messages]);
+
+  // useEffect(() => {
+  //   // CheckNewMessages();
+  // }, [user.messages, user.newMatch.length, user.newLike.length]);
 
   return (
     <div className={styles.main}>
@@ -45,7 +66,9 @@ const MainNav = () => {
         </Link>
         <Link to={"/matches"}>
           <li>
-            {user.newMatch.length > 0 && <span>{user.newMatch.length}</span>}
+            {notifies.length + user.newMatch.length > 0 && (
+              <span>{notifies.length + user.newMatch.length}</span>
+            )}
             {url.pathname === "/matches" ? (
               <BsChatRightDotsFill />
             ) : (

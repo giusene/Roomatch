@@ -5,6 +5,20 @@ import styles from "./Matches.module.scss";
 
 const Matches = () => {
   const user = useSelector(state => state.user);
+  let messageList = [];
+
+  if (Object.keys(user.messages).length > 0) {
+    Object.keys(user.messages).map(
+      message => (messageList = [...messageList, user.messages[message]])
+    );
+
+    messageList.sort((a, b) => {
+      return (
+        new Date(b.discussion[b.discussion.length - 1].date) -
+        new Date(a.discussion[a.discussion.length - 1].date)
+      );
+    });
+  }
 
   return (
     <>
@@ -15,10 +29,9 @@ const Matches = () => {
           <h3 className={styles.text}>Messages</h3>
           {Object.keys(user.messages).length > 0 ? (
             <>
-              {Object.keys(user.messages)
-                .map((message, index) => (
-                  <MessagePreview message={user.messages[message]} key={index} />
-                ))}
+              {messageList.map((message, index) => (
+                <MessagePreview message={message} key={index} />
+              ))}
             </>
           ) : (
             <p>no message available</p>
