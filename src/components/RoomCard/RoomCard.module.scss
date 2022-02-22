@@ -1,8 +1,6 @@
 @import "./../../libs/variables.scss";
 
 .main {
-  margin-top: 50px;
-
   .slider {
     width: 22rem;
     margin: 0 auto;
@@ -80,9 +78,13 @@
     height: 30rem;
     border-radius: 21px;
     margin-bottom: 25px;
-    padding: $sidePadding;
+    padding: 40px 20px;
     box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
     position: relative;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     .leftBtn {
       top: calc(50% - 33px);
       left: 5px;
@@ -94,6 +96,7 @@
     }
     .headerCardInfo {
       display: flex;
+      margin: 0 15px;
       .title {
         flex-grow: 1;
       }
@@ -111,32 +114,33 @@
       font-size: $superSmall;
       margin-top: 1.5rem;
     }
-    .details {
-      width: 240px;
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 40px;
-      p {
-        margin: 0.5rem 1rem 0.5rem 0;
-      }
-    }
     .gallery {
       margin: 42px 0;
       p {
         margin-bottom: 0.5rem;
       }
     }
-
+  }
+  .details {
+    color: darken($mainLightBlue, 21);
+    width: 260px;
+    margin: 0 auto;
+    border: 2px solid $mainLightBlue;
+    border-radius: $radiusDiv;
+    margin: 40px auto;
+    box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
     .charTitle {
-      margin: 40px 0 20px 40px;
-      font-weight: 400;
+      margin: 20px 0 10px 30px;
+      font-weight: 600;
       font-size: 14px;
     }
+
     .charSet {
       display: flex;
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+
       .char {
         display: flex;
         align-items: center;
@@ -144,7 +148,7 @@
         height: 40px;
         font-weight: 400;
         font-size: 12px;
-        margin: 0 0.5rem;
+        margin: 5px 0.5rem;
         cursor: pointer;
         span {
           color: #b9d1e0;
@@ -154,6 +158,12 @@
             color: $mainPink;
           }
         }
+      }
+      .charNum {
+        margin-right: 5px;
+        color: $mainLightBlue;
+        font-size: $smallSize;
+        font-weight: bold;
       }
     }
   }

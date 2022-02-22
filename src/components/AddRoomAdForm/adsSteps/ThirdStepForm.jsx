@@ -222,13 +222,15 @@ const ThirdStepForm = ({ formData, prevStep }) => {
             </div>
 
             <div>
-              <label className={styles.labelContainer} htmlFor="party">
+              <label className={styles.labelContainer} htmlFor="party_lover">
                 Party lover
                 <input
-                  checked={formData.friendlyWith.party === "1" ? true : false}
+                  checked={
+                    formData.friendlyWith.party_lover === "1" ? true : false
+                  }
                   type="checkbox"
                   name="action"
-                  id="party"
+                  id="party_lover"
                   readOnly
                 />
                 <span className={styles.mark}></span>

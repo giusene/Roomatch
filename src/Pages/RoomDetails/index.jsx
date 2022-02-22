@@ -10,7 +10,7 @@ import PhotoGallery from "../../components/PhotoGallery";
 import { useLocation } from "react-router-dom";
 
 const RoomDetails = () => {
-  const roomInfo = useLocation()
+  const roomInfo = useLocation();
 
   // const [roomLikes, setRoomLikes] = useState([]);
   const [roomDetails, setRoomDetails] = useState({
@@ -195,7 +195,7 @@ const RoomDetails = () => {
             <div className={styles.char}>
               <span
                 className={
-                  roomDetails.aboutFlat.wifi === "1" ? styles.active : ""
+                  roomDetails.aboutFlat.wifi === true ? styles.active : ""
                 }
               >
                 <BsWifi />

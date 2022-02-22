@@ -161,14 +161,21 @@ const SecondStepForm = ({
                 </div>
 
                 <div>
-                  <label className={styles.labelContainer} htmlFor="party">
+                  {console.log(values)}
+
+                  <label
+                    className={styles.labelContainer}
+                    htmlFor="party_lover"
+                  >
                     Party lover
                     <input
-                      checked={values.friendlyWith.party === "1" ? true : false}
-                      onChange={(e) => handleInputPref("party", e)}
+                      checked={
+                        values.friendlyWith.party_lover === "1" ? true : false
+                      }
+                      onChange={(e) => handleInputPref("party_lover", e)}
                       type="checkbox"
                       name="action"
-                      id="party"
+                      id="party_lover"
                     />
                     <span className={styles.mark}></span>
                   </label>

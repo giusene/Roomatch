@@ -1,7 +1,7 @@
 import { RiRainbowLine, RiPlantFill } from "react-icons/ri";
 import { GiCat, GiPartyPopper } from "react-icons/gi";
 import { FaHandSpock, FaSmoking } from "react-icons/fa";
-
+import { BsWifi, BsSnow, BsCash } from "react-icons/bs";
 import { useSelector, useDispatch } from "react-redux";
 import { likeDislike } from "../../store/actions";
 import styles from "./RoomCard.module.scss";
@@ -184,6 +184,53 @@ const RoomCard = ({ room }) => {
                 </div>
               </div>
             </section>
+            <div className={styles.details}>
+              <p className={styles.charTitle}>About Flat</p>
+              <div className={styles.charSet}>
+                <div className={styles.char}>
+                  <p className={styles.charNum}>{room.aboutFlat.bathrooms}</p>
+                  Bathrooms
+                </div>
+                <div className={styles.char}>
+                  <span
+                    className={
+                      room.aboutFlat.airCond === true ? styles.active : ""
+                    }
+                  >
+                    <BsSnow />
+                  </span>
+                  Air Conditioning
+                </div>
+                <div className={styles.char}>
+                  <p className={styles.charNum}>{room.aboutFlat.bedrooms}</p>
+                  Bedrooms
+                </div>
+                <div className={styles.char}>
+                  <span
+                    className={
+                      room.aboutFlat.billsIncl === true ? styles.active : ""
+                    }
+                  >
+                    <BsCash />
+                  </span>
+                  Bills included
+                </div>
+                <div className={styles.char}>
+                  <p className={styles.charNum}>{room.aboutFlat.kitchen}</p>
+                  Kitchen
+                </div>
+                <div className={styles.char}>
+                  <span
+                    className={
+                      room.aboutFlat.wifi === true ? styles.active : ""
+                    }
+                  >
+                    <BsWifi />
+                  </span>
+                  Wi-Fi
+                </div>
+              </div>
+            </div>
             <section className={styles.gallery}>
               <p>Gallery</p>
               <PhotoGallery photos={room.roomPhotos} />

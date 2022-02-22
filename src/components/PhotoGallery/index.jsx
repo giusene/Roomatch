@@ -22,25 +22,42 @@ const PhotoGallery = ({ photos }) => {
             });
           }}
           src={photo}
-          alt='roomatch'
+          alt="roomatch"
           key={index}
         />
       ))}
 
       {lightbox.isOpen && (
-            <Lightbox
-               mainSrc={lightbox.gallery[lightbox.photoIndex]}
-               nextSrc={lightbox.gallery[(lightbox.photoIndex + 1) % lightbox.gallery.length]}
-               prevSrc={lightbox.gallery[(lightbox.photoIndex + lightbox.gallery.length - 1) % lightbox.gallery.length]}
-               onCloseRequest={() => setLightbox({ ...lightbox, isOpen: false })}
-               onMovePrevRequest={() =>
-                  setLightbox({ ...lightbox, photoIndex: (lightbox.photoIndex + lightbox.gallery.length - 1) % lightbox.gallery.length })
-               }
-               onMoveNextRequest={() =>
-                  setLightbox({ ...lightbox, photoIndex: (lightbox.photoIndex + 1) % lightbox.gallery.length })
-               }
-            />
-         )}
+        <Lightbox
+          mainSrc={lightbox.gallery[lightbox.photoIndex]}
+          nextSrc={
+            lightbox.gallery[
+              (lightbox.photoIndex + 1) % lightbox.gallery.length
+            ]
+          }
+          prevSrc={
+            lightbox.gallery[
+              (lightbox.photoIndex + lightbox.gallery.length - 1) %
+                lightbox.gallery.length
+            ]
+          }
+          onCloseRequest={() => setLightbox({ ...lightbox, isOpen: false })}
+          onMovePrevRequest={() =>
+            setLightbox({
+              ...lightbox,
+              photoIndex:
+                (lightbox.photoIndex + lightbox.gallery.length - 1) %
+                lightbox.gallery.length,
+            })
+          }
+          onMoveNextRequest={() =>
+            setLightbox({
+              ...lightbox,
+              photoIndex: (lightbox.photoIndex + 1) % lightbox.gallery.length,
+            })
+          }
+        />
+      )}
     </div>
   );
 };
