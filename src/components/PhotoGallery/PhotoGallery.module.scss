@@ -5,10 +5,32 @@
   display: flex;
   justify-content: flex-start;
   overflow-y: hidden;
-  img {
-    object-fit: cover;
-    width: 100px;
-    height: 100px;
-    margin: 5px;
+  cursor: pointer;
+  /* width */
+  &::-webkit-scrollbar {
+    height: 8px;
   }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: darken($mainLightBlue, 21);
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: $mainLightBlue;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: darken($mainLightBlue, 8);
+  }
+}
+img {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
 }

@@ -5,13 +5,13 @@ import styles from "./ChatHeader.module.scss";
 import { Link } from "react-router-dom";
 
 const ChatHeader = ({ roomInfo, interlocutor }) => {
-  const user = useSelector(state => state.user);
+  const user = useSelector((state) => state.user);
   const [friend, setFriend] = useState({});
 
   useEffect(() => {
     interlocutor
-      ? httpGET(`/users/${interlocutor}`).then(data => setFriend(data))
-      : httpGET(`/users/${roomInfo.roomOwner}`).then(data => setFriend(data));
+      ? httpGET(`/users/${interlocutor}`).then((data) => setFriend(data))
+      : httpGET(`/users/${roomInfo.roomOwner}`).then((data) => setFriend(data));
   }, [interlocutor, roomInfo.roomOwner]);
 
   return (
@@ -43,7 +43,7 @@ const ChatHeader = ({ roomInfo, interlocutor }) => {
                   {user.roomId.roomAddress} - {user.roomId.town} (
                   {user.roomId.city})
                 </div>
-                <div className={styles.price}>{user.roomId.rentPrice}</div>
+                <div className={styles.price}>{user.roomId.rentPrice}€</div>
               </div>
             </>
           ) : (

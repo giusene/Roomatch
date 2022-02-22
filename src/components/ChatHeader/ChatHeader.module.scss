@@ -1,28 +1,31 @@
 @import "./../../libs/variables.scss";
 
 .main {
-    margin-top: 100px;
-    background-color: #C4C4C4;
-    margin-bottom: 10px;
-    padding: 10px;
-    p{
-        span{
-            font-weight: bold;
-        }
+  margin-top: 100px;
+  background-color: $mainLightBlue;
+  color: darken($mainLightBlue, 35);
+  margin-bottom: 10px;
+  padding: 10px;
+  p {
+    span {
+      font-weight: bold;
+      font-size: $smallSize;
     }
-    .roomInfo {
-        display: flex;
-        align-items: center;
-        padding: 10px 20px;
-        .img{
-            width: 80px;
-            height: 80px;
-            margin-right: 10px;
-            background-size: cover;
-            background-position: center;
-        }
-        .info{
-            flex-grow: 1;
-        }
+  }
+  .roomInfo {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: $superSmall;
+    .img {
+      width: 80px;
+      height: 80px;
+      margin-right: 10px;
+      background-size: cover;
+      background-position: center;
     }
+    .info {
+      flex-grow: 1;
+    }
+  }
 }

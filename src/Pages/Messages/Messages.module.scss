@@ -1,7 +1,7 @@
-
+@import "./../../libs/variables.scss";
 .main {
-    height: calc(100vh - 100px) ;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }

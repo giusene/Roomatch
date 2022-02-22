@@ -1,25 +1,25 @@
 @import "./../../libs/variables.scss";
 
 .main {
-    width: 100%;
-    background-color: #C4C4C4;
-    padding: 20px;
-    form {
-        display: flex;
-        input{
-            padding: 10px 20px;
-            border-radius: 30px;
-            flex-grow: 1;
-            border: none;
-        }
-        button {
-            margin-left: 10px;
-            border: none;
-            background-color: $mainPink;
-            color: white;
-            font-weight: bold;
-            padding: 0 10px;
-            border-radius: 5px;
-        }
+  width: 100%;
+  background-color: darken($mainLightBlue, 21);
+  padding: 20px;
+  form {
+    display: flex;
+    input {
+      padding: 10px 20px;
+      border-radius: 30px;
+      flex-grow: 1;
+      border: none;
     }
+    button {
+      margin-left: 10px;
+      border: none;
+      background-color: $mainPink;
+      color: white;
+      font-weight: bold;
+      padding: 0 10px;
+      border-radius: 5px;
+    }
+  }
 }
