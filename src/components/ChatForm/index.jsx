@@ -18,7 +18,7 @@ const ChatForm = ({ interlocutor }) => {
           date: new Date(),
           author: user._id,
           text: message,
-          read: false
+          read: false,
         },
       })
     );
