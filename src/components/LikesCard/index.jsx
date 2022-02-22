@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 const LikesCard = ({ data, isRoom }) => {
   const user = useSelector(state => state.user)
   const [showInfo, setShowInfo] = useState(false);
-  // console.log("LIKES CARD - data = ", data);
 
   const roomDataCard = () => (
     <>
@@ -41,7 +40,7 @@ const LikesCard = ({ data, isRoom }) => {
       )}
       <div
         className={styles.cardContainer}
-        style={{ backgroundImage: `url(${data.photo})` }}
+        style={{ backgroundImage: `url(${isRoom ? data.roomPhoto : data.photo})` }}
         onClick={() => setShowInfo(!showInfo)}
       >
         {user.newLike.filter(item => item === data.id).length > 0 && (
