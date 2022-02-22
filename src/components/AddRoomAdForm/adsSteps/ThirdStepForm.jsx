@@ -1,61 +1,64 @@
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from 'react-redux';
+import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { BsArrowRightCircleFill, BsArrowLeftCircle } from "react-icons/bs";
 import styles from "./ThirdStepForm.module.scss";
 import { newRoom } from "../../../store/actions";
-// import { httpPOST } from "../../../libs/http";
+import { FaShower } from "react-icons/fa";
+import { BiBed } from "react-icons/bi";
+import { GiCook } from "react-icons/gi";
 
 const ThirdStepForm = ({ formData, prevStep }) => {
   let url = useNavigate();
-  const [redirect, setRedirect] = useState('/addroom')
-  const dispatch = useDispatch()
+  const [redirect, setRedirect] = useState("/addroom");
+  const dispatch = useDispatch();
 
   const formSubmit = () => {
-    dispatch(
-      newRoom(formData, setRedirect)
-    );
+    dispatch(newRoom(formData, setRedirect));
   };
 
-  useEffect(()=> {
-    url(redirect)
-}, [url, redirect])
+  useEffect(() => {
+    url(redirect);
+  }, [url, redirect]);
 
   return (
     <div className={styles.containerForm}>
       <ul>
-        <li>
-          <h4>RoomType:</h4>
+        <li className={styles.li1}>
+          <h4>Room Type:</h4>
           {formData.roomType}
         </li>
-        <li>
+        <li className={styles.li1}>
           <h4>Rent Price:</h4>
           {formData.rentPrice} €/month
         </li>
-        <li>
+        <li className={styles.li1}>
           <h4>Address:</h4>
-          {formData.address}
+          {formData.roomAddress}
         </li>
-        <li>
+        {console.log(formData)}
+        <li className={styles.li1}>
           <h4>City:</h4>
           {formData.town} ({formData.city})
         </li>
-        <li>
+        <li className={styles.li1}>
           <h4>Roommates:</h4>
           <ul className={styles.submenu}>
-            <li>Males:{formData.roommates.males}</li>
-            <li>Females:{formData.roommates.females}</li>
-            <li>Other:{formData.roommates.others}</li>
+            <li className={styles.li2}>Males: {formData.roommates.males}</li>
+            <li className={styles.li2}>
+              Females: {formData.roommates.females}
+            </li>
+            <li className={styles.li2}>Other: {formData.roommates.others}</li>
           </ul>
         </li>
       </ul>
-      <fieldset>
+      <fieldset className={styles.fieldset}>
         <legend>About the flat</legend>
-        <section>
+        <section className={styles.section}>
           <div className={styles.flexColumn}>
             <div>
               <input
-                className={styles.styledCheckbox}
+                className={styles.flatInput}
                 value={formData.aboutFlat.bedrooms}
                 name="bedrooms"
                 id="bedrooms"
@@ -63,11 +66,13 @@ const ThirdStepForm = ({ formData, prevStep }) => {
                 placeholder="3"
                 readOnly
               />
-              <label htmlFor="bedrooms">Bedrooms</label>
+              <label className={styles.labelIcon} htmlFor="bedrooms">
+                <BiBed className={styles.icon} />
+              </label>
             </div>
             <div>
               <input
-                className={styles.styledCheckbox}
+                className={styles.flatInput}
                 value={formData.aboutFlat.bathrooms}
                 name="bathrooms"
                 id="bathrooms"
@@ -75,11 +80,13 @@ const ThirdStepForm = ({ formData, prevStep }) => {
                 placeholder="1"
                 readOnly
               />
-              <label htmlFor="bathrooms">Bathrooms</label>
+              <label className={styles.labelIcon} htmlFor="bathrooms">
+                <FaShower className={styles.icon} />
+              </label>
             </div>
             <div>
               <input
-                className={styles.styledCheckbox}
+                className={styles.flatInput}
                 value={formData.aboutFlat.kitchen}
                 name="kitchen"
                 id="kitchen"
@@ -87,10 +94,12 @@ const ThirdStepForm = ({ formData, prevStep }) => {
                 placeholder="1"
                 readOnly
               />
-              <label htmlFor="kitchen">Kitchen</label>
+              <label className={styles.labelIcon} htmlFor="kitchen">
+                <GiCook className={styles.icon} />
+              </label>
             </div>
           </div>
-          <div className={styles.flexColumn}>
+          <div className={styles.flexColumn2}>
             <div>
               <label className={styles.labelContainer} htmlFor="airCond">
                 Air Conditioning
@@ -135,8 +144,8 @@ const ThirdStepForm = ({ formData, prevStep }) => {
       </fieldset>
       <fieldset className={styles.fieldset}>
         <legend>Friendly for</legend>
-        <section>
-          <div className={styles.flexColumn}>
+        <section className={styles.section}>
+          <div className={styles.flexColumn2}>
             <div>
               <label className={styles.labelContainer} htmlFor="lgbtq">
                 LGBTQ+
@@ -183,7 +192,7 @@ const ThirdStepForm = ({ formData, prevStep }) => {
             </div>
           </div>
 
-          <div className={styles.flexColumn}>
+          <div className={styles.flexColumn2}>
             <div>
               <label className={styles.labelContainer} htmlFor="veg">
                 Veg

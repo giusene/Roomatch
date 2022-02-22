@@ -180,26 +180,33 @@ const SecondStepForm = ({
       </form>
       <div className={styles.imagesWrapper}>
         <p className={styles.uploadPics}>Upload min1/max4 pics</p>
-        <form className={styles.flexForm} onSubmit={(e) => submitFormData(e)}>
-          {values.roomPhotos.map((photo, index) => (
-            <img src={photo} key={index} alt="roomatch" />
-          ))}
-          {values.roomPhotos.length < 4 && (
-            <label htmlFor="upload" className={styles.uploadBtn}>
-              +
-            </label>
-          )}
-          <input
-            type="file"
-            onChange={(e) => photoGallery(e)}
-            accept=".jpg, .jpeg, .png"
-            placeholder="carica"
-            name="upload"
-            id="upload"
-            title="Carica"
-            className={styles.hidden}
-          />
-        </form>
+        <div className={styles.sliderForm}>
+          <div className={styles.formWrapper}>
+            <form
+              className={styles.flexForm}
+              onSubmit={(e) => submitFormData(e)}
+            >
+              {values.roomPhotos.map((photo, index) => (
+                <img src={photo} key={index} alt="roomatch" />
+              ))}
+              {values.roomPhotos.length < 4 && (
+                <label htmlFor="upload" className={styles.uploadBtn}>
+                  +
+                </label>
+              )}
+              <input
+                type="file"
+                onChange={(e) => photoGallery(e)}
+                accept=".jpg, .jpeg, .png"
+                placeholder="carica"
+                name="upload"
+                id="upload"
+                title="Carica"
+                className={styles.hidden}
+              />
+            </form>
+          </div>
+        </div>
       </div>
       <button className={styles.prevStep} onClick={prevStep}>
         <BsArrowLeftCircle className={styles.icon} />

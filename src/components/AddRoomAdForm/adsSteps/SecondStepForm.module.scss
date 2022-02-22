@@ -43,12 +43,20 @@
       width: 100px;
       height: 100px;
     }
-    .flexForm {
-      margin-top: 10px;
+    .sliderForm {
+      // border: 1px solid red;x
+      width: 280px;
+      overflow-y: hidden;
+      cursor: pointer;
+    }
+    .formWrapper {
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-
+      justify-content: flex-start;
+      .flexForm {
+        margin: 10px 0;
+        display: flex;
+        gap: 10px;
+      }
       .uploadBtn {
         display: block;
         background-color: $mainLightBlue;
