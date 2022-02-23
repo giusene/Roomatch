@@ -105,10 +105,10 @@ const UserCard = ({ setResult, userInfo }) => {
             <div className={styles.headerCardInfo}>
               <div className={styles.title}>
                 <h3>
-                  {userInfo.name} {userInfo.surname}
+                  {userInfo.name} {userInfo.surname}, {userInfo.age}
                 </h3>
                 <p>
-                  {userInfo.town} ({userInfo.city})
+                  from {userInfo.town} ({userInfo.city})
                 </p>
               </div>
               <div className={styles.likeBtn}>
