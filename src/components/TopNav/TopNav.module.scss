@@ -24,11 +24,12 @@
         position: absolute;
         right: -7px;
         top: -5px;
-        background-color: $mainPink;
+        color: $mainPink;
         font-size: 10px;
         width: 15px;
         height: 15px;
-        color: #fff;
+        background-color: #fff;
+        border: 1px solid $mainPink;
         border-radius: 50%;
         text-align: center;
         line-height: 15px;

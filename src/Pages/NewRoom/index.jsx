@@ -1,12 +1,15 @@
-import AddRoomAdForm from './../../components/AddRoomAdForm'
-import styles from './NewRoom.module.scss';
+import AddRoomAdForm from "./../../components/AddRoomAdForm";
+import styles from "./NewRoom.module.scss";
 
 const NewRoom = () => {
-    return (
-        <div className={styles.main}>
-            <AddRoomAdForm />
-        </div>
-    )
-}
+  return (
+    <div className={styles.main}>
+      <div className={styles.image}></div>
+      <div className={styles.form}>
+        <AddRoomAdForm />
+      </div>
+    </div>
+  );
+};
 
-export default NewRoom
+export default NewRoom;
