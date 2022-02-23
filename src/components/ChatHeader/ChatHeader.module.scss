@@ -1,10 +1,8 @@
 @import "./../../libs/variables.scss";
 
 .main {
-  margin-top: 100px;
   background-color: $mainLightBlue;
   color: darken($mainLightBlue, 35);
-  margin-bottom: 10px;
   padding: 10px;
   p {
     span {

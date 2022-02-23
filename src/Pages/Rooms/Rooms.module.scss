@@ -1,11 +1,9 @@
 @import "./../../libs/variables.scss";
 .main {
-  height: 100vh;
   width: 100%;
   margin: 0 auto;
   background-color: $background;
   overflow-y: auto;
-  padding-bottom: calc(100px + 30px);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -14,9 +12,8 @@
     display: none;
   }
   .filter {
-    margin-top: 100px;
     width: 100%;
-    padding: 20px;
-    text-align: center;
+    padding: 20px 40px;
+    margin-bottom: 20px;
   }
 }

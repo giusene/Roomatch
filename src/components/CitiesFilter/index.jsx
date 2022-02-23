@@ -3,6 +3,7 @@ import { useState } from "react";
 // import { cities } from "./../../libs/cities";
 import { provData } from "./../../libs/prov";
 import styles from "./CitiesFilter.module.scss";
+import { BsFilterLeft } from "react-icons/bs";
 
 const CitiesFilter = ({ filter, setFilter, town, city }) => {
   const [prov, setProv] = useState(city);
@@ -24,7 +25,10 @@ const CitiesFilter = ({ filter, setFilter, town, city }) => {
   };
 
   return (
-    <>
+    <div className={styles.filter}>
+      <p>
+        <BsFilterLeft />
+      </p>
       <select
         className={styles.select}
         name="city"
@@ -54,7 +58,7 @@ const CitiesFilter = ({ filter, setFilter, town, city }) => {
           </option>
         ))}
       </select> */}
-    </>
+    </div>
   );
 };
 

@@ -14,55 +14,67 @@ import { useSelector, useDispatch } from "react-redux";
 
 const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
   const dispatch = useDispatch();
-  const loading = useSelector((store) => store.loading);
-  const loggedUser = useSelector((store) => store.user);
+  const loading = useSelector(store => store.loading);
+  const loggedUser = useSelector(store => store.user);
 
   const currentItemDetails = isRoom ? data.friendlyWith : data.iam;
   const currentItem = data;
 
   const likeFunc = () => {
-    dispatch(isRoom
-      ? likeDislike(
-        {
-          userId: loggedUser._id,
-          ilike: currentItem.roomId,
-        },
-        currentItem.roomId,
-        "addlike"
-      )
-      : peoplelikeDislike(
-        {
-          roomId: loggedUser.roomId.roomId,
-          roomilike: currentItem.id,
-        },
-        currentItem.id,
-        "addlike"
-      )
+    dispatch(
+      isRoom
+        ? likeDislike(
+            {
+              userId: loggedUser._id,
+              ilike: currentItem.roomId,
+            },
+            currentItem.roomId,
+            "addlike"
+          )
+        : peoplelikeDislike(
+            {
+              roomId: loggedUser.roomId.roomId,
+              roomilike: currentItem.id,
+            },
+            currentItem.id,
+            "addlike"
+          )
     );
   };
 
   const genericDetails = () => (
     <fieldset className={styles.fieldset}>
-      <legend><strong>{isRoom ? "Friendly for" : "I'am"}</strong></legend>
+      <legend>
+        <strong>{isRoom ? "Friendly for" : "I'am"}</strong>
+      </legend>
       <section>
         <div className={styles.flexColumn}>
           <div className={styles.char}>
             <span
-              className={parseInt(currentItemDetails.lgbtq) ? styles.active : ""}>
+              className={
+                parseInt(currentItemDetails.lgbtq) ? styles.active : ""
+              }
+            >
               <RiRainbowLine />
             </span>
             LGBTQ+
           </div>
           <div className={styles.char}>
             <span
-              className={parseInt(currentItemDetails.pet_owner) ? styles.active : ""}>
+              className={
+                parseInt(currentItemDetails.pet_owner) ? styles.active : ""
+              }
+            >
               <GiCat />
             </span>
             Pet Owner
           </div>
           <div className={styles.char}>
             <span
-              className={parseInt(currentItemDetails.multicultural) ? styles.active : ""}>
+              className={
+                parseInt(currentItemDetails.multicultural) ? styles.active : ""
+              }
+            >
               <FaHandSpock />
             </span>
             Multicultural
@@ -71,21 +83,28 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
         <div className={styles.flexColumn}>
           <div className={styles.char}>
             <span
-              className={parseInt(currentItemDetails.veg) ? styles.active : ""}>
+              className={parseInt(currentItemDetails.veg) ? styles.active : ""}
+            >
               <RiPlantFill />
             </span>
             Veg
           </div>
           <div className={styles.char}>
             <span
-              className={parseInt(currentItemDetails.smooker) ? styles.active : ""}>
+              className={
+                parseInt(currentItemDetails.smooker) ? styles.active : ""
+              }
+            >
               <FaSmoking />
             </span>
             Smoker
           </div>
           <div className={styles.char}>
             <span
-              className={parseInt(currentItemDetails.party_lover) ? styles.active : ""}>
+              className={
+                parseInt(currentItemDetails.party_lover) ? styles.active : ""
+              }
+            >
               <GiPartyPopper />
             </span>
             Party Lover
@@ -98,7 +117,9 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
   const aboutTheFlat = () => (
     <>
       <fieldset className={styles.fieldset}>
-        <legend><strong>About the flat</strong></legend>
+        <legend>
+          <strong>About the flat</strong>
+        </legend>
         {/* Number of roommates in flat */}
         <p className={styles.roommatesTitle}>
           Roommates:
@@ -120,19 +141,24 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
           <div className={styles.flexColumn}>
             <div className={styles.char}>
               <span
-                className={currentItem.aboutFlat.bedrooms ? styles.active : ""}>
+                className={currentItem.aboutFlat.bedrooms ? styles.active : ""}
+              >
                 <BiBed className={styles.icon} />
               </span>
               {currentItem.aboutFlat.bedrooms} Bedrooms
             </div>
             <div className={styles.char}>
-              <span className={currentItem.aboutFlat.bathrooms ? styles.active : ""}>
+              <span
+                className={currentItem.aboutFlat.bathrooms ? styles.active : ""}
+              >
                 <FaShower className={styles.icon} />
               </span>
               {currentItem.aboutFlat.bathrooms} Bathrooms
             </div>
             <div className={styles.char}>
-              <span className={currentItem.aboutFlat.kitchen ? styles.active : ""}>
+              <span
+                className={currentItem.aboutFlat.kitchen ? styles.active : ""}
+              >
                 <GiCook className={styles.icon} />
               </span>
               {currentItem.aboutFlat.kitchen} Kitchen
@@ -142,21 +168,22 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
           <div className={styles.flexColumn}>
             <div className={styles.char}>
               <span
-                className={currentItem.aboutFlat.airCond ? styles.active : ""}>
+                className={currentItem.aboutFlat.airCond ? styles.active : ""}
+              >
                 <BsSnow />
               </span>
               Air Conditioning
             </div>
             <div className={styles.char}>
               <span
-                className={currentItem.aboutFlat.billsInc ? styles.active : ""}>
+                className={currentItem.aboutFlat.billsInc ? styles.active : ""}
+              >
                 <BsCash />
               </span>
               Bills included
             </div>
             <div className={styles.char}>
-              <span
-                className={currentItem.aboutFlat.wifi ? styles.active : ""}>
+              <span className={currentItem.aboutFlat.wifi ? styles.active : ""}>
                 <BsWifi />
               </span>
               Wi-Fi
@@ -170,26 +197,24 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
   const photoGallery = () => (
     <section className={styles.gallery}>
       <p>Gallery</p>
-      <PhotoGallery photos={isRoom ? [currentItem.roomPhoto] : [currentItem.photo]} />
+      <PhotoGallery
+        photos={isRoom ? [currentItem.roomPhoto] : [currentItem.photo]}
+      />
     </section>
-  )
+  );
 
   const roomDetails = () => (
     <>
       <div className={styles.flexHeaderInfo}>
         <div className={styles.headerInfo}>
-          <h3>
-            {data.roomType} Room
-          </h3>
+          <h3>{data.roomType} Room</h3>
           <div className={styles.subHeader}>
             <p>in {data.roomAddress}</p>
             <p>
               {data.town} ({data.city})
             </p>
           </div>
-          <h4>
-            Price: {data.rentPrice} Euro
-          </h4>
+          <h4>Price: {data.rentPrice},00€/month</h4>
         </div>
 
         <div className={styles.likeBtn}>
@@ -210,7 +235,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
       <div className={styles.flexHeaderInfo}>
         <div className={styles.headerInfo}>
           <h3>
-            {data.name} {data.surname} {data.age ? (data.age) : null}
+            {data.name} {data.surname} {data.age ? data.age : null}
           </h3>
           <div className={styles.subHeader}>
             <p>

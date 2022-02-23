@@ -1,14 +1,20 @@
 @import "./../../libs/variables.scss";
 .main {
-  height: 100vh;
   background-color: $background;
   overflow-y: auto;
-  padding-bottom: calc(150px + 30px);
+  padding-top: 10px;
+  padding-bottom: 100px;
   .title {
-    margin-top: 130px;
-    margin-left: 10%;
+    margin-left: 40px;
   }
-  .text {
-    margin-left: 10%;
+  .messPrev {
+    .text {
+      margin-left: 40px;
+    }
+    p {
+      padding: 20px 40px;
+      margin-left: 10px;
+      color: $mainLightBlue;
+    }
   }
 }

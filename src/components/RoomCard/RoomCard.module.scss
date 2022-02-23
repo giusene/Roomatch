@@ -1,6 +1,8 @@
 @import "./../../libs/variables.scss";
 
 .main {
+  position: relative;
+  margin-bottom: 20px;
   .slider {
     width: 22rem;
     margin: 0 auto;
@@ -12,8 +14,6 @@
     .sliderWrapper {
       display: flex;
       justify-content: flex-start;
-      margin-top: 50px;
-
       width: 100%;
       position: relative;
       transition: all 0.2s ease;
@@ -79,7 +79,6 @@
     height: 30rem;
     border-radius: 21px;
     margin-bottom: 25px;
-    padding: 40px 20px;
     box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
     position: relative;
     overflow-x: hidden;
@@ -89,7 +88,7 @@
     .leftBtn {
       top: calc(50% - 33px);
       left: 5px;
-      position: absolute;
+      position: sticky;
       color: rgba(202, 202, 202, 0.442);
       background-color: rgba(80, 80, 80, 0);
       border: none;
@@ -118,7 +117,8 @@
       margin-top: 1.5rem;
     }
     .gallery {
-      margin: 42px 0;
+      margin: 40px 0;
+      margin: 0 20px;
       p {
         margin-bottom: 0.5rem;
       }

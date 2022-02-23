@@ -7,34 +7,42 @@ import Likes from "../Likes";
 import Matches from "../Matches";
 import Profile from "../Profile";
 import Users from "../Users";
-import RoomDetails from '../RoomDetails'
-import UserDetails from '../UserDetails'
+import RoomDetails from "../RoomDetails";
+import UserDetails from "../UserDetails";
 import { useSelector } from "react-redux";
-import NewRoom from '../NewRoom'
-import Messages from '../Messages'
+import NewRoom from "../NewRoom";
+import Messages from "../Messages";
 
 const Main = () => {
-  const user = useSelector(state => state.user)
+  const user = useSelector(state => state.user);
 
   return (
     <div className={styles.main}>
       <Header />
-      <Routes>
-        <Route path="/list" element={user.roomId.roomId === '' ? <Rooms /> : <Users />} />
-        {/* <Route path="/rooms" element={<Rooms />} /> */}
-        <Route path="/likes" element={<Likes />} />
-        <Route path="/matches" element={<Matches />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/users" element={<Users />} />
-        <Route path="/roomdetails" element={<RoomDetails />} />
-        <Route path="/userdetails" element={<UserDetails />} />
-        <Route path="/addroom" element={<NewRoom />} />
-        <Route path="/messages" element={<Messages />} />
-      </Routes>
+      <div className={styles.mainContainer}>
+        <Routes>
+          <Route
+            path="/list"
+            element={user.roomId.roomId === "" ? <Rooms /> : <Users />}
+          />
+          <Route
+            path="/"
+            element={user.roomId.roomId === "" ? <Rooms /> : <Users />}
+          />
+          {/* <Route path="/rooms" element={<Rooms />} /> */}
+          <Route path="/likes" element={<Likes />} />
+          <Route path="/matches" element={<Matches />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/roomdetails" element={<RoomDetails />} />
+          <Route path="/userdetails" element={<UserDetails />} />
+          <Route path="/addroom" element={<NewRoom />} />
+          <Route path="/messages" element={<Messages />} />
+        </Routes>
+      </div>
       <MainNav />
     </div>
   );
 };
 
 export default Main;
-

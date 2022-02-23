@@ -1,11 +1,8 @@
 @import "./../../libs/variables.scss";
 
 .main {
-  position: fixed;
-  width: 100%;
   bottom: 0;
   height: 80px;
-  background: linear-gradient(180deg, #f4fbff, $mainLightBlue);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,14 +11,14 @@
     display: flex;
     li {
       margin: 28px;
-      font-size: 33px;
-      color: $iconcolor;
+      font-size: 24px;
+      color: white;
       position: relative;
       img {
         margin: 0;
       }
       &:hover {
-        color: $mainLightBlue;
+        color: white;
       }
       span {
         position: absolute;
@@ -40,8 +37,7 @@
     }
   }
 }
-
-@media all and (min-width: 990px) {
+@media all and (max-width: 990px) {
   .main {
     display: none;
   }

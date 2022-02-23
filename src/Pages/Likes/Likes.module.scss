@@ -4,9 +4,10 @@
   height: 100%;
   background-color: $background;
   overflow-y: auto;
+  padding-top: 10px;
   .title {
     display: inline-block;
-    margin: 140px auto auto 70px;
+    margin: 0 40px;
   }
 
   .cardContainer {

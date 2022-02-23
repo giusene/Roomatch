@@ -88,8 +88,8 @@ export const newRoom = (body, setRedirect) => {
         "roomatch",
         JSON.stringify({ myId: data._id, token: data.token })
       );
-      setRedirect("/profile");
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
+      setRedirect("/profile");
     } catch (e) {
       dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
     }

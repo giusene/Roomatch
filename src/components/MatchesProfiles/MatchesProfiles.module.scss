@@ -9,7 +9,10 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: row-reverse;
-
+    p {
+      padding: 20px 40px;
+      color: $mainLightBlue;
+    }
     .matches {
       display: flex;
       flex-direction: column;

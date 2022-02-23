@@ -14,8 +14,8 @@ import { useRef } from "react";
 
 const RoomCard = ({ room }) => {
   const dispatch = useDispatch();
-  const user = useSelector((store) => store.user);
-  const loading = useSelector((store) => store.loading);
+  const user = useSelector(store => store.user);
+  const loading = useSelector(store => store.loading);
 
   const likeFunc = () => {
     dispatch(
@@ -71,8 +71,8 @@ const RoomCard = ({ room }) => {
                   <progress value={room.compatibility} max="100"></progress>
                 </div>
                 <div>
-                  {user.ilike.filter((like) => like.roomId === room._id)
-                    .length > 0 ? (
+                  {user.ilike.filter(like => like.roomId === room._id).length >
+                  0 ? (
                     <FaHeart
                       onClick={() => !loading && dislikeFunc()}
                       className={`${styles.fillHeart} ${styles.icon}`}
@@ -95,6 +95,12 @@ const RoomCard = ({ room }) => {
           </div>
 
           <div className={styles.infoCardContainer}>
+            <button
+              className={styles.leftBtn}
+              onClick={() => sliderCommands(swipe, "left")}
+            >
+              <BsArrowLeftCircle />
+            </button>
             <div className={styles.headerCardInfo}>
               <div className={styles.title}>
                 <h3>Single room{room.type}</h3>
@@ -103,7 +109,7 @@ const RoomCard = ({ room }) => {
                 </p>
               </div>
               <div className={styles.likeBtn}>
-                {user.ilike.filter((like) => like.roomId === room._id).length >
+                {user.ilike.filter(like => like.roomId === room._id).length >
                 0 ? (
                   <FaHeart
                     onClick={() => !loading && dislikeFunc()}
@@ -235,12 +241,6 @@ const RoomCard = ({ room }) => {
               <p>Gallery</p>
               <PhotoGallery photos={room.roomPhotos} />
             </section>
-            <button
-              className={styles.leftBtn}
-              onClick={() => sliderCommands(swipe, "left")}
-            >
-              <BsArrowLeftCircle />
-            </button>
           </div>
         </div>
       </div>
