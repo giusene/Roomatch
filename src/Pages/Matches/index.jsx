@@ -34,7 +34,7 @@ const Matches = () => {
               ))}
             </>
           ) : (
-            <p>no message available</p>
+            <p className={styles.noitem}>no message available</p>
           )}
         </div>
       </div>
