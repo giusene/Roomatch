@@ -17,10 +17,13 @@
       font-size: 33px;
       color: $iconcolor;
       position: relative;
+      img {
+        margin: 0;
+      }
       &:hover {
         color: $mainLightBlue;
       }
-      span{
+      span {
         position: absolute;
         right: -10px;
         top: -8px;

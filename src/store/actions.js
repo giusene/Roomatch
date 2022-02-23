@@ -8,28 +8,31 @@ import {
   USER_UPDATE_ERROR,
   FETCH_LOGOUT_REQUEST,
   FETCH_LOGOUT_SUCCESS,
-  FETCH_LOGOUT_ERROR
+  FETCH_LOGOUT_ERROR,
 } from "./constants";
 
 import { backend_URL } from "../libs/functions";
 
 export const loginAction = (loginInput, setRedirect, setMessage) => {
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch({ type: FETCH_LOGIN_REQUEST });
     try {
       const { data } = await axios.post(backend_URL + "/login", loginInput);
       setRedirect("/list");
-      window.localStorage.setItem("roomatch", JSON.stringify({ myId: data._id, token: data.token }));
+      window.localStorage.setItem(
+        "roomatch",
+        JSON.stringify({ myId: data._id, token: data.token })
+      );
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
     } catch (e) {
       dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
-      setMessage(e.response.data.message)
+      setMessage(e.response.data.message);
     }
   };
 };
 
-export const logoutAction = (logoutData) => {
-  return async (dispatch) => {
+export const logoutAction = logoutData => {
+  return async dispatch => {
     dispatch({ type: FETCH_LOGOUT_REQUEST });
     try {
       await axios.post(backend_URL + "/logout", logoutData);
@@ -42,27 +45,33 @@ export const logoutAction = (logoutData) => {
 };
 
 export const restoreSession = (body, setRedirect) => {
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch({ type: FETCH_LOGIN_REQUEST });
     try {
       const { data } = await axios.post(backend_URL + "/update", body);
-      window.localStorage.setItem("roomatch", JSON.stringify({ myId: data._id, token: data.token }));
+      window.localStorage.setItem(
+        "roomatch",
+        JSON.stringify({ myId: data._id, token: data.token })
+      );
       setRedirect("/list");
-      console.log(data)
+      console.log(data);
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
     } catch (e) {
-      console.log(e)
+      console.log(e);
       dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
     }
   };
 };
 
-export const updateAction = (body) => {
-  return async (dispatch) => {
+export const updateAction = body => {
+  return async dispatch => {
     dispatch({ type: FETCH_LOGIN_REQUEST });
     try {
       const { data } = await axios.post(backend_URL + "/update", body);
-      window.localStorage.setItem("roomatch", JSON.stringify({ myId: data._id, token: data.token }));
+      window.localStorage.setItem(
+        "roomatch",
+        JSON.stringify({ myId: data._id, token: data.token })
+      );
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
     } catch (e) {
       dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
@@ -71,11 +80,14 @@ export const updateAction = (body) => {
 };
 
 export const newRoom = (body, setRedirect) => {
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch({ type: FETCH_LOGIN_REQUEST });
     try {
       const { data } = await axios.post(backend_URL + "/rooms", body);
-      window.localStorage.setItem("roomatch", JSON.stringify({ myId: data._id, token: data.token }));
+      window.localStorage.setItem(
+        "roomatch",
+        JSON.stringify({ myId: data._id, token: data.token })
+      );
       setRedirect("/profile");
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
     } catch (e) {
@@ -84,8 +96,8 @@ export const newRoom = (body, setRedirect) => {
   };
 };
 
-export const newMessage = (body) => {
-  return async (dispatch) => {
+export const newMessage = body => {
+  return async dispatch => {
     dispatch({ type: FETCH_LOGIN_REQUEST });
     try {
       const { data } = await axios.post(backend_URL + "/message", body);
@@ -96,12 +108,11 @@ export const newMessage = (body) => {
   };
 };
 
-export const deleteRoom = (roomId) => {
-  return async (dispatch) => {
+export const readMessage = body => {
+  return async dispatch => {
     dispatch({ type: FETCH_LOGIN_REQUEST });
     try {
-      const { data } = await axios.delete(backend_URL + "/rooms/" + roomId);
-      window.localStorage.setItem("roomatch", JSON.stringify({ myId: data._id, token: data.token }));
+      const { data } = await axios.post(backend_URL + "/readmessage", body);
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
     } catch (e) {
       dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
@@ -109,10 +120,24 @@ export const deleteRoom = (roomId) => {
   };
 };
 
-
+export const deleteRoom = roomId => {
+  return async dispatch => {
+    dispatch({ type: FETCH_LOGIN_REQUEST });
+    try {
+      const { data } = await axios.delete(backend_URL + "/rooms/" + roomId);
+      window.localStorage.setItem(
+        "roomatch",
+        JSON.stringify({ myId: data._id, token: data.token })
+      );
+      dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
+    } catch (e) {
+      dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
+    }
+  };
+};
 
 export const likeDislike = (body, roomId, type) => {
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch({ type: USER_UPDATE_REQUEST });
     try {
       const { data } = await axios.patch(
@@ -127,7 +152,7 @@ export const likeDislike = (body, roomId, type) => {
 };
 
 export const peoplelikeDislike = (body, userId, type) => {
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch({ type: USER_UPDATE_REQUEST });
     try {
       const { data } = await axios.patch(
@@ -142,7 +167,7 @@ export const peoplelikeDislike = (body, userId, type) => {
 };
 
 export const changeChar = (body, userId) => {
-  return async (dispatch) => {
+  return async dispatch => {
     dispatch({ type: USER_UPDATE_REQUEST });
     try {
       const { data } = await axios.patch(

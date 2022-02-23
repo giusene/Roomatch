@@ -9,20 +9,21 @@ const MatchesProfiles = () => {
   const user = useSelector(state => state.user);
 
   useEffect(() => {
-    setTimeout(() => {
-      dispatch(
-        changeChar(
-          [
-            {
-              propName: "newMatch",
-              value: [],
-            },
-          ],
-          user._id
-        )
-      );
-    }, 500);
-  }, [dispatch, user._id]);
+    user.newMatch.length > 0 &&
+      setTimeout(() => {
+        dispatch(
+          changeChar(
+            [
+              {
+                propName: "newMatch",
+                value: [],
+              },
+            ],
+            user._id
+          )
+        );
+      }, 500);
+  }, [dispatch, user._id, user.newMatch.length]);
 
   return (
     <div className={styles.container}>

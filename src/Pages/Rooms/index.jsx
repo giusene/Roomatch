@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import styles from "./Rooms.module.scss";
 import RoomCard from "../../components/RoomCard/RoomCard";
 import { httpPOST } from "../../libs/http";
-
 import CitiesFilter from "./../../components/CitiesFilter";
 
 const Rooms = () => {

@@ -6,35 +6,37 @@ import styles from "./ChatForm.module.scss";
 const ChatForm = ({ interlocutor }) => {
   const [message, setMessage] = useState("");
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
+  const user = useSelector(state => state.user);
 
-  const handleMessage = (e) => {
+  const handleMessage = e => {
     e.preventDefault();
-    dispatch(
-      newMessage({
-        myId: user._id,
-        friendId: interlocutor,
-        message: {
-          date: new Date(),
-          author: user._id,
-          text: message,
-          read: false,
-        },
-      })
-    );
-    setMessage("");
+    if (message.trim() !== "") {
+      dispatch(
+        newMessage({
+          myId: user._id,
+          friendId: interlocutor,
+          message: {
+            date: new Date(),
+            author: user._id,
+            text: message,
+            read: false,
+          },
+        })
+      );
+      setMessage("");
+    }
   };
 
   return (
     <div className={styles.main}>
-      <form onSubmit={(e) => handleMessage(e)}>
+      <form onSubmit={e => handleMessage(e)}>
         <input
           value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          onChange={e => setMessage(e.target.value)}
           type="text"
           id="message"
           name="message"
-          required
+          autoComplete="off"
         />
         <button>Send</button>
       </form>

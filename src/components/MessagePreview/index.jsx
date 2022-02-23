@@ -44,7 +44,7 @@ const MessagePreview = ({ message }) => {
               { addSuffix: true, locale: it }
             )}
           </p>
-          <p className={styles.details}>
+          <div className={styles.details}>
             {!message.discussion[message.discussion.length - 1].read && (
               <span></span>
             )}
@@ -55,7 +55,7 @@ const MessagePreview = ({ message }) => {
               <p className={styles.author}>{message.user.name}: </p>
             )}
             {message.discussion[message.discussion.length - 1].text}
-          </p>
+          </div>
         </div>
         <div className={styles.icon}>
           <BsChatRightDots />
