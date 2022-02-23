@@ -3,7 +3,11 @@ import styles from "./PlaceHolder.module.scss";
 const PlaceHolder = () => {
   return (
     <div className={styles.main}>
-      <p>nothing to show</p>;
+      <div className={styles.img}></div>
+      <div className={styles.cloud}>
+        <p>Mhhh!</p>
+        <p>Nothing here!</p>
+      </div>
     </div>
   );
 };

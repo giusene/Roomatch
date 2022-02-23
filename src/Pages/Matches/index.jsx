@@ -4,12 +4,12 @@ import MessagePreview from "../../components/MessagePreview";
 import styles from "./Matches.module.scss";
 
 const Matches = () => {
-  const user = useSelector(state => state.user);
+  const user = useSelector((state) => state.user);
   let messageList = [];
 
   if (Object.keys(user.messages).length > 0) {
     Object.keys(user.messages).map(
-      message => (messageList = [...messageList, user.messages[message]])
+      (message) => (messageList = [...messageList, user.messages[message]])
     );
 
     messageList.sort((a, b) => {
@@ -23,7 +23,7 @@ const Matches = () => {
   return (
     <>
       <div className={styles.main}>
-        <h3 className={styles.title}>Matchs</h3>
+        <h3 className={styles.title}>Matches</h3>
         <MatchesProfiles />
         <div className={styles.separator}></div>
         <div className={styles.messPrev}>
@@ -35,7 +35,9 @@ const Matches = () => {
               ))}
             </>
           ) : (
-            <p className={styles.noitem}>no message available</p>
+            <p className={styles.noitem}>
+              No message available. To start a conversation, click on a match!
+            </p>
           )}
         </div>
       </div>

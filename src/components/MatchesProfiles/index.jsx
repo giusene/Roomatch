@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const MatchesProfiles = () => {
   const dispatch = useDispatch();
-  const user = useSelector(state => state.user);
+  const user = useSelector((state) => state.user);
 
   useEffect(() => {
     user.newMatch.length > 0 &&
@@ -32,7 +32,7 @@ const MatchesProfiles = () => {
           user.roomId.matches.length > 0 ? (
             user.roomId.matches.map((userMatch, index) => (
               <div key={index} className={styles.matches}>
-                {user.newMatch.filter(item => item === userMatch.id).length >
+                {user.newMatch.filter((item) => item === userMatch.id).length >
                   0 && <span>New</span>}
                 <Link to="/messages" state={userMatch}>
                   <img
@@ -44,12 +44,12 @@ const MatchesProfiles = () => {
               </div>
             ))
           ) : (
-            <p>no matches available</p>
+            <p>No match available. To make a match, go and press like!</p>
           )
         ) : user.matches.length > 0 ? (
-          user.matches.map(room => (
+          user.matches.map((room) => (
             <div key={room.roomId} className={styles.matches}>
-              {user.newMatch.filter(item => item === room.roomId).length >
+              {user.newMatch.filter((item) => item === room.roomId).length >
                 0 && <span>New</span>}
               <Link to="/messages" state={room}>
                 <img
@@ -61,7 +61,7 @@ const MatchesProfiles = () => {
             </div>
           ))
         ) : (
-          <p>no matches available</p>
+          <p>No match available. To make a match, go and press like!</p>
         )}
       </div>
     </div>

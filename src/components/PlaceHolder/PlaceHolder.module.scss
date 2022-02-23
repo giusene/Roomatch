@@ -7,4 +7,38 @@
   padding: 40px;
   color: $mainLightBlue;
   border: 2px solid $mainLightBlue;
+  border-radius: $radiusDiv;
+  background-image: url(../../../public/SVG/background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 3px 13px rgba(0, 0, 0, 0.3);
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  .img {
+    width: 250px;
+    height: 190px;
+    background-image: url(../../../public/SVG/girl.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  .cloud {
+    width: 150px;
+    height: auto;
+    border-radius: 30px;
+    background-color: white;
+    border: 1px solid $mainLightBlue;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 0px 5px rgba(0, 0, 0, 0.15);
+
+    padding: 20px 10px;
+    text-align: center;
+
+    font-size: $smallSize;
+    font-family: $titleFont;
+    font-weight: bold;
+  }
 }
