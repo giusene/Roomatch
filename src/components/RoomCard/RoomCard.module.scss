@@ -6,7 +6,6 @@
     margin: 0 auto;
     left: calc(50% - 11rem);
     overflow-y: hidden;
-    cursor: pointer;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -40,6 +39,7 @@
       background-color: rgba(80, 80, 80, 0);
       border: none;
       font-size: 2rem;
+      cursor: pointer;
     }
     .cardText {
       position: absolute;
@@ -65,6 +65,7 @@
         .icon {
           color: lighten($mainPink, 8);
           font-size: 2rem;
+          cursor: pointer;
         }
       }
     }
@@ -93,6 +94,7 @@
       background-color: rgba(80, 80, 80, 0);
       border: none;
       font-size: 2rem;
+      cursor: pointer;
     }
     .headerCardInfo {
       display: flex;
@@ -104,6 +106,7 @@
         .icon {
           color: lighten($mainPink, 8);
           font-size: 2rem;
+          cursor: pointer;
         }
       }
     }
@@ -149,7 +152,6 @@
         font-weight: 400;
         font-size: 12px;
         margin: 5px 0.5rem;
-        cursor: pointer;
         span {
           color: #b9d1e0;
           margin-right: 8px;
