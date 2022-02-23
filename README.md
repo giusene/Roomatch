@@ -1,39 +1,97 @@
-# ROOMATCH
+<p align="center">
+  <img src="./src/libs/img/readmelogo.png" alt="roomatch" width=500/>
+</p>
 
-## Find your perfect room mate
+<h2 align="center">Tired of roomate horror stories? </h2>
 
-React App to find your perfect room mate. You can select rooms or people according to their way of life (or being).
+<p align="center">
+  <img src="https://res.cloudinary.com/dgfm4xoob/image/upload/v1645454073/roomatch_aihfku.png" alt="roomatch"/>
+</p>
 
-![everywhere](https://res.cloudinary.com/dgfm4xoob/image/upload/v1645454073/roomatch_aihfku.png)
-![every time](https://res.cloudinary.com/dgfm4xoob/image/upload/v1645455793/Free_Workstation_Person_Holding_Smartphone_Mockup_twabji.png)
+<h2 align="center">We've got great news for you!</h2>
+<hr>
 
-**ver**: 0.1.0
+<h3 align="center"><b>A perfect place, a perfect price, a perfect match.</b></h3>
 
-**how to install**:
+<p>Create your personal roommate profile and get started within minutes. Don't let the length of the registration form scare you away, it's our way to ensure you can point out anything that'd make you feel at ease and comfortable with your roommate-to-be: get specific with things like pet preference, room features,  neighborhood details, and more!</p>
+<p>While you're here, you can navigate through a list of rooms made available by other users looking for a roommate. Following some simple steps, you'll be able to find the best solution based upon your actual needs and your current budget. Either this or you can share your own!</p>
+<p>As we already mentioned, no more roommate horror stories! Find and get in touch only with the people who match with you and fit the most your likings.</p>
+
+<hr>
+
+<h2>Technologies used</h2>
+<h3>Frontend:</h3>
+  <ul>
+    <li>HTML</li>
+    <li>Javascript</li>
+    <li>React.js</li>
+    <li>Redux</li>
+    <li>Axios</li>
+    <li>SASS/SCSS</li>
+  </ul>
+  <h3>Backend:</h3>
+  <ul>
+    <li>Express - Node JS</li>
+    <li>MongoDB</li>
+  </ul>
+
+<hr>
+
+<h2>How to run it:</h2>
+
+Once you've forket, downloaded the zip file or cloned the repository, run the following command to install all the libraries you need to run it properly:
 
 ```
-$ git clone https://github.com/ilPhil/roomatch.git
-$ cd ../path/to/the/file
-$ npm install
-$ npm start
+npm i 
 ```
 
-**dependencies**:
+Then, run the development server:
 
-- "axios": "^0.25.0"
-- "react": "^17.0.2"
-- "react-icons": "^4.3.1"
-- "redux-thunk": "^2.4.1"
-- "sass": "^1.49.7"
+```bash
+npm start
+# or
+yarn start
+```
 
-**Authors**:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- Giuseppe Senettone [Giusene](https://github.com/giusene)
-- Ilenia Castellana [Kastellai](https://github.com/kastellai)
-- Stefania Galazzo [Galax](https://github.com/StefaniaGalazzo)
-- Rebecca Mollica [rebecca-xm](https://github.com/rebecca-xm)
-- Roberto Tirrito [reborto](https://github.com/reborto)
+<hr>
 
-**Tutor**:
+<h3>Made by:</h3>
+<ul>
+  <li>
+    <a href="https://github.com/giusene">
+      Giuseppe Senettone
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/kastellai">
+      Ilenia Castellana
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/StefaniaGalazzo">
+      Stefania Galazzo
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/rebecca-xm">
+      Rebecca Mollica
+    </a>
+  </li>
+  <li>
+    <a href="https://github.com/reborto">
+      Roberto Tirrito
+    </a>
+  </li>
+</ul>
 
-- Stefano Russo [ilPhil](https://github.com/ilPhil)
+<h3>Team Leader:</h3>
+<ul>
+  <li>
+    <a href="https://github.com/ilPhil">
+      Stefano Russo
+    </a>
+  </li>
+</ul>
+
