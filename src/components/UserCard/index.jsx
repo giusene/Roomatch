@@ -4,16 +4,16 @@ import styles from "./UserCard.module.scss";
 import { FiHeart } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
 import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { RiRainbowLine, RiPlantFill } from "react-icons/ri";
 import { GiCat, GiPartyPopper } from "react-icons/gi";
 
 import { FaHandSpock, FaSmoking } from "react-icons/fa";
 
-const UserCard = ({ userInfo }) => {
+const UserCard = ({ setResult, userInfo }) => {
   const dispatch = useDispatch();
-  const user = useSelector((store) => store.user);
-  const loading = useSelector((store) => store.loading);
+  const user = useSelector(store => store.user);
+  const loading = useSelector(store => store.loading);
 
   const likeFunc = () => {
     dispatch(
@@ -40,6 +40,11 @@ const UserCard = ({ userInfo }) => {
       )
     );
   };
+
+  useEffect(() => {
+    setResult(true);
+  }, [setResult]);
+
   const swipe = useRef();
   const sliderCommands = (el, dir) => {
     if (dir === "right") el.current.style.right = `calc(100% - 1%)`;
@@ -73,7 +78,7 @@ const UserCard = ({ userInfo }) => {
                   <progress value={userInfo.compatibility} max="100"></progress>
                 </div>
                 <div>
-                  {user.roomId.ilike.filter((like) => like.id === userInfo._id)
+                  {user.roomId.ilike.filter(like => like.id === userInfo._id)
                     .length > 0 ? (
                     <FaHeart
                       onClick={() => !loading && dislikeFunc()}
@@ -107,7 +112,7 @@ const UserCard = ({ userInfo }) => {
                 </p>
               </div>
               <div className={styles.likeBtn}>
-                {user.roomId.ilike.filter((like) => like.id === userInfo._id)
+                {user.roomId.ilike.filter(like => like.id === userInfo._id)
                   .length > 0 ? (
                   <FaHeart
                     onClick={() => !loading && dislikeFunc()}

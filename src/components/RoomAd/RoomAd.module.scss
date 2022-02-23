@@ -8,6 +8,10 @@
     .roomComp {
       display: flex;
       align-items: center;
+      border: 2px solid #b9d1e0;
+      border-radius: 21px;
+      box-shadow: 0 3px 13px rgb(0 0 0 / 25%);
+
       .img {
         min-width: 136px;
         height: 136px;
@@ -16,7 +20,7 @@
         background-size: cover;
         overflow: hidden;
         position: relative;
-        margin-right: 10px;
+        margin-right: 20px;
         .likes {
           position: absolute;
           bottom: 5px;

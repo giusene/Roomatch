@@ -47,7 +47,7 @@ const RoomDetails = () => {
   });
 
   useEffect(() => {
-    httpGET(`/rooms/${roomInfo.state}`).then((data) => {
+    httpGET(`/rooms/${roomInfo.state}`).then(data => {
       setRoomDetails(data);
     });
   }, [roomInfo.state]);
@@ -81,12 +81,11 @@ const RoomDetails = () => {
           {roomDetails.roommates.others}
         </span>
       </p>
-      <div>
+      <div className={styles.boxContainer}>
         <div className={styles.charsetContainer}>
           <p className={styles.charTitle}>Friendly for</p>
           <div className={styles.charSet}>
             <div className={styles.char}>
-              {console.log(roomDetails)}
               <span
                 className={
                   roomDetails.friendlyWith.lgbtq === "1" ? styles.active : ""
@@ -204,12 +203,10 @@ const RoomDetails = () => {
             </div>
           </div>
         </div>
-
-        <div className={styles.gallery}>
-          <p>Gallery</p>
-          <PhotoGallery photos={roomDetails.roomPhotos} />
-        </div>
-        {/* {roomLikes.length ? getLikes() : null} */}
+      </div>
+      <div className={styles.gallery}>
+        <p>Gallery</p>
+        <PhotoGallery photos={roomDetails.roomPhotos} />
       </div>
     </div>
   );

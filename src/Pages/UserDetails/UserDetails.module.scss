@@ -9,31 +9,35 @@
     position: relative;
     color: #fff;
     z-index: 2;
-    margin-top: 80px;
-    padding-left: 45px;
+    max-width: 400px;
+    margin: 25px auto;
     p {
       font-weight: 400;
-      font-size: 12px;
+      font-size: 14px;
       line-height: 14px;
-      margin: 5px 0;
+      margin: 5px 0 0 20px;
     }
     h3 {
       font-family: $paragraphFont;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 24px;
+      margin-left: 20px;
+      padding-top: 80px;
     }
   }
   .header {
-    width: 100vw;
+    max-width: 400px;
     height: 208px;
     background-size: cover;
     background-position: center;
     position: relative;
-    margin-top: -160px;
+    margin: -200px auto 0;
+    border-radius: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
     &::before {
       content: "";
       position: absolute;
+      border-radius: 20px;
       background: linear-gradient(
         180deg,
         rgba(72, 0, 48, 0.68) 0%,
@@ -57,6 +61,7 @@
   }
   .charsetContainer {
     width: 80%;
+    max-width: 400px;
     margin: 0 auto;
     border: 2px solid $mainLightBlue;
     border-radius: $radiusDiv;
@@ -64,8 +69,9 @@
     box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
 
     .charTitle {
-      margin: 30px 0 20px 30px;
-      font-weight: 400;
+      margin: 30px 0 10px 30px;
+      font-weight: bold;
+      color: $mainLightBlue;
       font-size: 14px;
     }
     .charSet {

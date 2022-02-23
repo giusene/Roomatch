@@ -10,9 +10,9 @@ import { FaHeart } from "react-icons/fa";
 import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
 
 import PhotoGallery from "../PhotoGallery";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
-const RoomCard = ({ room }) => {
+const RoomCard = ({ setResult, room }) => {
   const dispatch = useDispatch();
   const user = useSelector(store => store.user);
   const loading = useSelector(store => store.loading);
@@ -42,6 +42,10 @@ const RoomCard = ({ room }) => {
       )
     );
   };
+
+  useEffect(() => {
+    setResult(true);
+  }, [setResult]);
 
   const swipe = useRef();
   const sliderCommands = (el, dir) => {

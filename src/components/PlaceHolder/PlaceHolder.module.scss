@@ -1,0 +1,10 @@
+@import "./../../libs/variables.scss";
+
+.main {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+  color: $mainLightBlue;
+  border: 2px solid $mainLightBlue;
+}

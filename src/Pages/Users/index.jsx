@@ -4,10 +4,12 @@ import UserCard from "../../components/UserCard";
 import { httpPOST } from "../../libs/http";
 import { useSelector } from "react-redux";
 import CitiesFilter from "./../../components/CitiesFilter";
+import PlaceHolder from "../../components/PlaceHolder";
 
 const Users = () => {
   const myData = useSelector(state => state.user);
   const [peopleList, setPeopleList] = useState([]);
+  const [result, setResult] = useState(false);
   const [filter, setFilter] = useState({
     city: myData.city,
     town: myData.town,
@@ -25,6 +27,7 @@ const Users = () => {
         <CitiesFilter
           filter={filter}
           setFilter={setFilter}
+          setResult={setResult}
           town={myData.roomId.town}
           city={myData.roomId.city}
         />
@@ -35,9 +38,10 @@ const Users = () => {
           myData._id !== user._id &&
           user.roomId.roomId === "" &&
           filter.city === user.city && (
-            <UserCard userInfo={user} key={user._id} />
+            <UserCard setResult={setResult} userInfo={user} key={user._id} />
           )
       )}
+      {!result && <PlaceHolder />}
     </div>
   );
 };

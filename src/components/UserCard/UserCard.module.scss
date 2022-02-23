@@ -64,6 +64,21 @@
           flex-direction: column;
           margin: 0.5rem 0;
           font-size: $superSmall;
+          progress[value] {
+            -webkit-appearance: none;
+            appearance: none;
+            margin-top: 5px;
+            width: 100px;
+            height: 10px;
+          }
+          progress[value]::-webkit-progress-bar {
+            background-color: #eee;
+            border-radius: 2px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+          }
+          progress[value]::-webkit-progress-value {
+            background-color: $mainPink;
+          }
         }
         .icon {
           color: lighten($mainPink, 8);

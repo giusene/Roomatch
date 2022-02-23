@@ -36,9 +36,11 @@ const UserDetails = () => {
   return (
     <div className={styles.main}>
       <div className={styles.info}>
-        <h3>{userDetails.name} {userDetails.surname}</h3>
+        <h3>
+          {userDetails.name} {userDetails.surname}
+        </h3>
         <p>{userDetails.gender}</p>
-         <p>{userDetails.age}</p>
+        <p>Age {userDetails.age}</p>
         <p>
           {userDetails.town} ({userDetails.city})
         </p>
@@ -54,7 +56,7 @@ const UserDetails = () => {
             <div className={styles.char}>
               <span
                 className={
-                parseInt(userDetails.iam.lgbtq) === 1 ? styles.active : ""
+                  parseInt(userDetails.iam.lgbtq) === 1 ? styles.active : ""
                 }
               >
                 <RiRainbowLine />
@@ -64,9 +66,7 @@ const UserDetails = () => {
             <div className={styles.char}>
               <span
                 className={
-                  parseInt(userDetails.iam.pet_owner) === 1
-                    ? styles.active
-                    : ""
+                  parseInt(userDetails.iam.pet_owner) === 1 ? styles.active : ""
                 }
               >
                 <GiCat />

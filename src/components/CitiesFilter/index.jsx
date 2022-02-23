@@ -5,7 +5,7 @@ import { provData } from "./../../libs/prov";
 import styles from "./CitiesFilter.module.scss";
 import { BsFilterLeft } from "react-icons/bs";
 
-const CitiesFilter = ({ filter, setFilter, town, city }) => {
+const CitiesFilter = ({ setResult, filter, setFilter, town, city }) => {
   const [prov, setProv] = useState(city);
   // const [changeTown, setChangeTown] = useState(town);
   // const [filteredCities, setFilteredCities] = useState([]);
@@ -16,6 +16,7 @@ const CitiesFilter = ({ filter, setFilter, town, city }) => {
 
   const changeProv = e => {
     setProv(e.target.value);
+    setResult(false);
     // setFilteredCities(cities.filter(item => prov === item.sigla));
 
     setFilter({

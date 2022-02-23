@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { loginAction } from "./../../store/actions";
 import styles from "./LoginForm.module.scss";
 import { useDispatch } from "react-redux";
+import HeaderForms from "../../components/HeaderForms/HeaderForms";
 
 const LoginForm = () => {
   const [message, setMessage] = useState("");
@@ -14,7 +15,7 @@ const LoginForm = () => {
     password: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     dispatch(loginAction(loginForm, setRedirect, setMessage));
   };
@@ -25,7 +26,8 @@ const LoginForm = () => {
 
   return (
     <div className={styles.main}>
-      <form className={styles.form} onSubmit={(e) => handleSubmit(e)}>
+      <HeaderForms />
+      <form className={styles.form} onSubmit={e => handleSubmit(e)}>
         <label className={styles.label} htmlFor="email">
           Email*
         </label>
@@ -33,9 +35,7 @@ const LoginForm = () => {
           className={styles.input}
           id="email"
           name="email"
-          onChange={(e) =>
-            setLoginForm({ ...loginForm, email: e.target.value })
-          }
+          onChange={e => setLoginForm({ ...loginForm, email: e.target.value })}
           type="email"
           placeholder="email"
           required
@@ -47,7 +47,7 @@ const LoginForm = () => {
           className={styles.input}
           id="password"
           name="password"
-          onChange={(e) =>
+          onChange={e =>
             setLoginForm({ ...loginForm, password: e.target.value })
           }
           type="password"

@@ -25,6 +25,7 @@ const Matches = () => {
       <div className={styles.main}>
         <h3 className={styles.title}>Matchs</h3>
         <MatchesProfiles />
+        <div className={styles.separator}></div>
         <div className={styles.messPrev}>
           <h3 className={styles.text}>Messages</h3>
           {Object.keys(user.messages).length > 0 ? (

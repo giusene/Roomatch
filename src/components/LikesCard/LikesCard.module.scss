@@ -1,8 +1,5 @@
 @import "./../../libs/variables.scss";
 
-.mainContent {
-  border: 2px solid green;
-}
 .cardContainer {
   min-width: 110px;
   height: 150px;
@@ -13,7 +10,8 @@
   background-position: center;
   border-radius: $radiusDiv;
   position: relative;
-  span{
+  cursor: pointer;
+  span {
     position: absolute;
     z-index: 2;
     background-color: $mainPink;
