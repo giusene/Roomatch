@@ -1,10 +1,12 @@
 @import "./../../../libs/variables.scss";
 .containerForm {
-  color: darken($mainLightBlue, 8);
-  height: 100%;
   width: 260px;
+  height: 100%;
+  color: darken($mainLightBlue, 8);
   margin: 0 auto;
-  form {
+  .form {
+    display: flex;
+    flex-direction: column;
     label {
       font-size: 0.7rem;
       font-weight: bold;
@@ -101,29 +103,29 @@
   }
   // end checkbox style
 
-  .nextStep {
-    border: none;
-    background-color: rgba(80, 80, 80, 0);
-    position: absolute;
-    top: 108%;
-    right: $sidePadding;
-    color: $mainPink;
-    font-size: 2rem;
-    .icon {
-      border-radius: 50px;
+  .arrowBtns {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .nextStep {
+      width: 35px;
+      border: none;
+      background-color: rgba(80, 80, 80, 0);
+      margin-top: 50px;
+      color: $mainPink;
+      font-size: 2rem;
+      cursor: pointer;
     }
-  }
 
-  .prevStep {
-    border: none;
-    background-color: rgba(80, 80, 80, 0);
-    position: absolute;
-    top: 108%;
-    left: $sidePadding;
-    color: $mainLightBlue;
-    font-size: 2rem;
-    .icon {
-      border-radius: 50px;
+    .prevStep {
+      width: 35px;
+      border: none;
+      background-color: rgba(80, 80, 80, 0);
+      margin-top: 50px;
+      color: $mainLightBlue;
+      font-size: 2rem;
+      cursor: pointer;
     }
   }
 }

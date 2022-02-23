@@ -215,16 +215,18 @@ const SecondStepForm = ({
           </div>
         </div>
       </div>
-      <button className={styles.prevStep} onClick={prevStep}>
-        <BsArrowLeftCircle className={styles.icon} />
-      </button>
-      <button
-        className={styles.nextStep}
-        disabled={values.roomPhotos.length > 0 ? false : true}
-        onClick={nextStep}
-      >
-        <BsArrowRightCircleFill className={styles.icon} />
-      </button>
+      <div className={styles.arrowBtns}>
+        <button className={styles.prevStep} onClick={prevStep}>
+          <BsArrowLeftCircle className={styles.icon} />
+        </button>
+        <button
+          className={styles.nextStep}
+          disabled={values.roomPhotos.length > 0 ? false : true}
+          onClick={nextStep}
+        >
+          <BsArrowRightCircleFill className={styles.icon} />
+        </button>
+      </div>
     </div>
   );
 };

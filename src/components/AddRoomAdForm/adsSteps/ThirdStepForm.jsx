@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
-import { BsArrowRightCircleFill, BsArrowLeftCircle } from "react-icons/bs";
+import { BsArrowLeftCircle } from "react-icons/bs";
 import styles from "./ThirdStepForm.module.scss";
 import { newRoom } from "../../../store/actions";
 import { FaShower } from "react-icons/fa";
@@ -239,13 +239,14 @@ const ThirdStepForm = ({ formData, prevStep }) => {
           </div>
         </section>
       </fieldset>
-
-      <button className={styles.prevStep} onClick={prevStep}>
-        <BsArrowLeftCircle />
-      </button>
-      <button className={styles.nextStep} onClick={() => formSubmit()}>
-        <BsArrowRightCircleFill />
-      </button>
+      <div className={styles.btnSet}>
+        <button className={styles.prevStep} onClick={prevStep}>
+          <BsArrowLeftCircle />
+        </button>
+        <button className={styles.nextStep} onClick={() => formSubmit()}>
+          Go!
+        </button>
+      </div>
     </div>
   );
 };

@@ -17,7 +17,7 @@ const SecondStep = ({
 
   return (
     <div className={styles.containerForm}>
-      <form onSubmit={(e) => submitFormData(e)}>
+      <form className={styles.form} onSubmit={(e) => submitFormData(e)}>
         <div>
           <div className={styles.age}>
             <label className={styles.selectorLabel} htmlFor="age">
@@ -162,12 +162,14 @@ const SecondStep = ({
           </fieldset>
         </div>
       </form>
-      <button className={styles.prevStep} onClick={prevStep}>
-        <BsArrowLeftCircle className={styles.icon} />
-      </button>
-      <button className={styles.nextStep} onClick={nextStep}>
-        <BsArrowRightCircleFill className={styles.icon} />
-      </button>
+      <div className={styles.arrowBtns}>
+        <button className={styles.prevStep} onClick={prevStep}>
+          <BsArrowLeftCircle />
+        </button>
+        <button className={styles.nextStep} onClick={nextStep}>
+          <BsArrowRightCircleFill />
+        </button>
+      </div>
     </div>
   );
 };

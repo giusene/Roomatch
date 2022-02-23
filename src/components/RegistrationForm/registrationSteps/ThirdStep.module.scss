@@ -45,6 +45,9 @@
     }
     section {
       display: flex;
+      .sectionItem {
+        cursor: default;
+      }
     }
 
     .flexColumn {
@@ -60,14 +63,14 @@
     position: relative;
     padding-left: 1.5rem;
     margin-bottom: 0.8rem;
-    cursor: pointer;
+    cursor: default;
     font-size: $labelSize;
   }
 
   // Hide the default checkbox
   .labelContainer input {
     visibility: hidden;
-    cursor: pointer;
+    cursor: default;
   }
 
   // Create new checkbox
@@ -86,43 +89,31 @@
   // end checkbox style
 
   .btnSet {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
     .prevStep {
-      width: 32px;
-      height: 32px;
+      width: 35px;
       border: none;
       background-color: rgba(80, 80, 80, 0);
-      position: absolute;
-      bottom: 1.5rem;
-      left: $sidePadding;
+      margin-top: 50px;
       color: $mainLightBlue;
       font-size: 2rem;
+      cursor: pointer;
     }
 
     .nextStep {
+      width: 45px;
       border: none;
-      width: 40px;
-      height: 40px;
+      height: 45px;
       background-color: $mainPink;
-      position: absolute;
-      right: $sidePadding;
       color: #fff;
       font-size: 1rem;
       border-radius: 50%;
       font-weight: bold;
-      top: 87%;
-    }
-
-    .prevStep {
-      border: none;
-      background-color: rgba(80, 80, 80, 0);
-      position: absolute;
-      top: 88%;
-      left: $sidePadding;
-      color: $mainLightBlue;
-      font-size: 2rem;
-      .icon {
-        border-radius: 50px;
-      }
+      margin-top: 40px;
+      cursor: pointer;
     }
   }
 }

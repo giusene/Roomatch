@@ -44,7 +44,7 @@ const HeaderAddRoomForm = ({ step }) => {
         </>
       )}
       <div>
-        <Link className={styles.closeBtn} to="/">
+        <Link className={styles.closeBtn} to="/profile">
           <IoIosCloseCircle />
         </Link>
       </div>

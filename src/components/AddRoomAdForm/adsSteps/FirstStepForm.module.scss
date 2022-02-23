@@ -4,9 +4,9 @@
   color: darken($mainLightBlue, 8);
   width: 260px;
   margin: 0 auto;
-  padding-bottom: 150px;
+  padding-bottom: 80px;
   .select {
-    width: 245px;
+    width: 100%;
     margin: 0 auto;
     background-color: white;
     border: 2px solid $mainLightBlue;
@@ -107,7 +107,7 @@
   }
 
   .address {
-    margin: 20px 0 15px 0;
+    margin: 20px auto;
     .adressInput {
       text-align: center;
       margin-left: 10px;
@@ -152,16 +152,19 @@
   }
   // end checkbox style
 
-  .nextStep {
-    border: none;
-    background-color: rgba(80, 80, 80, 0);
-    position: absolute;
-    top: 990px;
-    right: 0;
-    color: $mainPink;
-    font-size: 2rem;
-    .icon {
-      border-radius: 50px;
+  .arrowBtns {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    .nextStep {
+      width: 35px;
+      border: none;
+      background-color: rgba(80, 80, 80, 0);
+      margin: 30px 0;
+      color: $mainPink;
+      font-size: 2rem;
+      cursor: pointer;
     }
   }
 }

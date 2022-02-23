@@ -178,17 +178,12 @@ const FirstStepForm = ({
             required
           />
         </div>
-        <button className={styles.nextStep} onSubmit={nextStep}>
-          <BsArrowRightCircleFill className={styles.icon} />
-        </button>
+        <div className={styles.arrowBtns}>
+          <button className={styles.nextStep} onSubmit={nextStep}>
+            <BsArrowRightCircleFill className={styles.icon} />
+          </button>
+        </div>
       </form>
-      <img
-        className={styles.img}
-        src="https://img.freepik.com/free-vector/street-map-desing-with-catering-sector-pins_23-2147618798.jpg?w=740"
-        width={"100%"}
-        height={"30%"}
-        alt="map"
-      ></img>
     </div>
   );
 };

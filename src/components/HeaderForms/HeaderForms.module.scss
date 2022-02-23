@@ -1,7 +1,7 @@
 @import "./../../libs/variables.scss";
 
 .main {
-  margin: 50px 0 60px 0;
+  margin: 30px 0 30px 0;
 
   .logo {
     text-align: left;
@@ -33,7 +33,7 @@
     width: 250px;
     display: flex;
     justify-content: space-between;
-    margin: 30px auto 50px;
+    margin: 30px auto;
     position: relative;
   }
   .stepCounter {

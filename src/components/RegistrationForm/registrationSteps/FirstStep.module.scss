@@ -1,15 +1,13 @@
 @import "./../../../libs/variables.scss";
 
 .containerForm {
-  color: darken($mainLightBlue, 8);
   width: 260px;
-  // height: 100vh;
+  height: 100%;
   margin: 0 auto;
-  padding-bottom: 100px;
+  color: darken($mainLightBlue, 8);
   .flexForm {
     display: flex;
     flex-direction: column;
-
     .img {
       width: 100px;
       height: 100px;
@@ -18,6 +16,7 @@
       background-size: cover;
       position: relative;
       margin-bottom: 20px;
+      cursor: pointer;
 
       .uploadBtn {
         position: absolute;
@@ -30,6 +29,7 @@
         text-align: center;
         bottom: 5px;
         right: 5px;
+        cursor: pointer;
       }
     }
     .hidden {
@@ -57,17 +57,19 @@
     .inputNameSur {
       margin-bottom: 10px;
     }
-
-    .nextStep {
-      border: none;
-      background-color: rgba(80, 80, 80, 0);
-      position: absolute;
-      bottom: -80px;
-      right: 0;
-      color: $mainPink;
-      font-size: 2rem;
-      .icon {
-        border-radius: 50px;
+    .arrowBtns {
+      width: 200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: flex-end;
+      .nextStep {
+        width: 35px;
+        border: none;
+        background-color: rgba(80, 80, 80, 0);
+        margin-top: 50px;
+        color: $mainPink;
+        font-size: 2rem;
+        cursor: pointer;
       }
     }
   }

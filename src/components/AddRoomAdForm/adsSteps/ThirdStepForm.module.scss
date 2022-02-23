@@ -2,9 +2,10 @@
 
 .containerForm {
   color: darken($mainLightBlue, 13);
+  height: 100%;
   width: 260px;
-  margin: 0 auto;
-  padding-bottom: 150px;
+  margin: 60px auto;
+  padding-bottom: 130px;
   ul {
     list-style: none;
     .li1 {
@@ -71,14 +72,14 @@
     position: relative;
     padding-left: 1.5rem;
     margin-bottom: 15px;
-    cursor: pointer;
+    cursor: default;
     font-size: $superSmall;
   }
 
   // Hide the default checkbox
   .labelContainer input {
     visibility: hidden;
-    cursor: pointer;
+    cursor: default;
   }
 
   // Create new checkbox
@@ -96,22 +97,31 @@
   }
   // end checkbox style
 
-  .nextStep {
-    border: none;
-    background-color: rgba(80, 80, 80, 0);
-    position: absolute;
-    top: 760px;
-    right: 0;
-    color: $mainPink;
-    font-size: 2rem;
-  }
-  .prevStep {
-    border: none;
-    background-color: rgba(80, 80, 80, 0);
-    position: absolute;
-    top: 760px;
-    left: 0;
-    color: $mainLightBlue;
-    font-size: 2rem;
+  .btnSet {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    .prevStep {
+      width: 35px;
+      border: none;
+      margin-top: 10px;
+      background-color: rgba(80, 80, 80, 0);
+      color: $mainLightBlue;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    .nextStep {
+      width: 45px;
+      border: none;
+      height: 45px;
+      background-color: $mainPink;
+      color: #fff;
+      font-size: 1rem;
+      border-radius: 50%;
+      font-weight: bold;
+      cursor: pointer;
+    }
   }
 }

@@ -1,16 +1,8 @@
 @import "./../../libs/variables.scss";
 
 .containerForm {
-  width: 250px;
-  height: 100vh;
+  width: 260px;
+  height: 100%;
   margin: 0 auto;
   position: relative;
-
-  .containerForm {
-    width: 100vw;
-    height: 100vh;
-    margin: 0 auto;
-    padding: $sidePadding;
-    position: relative;
-  }
 }

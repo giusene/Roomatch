@@ -108,9 +108,11 @@ const FirstStep = ({ handleFormData, values, nextStep, setImage }) => {
           required
         />
         {message}
-        <button className={styles.nextStep} onSubmit={nextStep}>
-          <BsArrowRightCircleFill className={styles.icon} />
-        </button>
+        <div className={styles.arrowBtns}>
+          <button className={styles.nextStep} onSubmit={nextStep}>
+            <BsArrowRightCircleFill className={styles.icon} />
+          </button>
+        </div>
       </form>
     </div>
   );

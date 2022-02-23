@@ -3,8 +3,8 @@
 .containerForm {
   color: darken($mainLightBlue, 13);
   width: 260px;
-  margin: 0 auto;
-  padding-bottom: 180px;
+  margin: 50px auto;
+  padding-bottom: 100px;
   .roommates {
     margin-top: 20px;
     .roommatesWrapper {
@@ -43,31 +43,50 @@
       width: 100px;
       height: 100px;
     }
-    .sliderForm {
-      // border: 1px solid red;x
-      width: 280px;
-      overflow-y: hidden;
-      cursor: pointer;
-    }
+
     .formWrapper {
       display: flex;
-      justify-content: flex-start;
+      justify-content: center;
+      cursor: default;
+      width: 260px;
       .flexForm {
         margin: 10px 0;
         display: flex;
         gap: 10px;
+        width: 280px;
+        overflow-y: hidden;
+        cursor: pointer;
+        &::-webkit-scrollbar {
+          height: 8px;
+        }
+        /* Track */
+        &::-webkit-scrollbar-track {
+          border-radius: 10px;
+          background-color: darken($mainLightBlue, 21);
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: $mainLightBlue;
+          border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+          background: darken($mainLightBlue, 8);
+        }
       }
       .uploadBtn {
         display: block;
         background-color: $mainLightBlue;
-        width: 100px;
+        min-width: 100px;
         height: 100px;
         font-size: 40px;
         font-weight: bold;
         text-align: center;
         line-height: 100px;
+        margin: 5px 0;
       }
-
       .hidden {
         display: none;
       }
@@ -130,28 +149,28 @@
 }
 // end checkbox style
 
-.nextStep {
-  border: none;
-  background-color: rgba(80, 80, 80, 0);
-  position: absolute;
-  top: 580px;
-  right: 0;
-  color: $mainPink;
-  font-size: 2rem;
-  .icon {
-    border-radius: 50px;
+.arrowBtns {
+  width: 200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  .nextStep {
+    width: 35px;
+    border: none;
+    background-color: rgba(80, 80, 80, 0);
+    margin-top: 50px;
+    color: $mainPink;
+    font-size: 2rem;
+    cursor: pointer;
   }
-}
 
-.prevStep {
-  border: none;
-  background-color: rgba(80, 80, 80, 0);
-  position: absolute;
-  top: 580px;
-  left: 0;
-  color: $mainPink;
-  font-size: 2rem;
-  .icon {
-    border-radius: 50px;
+  .prevStep {
+    width: 35px;
+    border: none;
+    background-color: rgba(80, 80, 80, 0);
+    margin-top: 50px;
+    color: $mainLightBlue;
+    font-size: 2rem;
+    cursor: pointer;
   }
 }

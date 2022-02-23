@@ -16,7 +16,7 @@
   .stepText {
     font-family: $paragraphFont;
     text-align: left;
-    margin: 30px auto;
+    margin: 0 auto;
     font-size: $superSmall;
   }
 
@@ -24,7 +24,7 @@
     width: 250px;
     display: flex;
     justify-content: space-between;
-    margin: 30px auto 50px;
+    margin: 30px auto;
     position: relative;
   }
   .stepCounter {
