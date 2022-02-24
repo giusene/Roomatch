@@ -10,7 +10,8 @@
   flex-wrap: wrap;
   .title {
     display: inline-block;
-    margin: 0 40px 20px;
+    width: 100%;
+    padding-left: 20px;
   }
   &::-webkit-scrollbar {
     display: none;
