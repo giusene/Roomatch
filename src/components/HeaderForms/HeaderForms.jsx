@@ -4,7 +4,6 @@ import styles from "./HeaderForms.module.scss";
 import { useState, useEffect } from "react";
 
 const HeaderForms = ({ step }) => {
-  //   const stepTitle = props.stepTitle || "Create your profile";
   const logo = "ROOMATCH";
   const [title, setTitle] = useState("");
 

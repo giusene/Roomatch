@@ -8,7 +8,6 @@
   width: 100%;
   max-height: -webkit-fill-available;
   .mainContainer {
-    // display: flex;
     width: 100%;
     flex-grow: 1;
     overflow-y: auto;
@@ -20,7 +19,6 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
     &::-webkit-scrollbar {
       width: 5px;
-      //   left: -100px;
     }
     &::-webkit-scrollbar-track {
       background-color: transparent;

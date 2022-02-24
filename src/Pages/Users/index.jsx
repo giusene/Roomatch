@@ -24,9 +24,9 @@ const Users = () => {
   const setNoFilter = () => {
     setFilter({
       city: null,
-      town: myData.town
-    })
-  }
+      town: myData.town,
+    });
+  };
 
   return (
     <div className={styles.main}>
@@ -39,22 +39,32 @@ const Users = () => {
           town={myData.roomId.town}
           city={myData.roomId.city}
         />
-        <button className={styles.clearFilterBtn} onClick={setNoFilter}>No filter</button>
+        <button className={styles.clearFilterBtn} onClick={setNoFilter}>
+          No filter
+        </button>
       </div>
       {peopleList.map(
         user =>
           !myData.roomId.matches.map(item => item.id).includes(user._id) &&
           myData._id !== user._id &&
           user.roomId.roomId === "" &&
-          (filter.city
-            ?
-            (
-              filter.city === user.city && (
-                <UserCard setResult={setResult} filter={filter.city} userInfo={user} key={user._id} />
-              )
+          (filter.city ? (
+            filter.city === user.city && (
+              <UserCard
+                setResult={setResult}
+                filter={filter.city}
+                userInfo={user}
+                key={user._id}
+              />
             )
-            : <UserCard setResult={setResult} filter={filter.city} userInfo={user} key={user._id} />
-          )
+          ) : (
+            <UserCard
+              setResult={setResult}
+              filter={filter.city}
+              userInfo={user}
+              key={user._id}
+            />
+          ))
       )}
       {!result && <PlaceHolder />}
     </div>

@@ -34,10 +34,6 @@ const MainNav = ({ visible }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user.newMatch.length, user.newLike.length, user.messages]);
 
-  // useEffect(() => {
-  //   // CheckNewMessages();
-  // }, [user.messages, user.newMatch.length, user.newLike.length]);
-
   return (
     <>
       {visible && (

@@ -54,10 +54,8 @@ export const restoreSession = (body, setRedirect) => {
         JSON.stringify({ myId: data._id, token: data.token })
       );
       setRedirect("/list");
-      console.log(data);
       dispatch({ type: FETCH_LOGIN_SUCCESS, payload: data });
     } catch (e) {
-      console.log(e);
       dispatch({ type: FETCH_LOGIN_ERROR, payload: e });
     }
   };

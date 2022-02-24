@@ -7,7 +7,7 @@ import CitiesFilter from "./../../components/CitiesFilter";
 import PlaceHolder from "../../components/PlaceHolder";
 
 const Rooms = () => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector(state => state.user);
   const [roomsList, setRoomList] = useState([]);
   const [result, setResult] = useState(false);
   const [filter, setFilter] = useState({
@@ -16,19 +16,18 @@ const Rooms = () => {
   });
 
   useEffect(() => {
-    httpPOST("/getrooms", user.iam).then((data) => setRoomList(data));
+    httpPOST("/getrooms", user.iam).then(data => setRoomList(data));
   }, [user.iam]);
 
   const setNoFilter = () => {
     setFilter({
       city: null,
-      town: user.town
-    })
-  }
+      town: user.town,
+    });
+  };
 
   return (
     <div className={styles.main}>
-      {console.log(result)}
       <h3 className={styles.title}>Find your perfect Room!</h3>
       <div className={styles.filter}>
         <CitiesFilter
@@ -38,21 +37,31 @@ const Rooms = () => {
           town={user.town}
           city={user.city}
         />
-        <button className={styles.clearFilterBtn} onClick={setNoFilter}>No filter</button>
+        <button className={styles.clearFilterBtn} onClick={setNoFilter}>
+          No filter
+        </button>
       </div>
       {roomsList.map(
-        (room) =>
-          !user.matches.map((item) => item.roomId).includes(room._id) &&
+        room =>
+          !user.matches.map(item => item.roomId).includes(room._id) &&
           room.roomOwner !== user._id &&
-          (filter.city
-            ?
-            (
-              filter.city === room.city && (
-                <RoomCard setResult={setResult} filter={filter.city} room={room} key={room._id} />
-              )
+          (filter.city ? (
+            filter.city === room.city && (
+              <RoomCard
+                setResult={setResult}
+                filter={filter.city}
+                room={room}
+                key={room._id}
+              />
             )
-            : <RoomCard setResult={setResult} filter={filter.city} room={room} key={room._id} />
-          )
+          ) : (
+            <RoomCard
+              setResult={setResult}
+              filter={filter.city}
+              room={room}
+              key={room._id}
+            />
+          ))
       )}
       {!result && <PlaceHolder />}
     </div>

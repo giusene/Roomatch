@@ -6,20 +6,16 @@ import { useState, useEffect } from "react";
 import PlaceHolder from "../../components/PlaceHolder";
 
 const Likes = () => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector(state => state.user);
   const dispatch = useDispatch();
 
   const [dataLikes, setDataLikes] = useState({ data: [], isRoom: null });
-  // const [result, setResult] = useState(false);
 
   useEffect(() => {
     user.roomId.roomId !== ""
       ? setDataLikes({ data: user.roomId.wholikesme, isRoom: 0 })
       : setDataLikes({ data: user.wholikesme, isRoom: 1 });
 
-    // if (user.newLike.length === 0) {
-    //   setResult(!result);
-    // }
     user.newLike.length > 0 &&
       setTimeout(() => {
         dispatch(
@@ -54,7 +50,6 @@ const Likes = () => {
               key={index}
               data={currentData}
               isRoom={dataLikes.isRoom}
-              // setResult={setResult}
             />
           ))}
           {dataLikes.data.length === 0 ? <PlaceHolder /> : ""}

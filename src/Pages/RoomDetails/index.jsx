@@ -12,7 +12,6 @@ import { useLocation } from "react-router-dom";
 const RoomDetails = () => {
   const roomInfo = useLocation();
 
-  // const [roomLikes, setRoomLikes] = useState([]);
   const [roomDetails, setRoomDetails] = useState({
     roommates: {
       females: 0,
@@ -54,7 +53,6 @@ const RoomDetails = () => {
 
   return (
     <div className={styles.main}>
-      {console.log.roomDetails}
       <div className={styles.info}>
         <h3>{roomDetails.roomType}</h3>
         <p>

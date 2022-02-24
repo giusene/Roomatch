@@ -36,7 +36,6 @@ const ThirdStepForm = ({ formData, prevStep }) => {
           <h4>Address:</h4>
           {formData.roomAddress}
         </li>
-        {console.log(formData)}
         <li className={styles.li1}>
           <h4>City:</h4>
           {formData.town} ({formData.city})
