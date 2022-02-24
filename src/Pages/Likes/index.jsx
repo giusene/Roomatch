@@ -10,12 +10,16 @@ const Likes = () => {
   const dispatch = useDispatch();
 
   const [dataLikes, setDataLikes] = useState({ data: [], isRoom: null });
+  // const [result, setResult] = useState(false);
 
   useEffect(() => {
     user.roomId.roomId !== ""
       ? setDataLikes({ data: user.roomId.wholikesme, isRoom: 0 })
       : setDataLikes({ data: user.wholikesme, isRoom: 1 });
 
+    // if (user.newLike.length === 0) {
+    //   setResult(!result);
+    // }
     user.newLike.length > 0 &&
       setTimeout(() => {
         dispatch(
@@ -39,21 +43,23 @@ const Likes = () => {
     user.newLike.length,
   ]);
 
-  const [result, setResult] = useState(false);
   return (
     <div className={styles.main}>
-      <h3 className={styles.title}>These people like you!</h3>
-      <div className={styles.cardContainer}>
-        {dataLikes.data.map((currentData, index) => (
-          <LikesCard
-            key={index}
-            data={currentData}
-            isRoom={dataLikes.isRoom}
-            setResult={setResult}
-          />
-        ))}
+      <div className={styles.image}></div>
+      <div className={styles.likesContainer}>
+        <h3 className={styles.title}>These people like you!</h3>
+        <div className={styles.cardContainer}>
+          {dataLikes.data.map((currentData, index) => (
+            <LikesCard
+              key={index}
+              data={currentData}
+              isRoom={dataLikes.isRoom}
+              // setResult={setResult}
+            />
+          ))}
+          {dataLikes.data.length === 0 ? <PlaceHolder /> : ""}
+        </div>
       </div>
-      {!result && <PlaceHolder />}
     </div>
   );
 };
