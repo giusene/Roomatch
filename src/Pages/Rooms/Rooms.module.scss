@@ -1,14 +1,13 @@
 @import "./../../libs/variables.scss";
 .main {
   width: 100%;
-  padding-bottom: 20px;
+  padding: 10px 20px 20px 20px;
   margin: 0 auto;
   background-color: $background;
   overflow-y: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: 10px;
   .title {
     display: inline-block;
     margin: 0 40px 20px;

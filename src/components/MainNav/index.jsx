@@ -14,7 +14,7 @@ import {
 } from "react-icons/bs";
 import { useEffect, useState } from "react";
 
-const MainNav = () => {
+const MainNav = ({ visible }) => {
   const user = useSelector(state => state.user);
   const url = useLocation();
   const [notifies, setNotifies] = useState([]);
@@ -39,51 +39,55 @@ const MainNav = () => {
   // }, [user.messages, user.newMatch.length, user.newLike.length]);
 
   return (
-    <div className={styles.main}>
-      <ul>
-        <Link to={"/list"}>
-          <li>
-            {url.pathname === "/list" ? (
-              <img
-                src={roomatchFill}
-                style={{ height: 32, width: 32 }}
-                alt="logo fill"
-              />
-            ) : (
-              <img
-                src={roomatch}
-                style={{ height: 32, width: 32 }}
-                alt="logo"
-              />
-            )}
-          </li>
-        </Link>
-        <Link to={"/likes"}>
-          <li>
-            {user.newLike.length > 0 && <span>{user.newLike.length}</span>}
-            {url.pathname === "/likes" ? <BsHeartFill /> : <BsHeart />}
-          </li>
-        </Link>
-        <Link to={"/matches"}>
-          <li>
-            {notifies.length + user.newMatch.length > 0 && (
-              <span>{notifies.length + user.newMatch.length}</span>
-            )}
-            {url.pathname === "/matches" ? (
-              <BsChatRightDotsFill />
-            ) : (
-              <BsChatRightDots />
-            )}
-          </li>
-        </Link>
+    <>
+      {visible && (
+        <div className={styles.main}>
+          <ul>
+            <Link to={"/list"}>
+              <li>
+                {url.pathname === "/list" ? (
+                  <img
+                    src={roomatchFill}
+                    style={{ height: 32, width: 32 }}
+                    alt="logo fill"
+                  />
+                ) : (
+                  <img
+                    src={roomatch}
+                    style={{ height: 32, width: 32 }}
+                    alt="logo"
+                  />
+                )}
+              </li>
+            </Link>
+            <Link to={"/likes"}>
+              <li>
+                {user.newLike.length > 0 && <span>{user.newLike.length}</span>}
+                {url.pathname === "/likes" ? <BsHeartFill /> : <BsHeart />}
+              </li>
+            </Link>
+            <Link to={"/matches"}>
+              <li>
+                {notifies.length + user.newMatch.length > 0 && (
+                  <span>{notifies.length + user.newMatch.length}</span>
+                )}
+                {url.pathname === "/matches" ? (
+                  <BsChatRightDotsFill />
+                ) : (
+                  <BsChatRightDots />
+                )}
+              </li>
+            </Link>
 
-        <Link to={"/profile"}>
-          <li>
-            {url.pathname === "/profile" ? <BsPersonFill /> : <BsPerson />}
-          </li>
-        </Link>
-      </ul>
-    </div>
+            <Link to={"/profile"}>
+              <li>
+                {url.pathname === "/profile" ? <BsPersonFill /> : <BsPerson />}
+              </li>
+            </Link>
+          </ul>
+        </div>
+      )}
+    </>
   );
 };
 

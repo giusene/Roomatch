@@ -2,10 +2,9 @@
 
 .main {
   height: 100%;
-  padding-bottom: 20px;
+  padding: 10px 20px 20px 20px;
   background-color: $background;
   overflow-y: auto;
-  padding-top: 10px;
   .title {
     display: inline-block;
     margin: 0 40px;

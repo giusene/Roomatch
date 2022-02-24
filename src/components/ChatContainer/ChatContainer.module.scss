@@ -2,6 +2,7 @@
 
 .main {
   flex-grow: 1;
+  min-height: calc(100vh - 90px - 140px - 80px - 75px);
   padding: 10px;
   display: flex;
   flex-direction: column;

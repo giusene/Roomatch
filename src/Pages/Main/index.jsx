@@ -12,9 +12,11 @@ import UserDetails from "../UserDetails";
 import { useSelector } from "react-redux";
 import NewRoom from "../NewRoom";
 import Messages from "../Messages";
+import { useState } from "react";
 
 const Main = () => {
   const user = useSelector(state => state.user);
+  const [visible, setVisible] = useState(true);
 
   return (
     <div className={styles.main}>
@@ -37,10 +39,13 @@ const Main = () => {
           <Route path="/roomdetails" element={<RoomDetails />} />
           <Route path="/userdetails" element={<UserDetails />} />
           <Route path="/addroom" element={<NewRoom />} />
-          <Route path="/messages" element={<Messages />} />
+          <Route
+            path="/messages"
+            element={<Messages setVisible={setVisible} />}
+          />
         </Routes>
       </div>
-      <MainNav />
+      <MainNav visible={visible} />
     </div>
   );
 };

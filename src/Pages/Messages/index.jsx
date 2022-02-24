@@ -8,7 +8,7 @@ import { readMessage } from "../../store/actions";
 import { useDispatch } from "react-redux";
 import styles from "./Messages.module.scss";
 
-const Messages = () => {
+const Messages = ({ setVisible }) => {
   const dispatch = useDispatch();
   const stateFromLink = useLocation();
   const user = useSelector(state => state.user);
@@ -47,6 +47,7 @@ const Messages = () => {
         }
       />
       <ChatForm
+        setVisible={setVisible}
         interlocutor={
           stateFromLink.state.id
             ? stateFromLink.state.id
