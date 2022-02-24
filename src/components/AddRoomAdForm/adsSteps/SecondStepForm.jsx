@@ -11,20 +11,20 @@ const SecondStepForm = ({
   handleInputPref,
   setImage,
 }) => {
-  const submitFormData = (e) => {
+  const submitFormData = e => {
     e.preventDefault();
     nextStep();
   };
 
-  const photoGallery = (e) => {
-    uploadImg(e.target.files[0]).then((result) => {
+  const photoGallery = e => {
+    uploadImg(e.target.files[0]).then(result => {
       setImage(result.data.display_url);
     });
   };
 
   return (
     <div className={styles.containerForm}>
-      <form onSubmit={(e) => submitFormData(e)}>
+      <form onSubmit={e => submitFormData(e)}>
         <div>
           <div className={styles.roommates}>
             Roomates:
@@ -35,7 +35,7 @@ const SecondStepForm = ({
                 </label>
                 <input
                   value={values.roommates.males}
-                  onChange={(e) => handleRoommates("males", e)}
+                  onChange={e => handleRoommates("males", e)}
                   name="Males"
                   id="Males"
                   type="number"
@@ -50,7 +50,7 @@ const SecondStepForm = ({
                 </label>
                 <input
                   value={values.roommates.females}
-                  onChange={(e) => handleRoommates("females", e)}
+                  onChange={e => handleRoommates("females", e)}
                   name="Females"
                   id="Females"
                   type="number"
@@ -65,7 +65,7 @@ const SecondStepForm = ({
                 </label>
                 <input
                   value={values.roommates.others}
-                  onChange={(e) => handleRoommates("others", e)}
+                  onChange={e => handleRoommates("others", e)}
                   name="Others"
                   id="Others"
                   type="number"
@@ -88,7 +88,7 @@ const SecondStepForm = ({
                       name="action"
                       id="lgbtq"
                       checked={values.friendlyWith.lgbtq === "1" ? true : false}
-                      onChange={(e) => handleInputPref("lgbtq", e)}
+                      onChange={e => handleInputPref("lgbtq", e)}
                     />
                     <span className={styles.mark}></span>
                   </label>
@@ -101,7 +101,7 @@ const SecondStepForm = ({
                       checked={
                         values.friendlyWith.pet_owner === "1" ? true : false
                       }
-                      onChange={(e) => handleInputPref("pet_owner", e)}
+                      onChange={e => handleInputPref("pet_owner", e)}
                       type="checkbox"
                       name="action"
                       id="pet_owner"
@@ -119,7 +119,7 @@ const SecondStepForm = ({
                       checked={
                         values.friendlyWith.multicultural === "1" ? true : false
                       }
-                      onChange={(e) => handleInputPref("multicultural", e)}
+                      onChange={e => handleInputPref("multicultural", e)}
                       type="checkbox"
                       name="action"
                       id="multicultural"
@@ -136,7 +136,7 @@ const SecondStepForm = ({
                     <input
                       checked={values.friendlyWith.veg === "1" ? true : false}
                       type="checkbox"
-                      onChange={(e) => handleInputPref("veg", e)}
+                      onChange={e => handleInputPref("veg", e)}
                       name="action"
                       id="veg"
                     />
@@ -151,7 +151,7 @@ const SecondStepForm = ({
                       checked={
                         values.friendlyWith.smooker === "1" ? true : false
                       }
-                      onChange={(e) => handleInputPref("smooker", e)}
+                      onChange={e => handleInputPref("smooker", e)}
                       type="checkbox"
                       name="action"
                       id="smooker"
@@ -161,8 +161,6 @@ const SecondStepForm = ({
                 </div>
 
                 <div>
-                  {console.log(values)}
-
                   <label
                     className={styles.labelContainer}
                     htmlFor="party_lover"
@@ -172,7 +170,7 @@ const SecondStepForm = ({
                       checked={
                         values.friendlyWith.party_lover === "1" ? true : false
                       }
-                      onChange={(e) => handleInputPref("party_lover", e)}
+                      onChange={e => handleInputPref("party_lover", e)}
                       type="checkbox"
                       name="action"
                       id="party_lover"
@@ -189,10 +187,7 @@ const SecondStepForm = ({
         <p className={styles.uploadPics}>Upload min1/max4 pics</p>
         <div className={styles.sliderForm}>
           <div className={styles.formWrapper}>
-            <form
-              className={styles.flexForm}
-              onSubmit={(e) => submitFormData(e)}
-            >
+            <form className={styles.flexForm} onSubmit={e => submitFormData(e)}>
               {values.roomPhotos.map((photo, index) => (
                 <img src={photo} key={index} alt="roomatch" />
               ))}
@@ -203,7 +198,7 @@ const SecondStepForm = ({
               )}
               <input
                 type="file"
-                onChange={(e) => photoGallery(e)}
+                onChange={e => photoGallery(e)}
                 accept=".jpg, .jpeg, .png"
                 placeholder="carica"
                 name="upload"

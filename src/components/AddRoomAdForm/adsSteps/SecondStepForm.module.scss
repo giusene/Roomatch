@@ -85,8 +85,10 @@
         text-align: center;
         line-height: 100px;
         margin: 5px 0;
+        cursor: pointer;
       }
       .hidden {
+        cursor: default;
         display: none;
       }
     }

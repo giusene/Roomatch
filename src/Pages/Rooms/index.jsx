@@ -7,7 +7,7 @@ import CitiesFilter from "./../../components/CitiesFilter";
 import PlaceHolder from "../../components/PlaceHolder";
 
 const Rooms = () => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector(state => state.user);
   const [roomsList, setRoomList] = useState([]);
   const [result, setResult] = useState(false);
   const [filter, setFilter] = useState({
@@ -16,11 +16,12 @@ const Rooms = () => {
   });
 
   useEffect(() => {
-    httpPOST("/getrooms", user.iam).then((data) => setRoomList(data));
+    httpPOST("/getrooms", user.iam).then(data => setRoomList(data));
   }, [user.iam]);
 
   return (
     <div className={styles.main}>
+      <h3 className={styles.title}>Find your perfect Room!</h3>
       <div className={styles.filter}>
         <CitiesFilter
           filter={filter}
@@ -31,8 +32,8 @@ const Rooms = () => {
         />
       </div>
       {roomsList.map(
-        (room) =>
-          !user.matches.map((item) => item.roomId).includes(room._id) &&
+        room =>
+          !user.matches.map(item => item.roomId).includes(room._id) &&
           room.roomOwner !== user._id &&
           filter.city === room.city && (
             <RoomCard setResult={setResult} room={room} key={room._id} />
