@@ -8,7 +8,7 @@
   color: $mainLightBlue;
   border: 2px solid $mainLightBlue;
   border-radius: $radiusDiv;
-  background-image: url(../../../public/SVG/background.svg);
+  background-image: url(../../libs/SVG/background.svg);
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: 0 3px 13px rgba(0, 0, 0, 0.3);
@@ -20,7 +20,7 @@
   .img {
     width: 250px;
     height: 190px;
-    background-image: url(../../../public/SVG/girl.svg);
+    background-image: url(../../libs/SVG/girl.svg);
     background-repeat: no-repeat;
     background-size: contain;
   }

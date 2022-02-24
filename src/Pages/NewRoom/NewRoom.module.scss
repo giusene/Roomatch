@@ -3,7 +3,7 @@
   height: 100vh;
   justify-content: center;
   .image {
-    background-image: url("./../../libs/img/desktop1.jpg");
+    background-image: url("./../../libs/img/desktop.jpg");
     background-size: cover;
     background-position: center;
     flex-grow: 1;
@@ -33,7 +33,7 @@
     .form {
       width: 100%;
       align-items: flex-start;
-      padding-top: 40px;
+      padding-top: 20px;
     }
   }
 }
