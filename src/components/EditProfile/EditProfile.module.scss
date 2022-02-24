@@ -1,0 +1,53 @@
+@import "./../../libs/variables.scss";
+
+.main {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4e0134e1;
+  width: 100%;
+  height: 100%;
+  .modal {
+    width: 400px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 21px rgb(0 0 0 / 83%);
+    .btnWrapper {
+      width: 100%;
+      text-align: right;
+      font-size: 32px;
+      color: $mainLightBlue;
+      svg {
+        cursor: pointer;
+      }
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      input,
+      select {
+        padding: 5px;
+        border: 2px solid #b9d1e0;
+        border-radius: 4px;
+        margin: 5px 0;
+        color: $mainLightBlue;
+        font-size: 12px;
+      }
+      button {
+        background-color: $mainLightBlue;
+        padding: 5px 20px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}

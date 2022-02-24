@@ -32,13 +32,17 @@
     background-color: white;
     border-radius: 5rem;
     color: $mainLightBlue;
+    z-index: 3;
+    position: relative;
     &::before {
       position: absolute;
       content: "";
       border-bottom: 3px solid $mainPink;
-      width: 130px;
+      width: 100px;
       top: 10px;
       z-index: -1;
+      top: 8px;
+      left: 20px;
     }
     &:last-child::before {
       content: "";

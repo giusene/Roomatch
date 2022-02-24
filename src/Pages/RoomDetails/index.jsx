@@ -8,9 +8,18 @@ import { BsWifi, BsSnow, BsCash } from "react-icons/bs";
 import { FaHandSpock, FaSmoking } from "react-icons/fa";
 import PhotoGallery from "../../components/PhotoGallery";
 import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteRoom } from "../../store/actions";
+import { Link } from "react-router-dom";
 
 const RoomDetails = () => {
+  const user = useSelector(state => state.user);
   const roomInfo = useLocation();
+  const dispatch = useDispatch();
+
+  const removeRoom = () => {
+    dispatch(deleteRoom(roomInfo.state));
+  };
 
   const [roomDetails, setRoomDetails] = useState({
     roommates: {
@@ -53,6 +62,14 @@ const RoomDetails = () => {
 
   return (
     <div className={styles.main}>
+      {user.roomId.roomId === roomInfo.state && (
+        <div className={styles.btnSet}>
+          <Link state={roomDetails} to={"/editroom"}>
+            Edit Room
+          </Link>
+          <div onClick={() => removeRoom()}>Remove Room</div>
+        </div>
+      )}
       <div className={styles.info}>
         <h3>{roomDetails.roomType}</h3>
         <p>

@@ -1,16 +1,8 @@
 import { Link } from "react-router-dom";
 import styles from "./RoomAd.module.scss";
 import { FaHeart } from "react-icons/fa";
-import { useDispatch } from "react-redux";
-import { deleteRoom } from "../../store/actions";
 
 const RoomAd = ({ room }) => {
-  const dispatch = useDispatch()
-
-  const removeRoom = () => {
-    dispatch(deleteRoom(room.roomId));
-    }
-
   return (
     <div className={styles.main}>
       <Link to={"/roomdetails"} state={room.roomId}>
@@ -20,7 +12,12 @@ const RoomAd = ({ room }) => {
             style={{ backgroundImage: `url(${room.roomPhotos})` }}
           >
             <div className={styles.likes}>
-              <span>{room.wholikesme.filter(user => user.room?.roomId === '').length}</span>
+              <span>
+                {
+                  room.wholikesme.filter(user => user.room?.roomId === "")
+                    .length
+                }
+              </span>
               <FaHeart />
             </div>
           </div>
@@ -32,9 +29,6 @@ const RoomAd = ({ room }) => {
           </div>
         </div>
       </Link>
-      <div className={styles.btnSet}>
-          <button onClick={() => removeRoom()}>Remove Room</button>
-      </div>
     </div>
   );
 };
