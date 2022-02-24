@@ -3,13 +3,18 @@
 .containerForm {
   color: darken($mainLightBlue, 13);
   width: 260px;
-  margin: 60px auto;
+  margin: 50px auto;
   ul {
     list-style: none;
     font-size: 12px;
+    .rentFlex {
+      display: flex;
+      justify-content: flex-start;
+      gap: 50px;
+    }
     .li1 {
       display: flex;
-      margin: 15px 0;
+      margin: 20px 0;
       h4 {
         margin-right: 10px;
       }

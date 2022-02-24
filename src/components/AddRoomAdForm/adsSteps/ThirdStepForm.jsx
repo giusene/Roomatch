@@ -24,14 +24,16 @@ const ThirdStepForm = ({ formData, prevStep }) => {
   return (
     <div className={styles.containerForm}>
       <ul>
-        <li className={styles.li1}>
-          <h4>Room Type:</h4>
-          {formData.roomType}
-        </li>
-        <li className={styles.li1}>
-          <h4>Rent Price:</h4>
-          {formData.rentPrice} €/month
-        </li>
+        <div className={styles.rentFlex}>
+          <li className={styles.rentLi}>
+            <h4>Room Type:</h4>
+            {formData.roomType}
+          </li>
+          <li>
+            <h4>Rent Price:</h4>
+            {formData.rentPrice} €/month
+          </li>
+        </div>
         <li className={styles.li1}>
           <h4>Address:</h4>
           {formData.roomAddress}

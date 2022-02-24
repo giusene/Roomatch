@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import PlaceHolder from "../../components/PlaceHolder";
 
 const Likes = () => {
-  const user = useSelector(state => state.user);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const [dataLikes, setDataLikes] = useState({ data: [], isRoom: null });

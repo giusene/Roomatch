@@ -39,6 +39,22 @@ const FirstStepForm = ({
             />
             <span>,00 €/month</span>
           </div>
+          <div className={styles.address}>
+            <label className={styles.label} htmlFor="address">
+              Address
+            </label>
+            <input
+              className={styles.adressInput}
+              value={values.roomAddress}
+              onChange={handleFormData("roomAddress")}
+              name="roomAddress"
+              id="roomAddress"
+              type="text"
+              placeholder="via della felicità"
+              required
+            />
+          </div>
+
           <div className={styles.roomType}>
             <label className={styles.label} htmlFor="roomtype">
               Room type*
@@ -64,21 +80,6 @@ const FirstStepForm = ({
           <CitiesSelector
             handleInputCities={handleInputCities}
             values={values}
-          />
-        </div>
-        <div className={styles.address}>
-          <label className={styles.label} htmlFor="address">
-            Address
-          </label>
-          <input
-            className={styles.adressInput}
-            value={values.roomAddress}
-            onChange={handleFormData("roomAddress")}
-            name="roomAddress"
-            id="roomAddress"
-            type="text"
-            placeholder="via della felicità"
-            required
           />
         </div>
         <fieldset className={styles.fieldset}>

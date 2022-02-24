@@ -41,6 +41,7 @@
       object-fit: cover;
       width: 100px;
       height: 100px;
+      margin: 5px 0;
     }
 
     .formWrapper {
@@ -84,8 +85,8 @@
         font-weight: bold;
         text-align: center;
         line-height: 100px;
-        margin: 5px 0;
         cursor: pointer;
+        margin: 5px 0;
       }
       .hidden {
         cursor: default;

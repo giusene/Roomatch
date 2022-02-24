@@ -1,6 +1,7 @@
 @import "./../../libs/variables.scss";
 
 .main {
+  // padding-top: 30px;
   .closeBtn {
     border: none;
     background-color: rgba(80, 80, 80, 0);
@@ -24,6 +25,7 @@
     justify-content: space-between;
     margin: 30px auto;
     position: relative;
+    z-index: 1;
   }
   .stepCounter {
     width: 1.5rem;

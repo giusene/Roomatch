@@ -2,17 +2,20 @@
   display: flex;
   height: calc(100vh - 120px);
   justify-content: center;
+  padding: 10px;
+
   .image {
     background-image: url("./../../libs/img/desktop.jpg");
     background-size: cover;
     background-position: center;
     flex-grow: 1;
     position: relative;
+    height: 90vh;
     &::before {
       content: "";
       position: absolute;
       width: 100%;
-      height: calc(100vh - 120px);
+      height: 100%;
       background: linear-gradient(
         0deg,
         rgba(72, 0, 48, 0.68) 0%,
@@ -25,6 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 100px;
   }
   @media all and (max-width: 990px) {
     .image {
