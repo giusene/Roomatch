@@ -17,14 +17,7 @@ const httpPOST = (resource, data) =>
       "Content-type": "application/json",
     },
     body: JSON.stringify(data),
-  }).then(response => {
-    if (response.status > 399) {
-      console.warn("Server Error!!!");
-      return [];
-    } else {
-      return response.json();
-    }
-  });
+  }).then(response => response.json());
 
 const httpPATCH = (resource, data) =>
   fetch(backend_URL + resource, {
