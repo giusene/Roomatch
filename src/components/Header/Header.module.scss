@@ -15,10 +15,12 @@
     justify-content: space-between;
     margin: 0 auto;
     .logo {
-      color: $background;
-      font-family: $titleFont;
-      font-size: 1rem;
+      width: 9rem;
+      height: 1.2rem;
       margin: $topMargin 2rem;
+      background-image: url(./../../libs/img/logo/logo-header_3.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
     }
   }
 }
