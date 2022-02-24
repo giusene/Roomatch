@@ -10,15 +10,17 @@ import PhotoGallery from "../../components/PhotoGallery";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteRoom } from "../../store/actions";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const RoomDetails = () => {
   const user = useSelector(state => state.user);
   const roomInfo = useLocation();
   const dispatch = useDispatch();
+  let url = useNavigate();
 
   const removeRoom = () => {
     dispatch(deleteRoom(roomInfo.state));
+    url("/profile");
   };
 
   const [roomDetails, setRoomDetails] = useState({

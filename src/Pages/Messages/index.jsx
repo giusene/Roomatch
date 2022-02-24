@@ -27,6 +27,7 @@ const Messages = ({ setVisible }) => {
     stateFromLink.state.roomOwner,
     user._id,
     dispatch,
+    user,
   ]);
 
   return (

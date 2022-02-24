@@ -21,42 +21,42 @@ const ThirdStepForm = ({ formData, prevStep }) => {
         propName: "city",
         value: formData.city,
       },
-      // {
-      //   propName: "aboutFlat",
-      //   value: formData.aboutFlat,
-      // },
-      // {
-      //   propName: "city",
-      //   value: formData.city,
-      // },
-      // {
-      //   propName: "friendlyWith",
-      //   value: formData.friendlyWith,
-      // },
-      // {
-      //   propName: "rentPrice",
-      //   value: formData.rentPrice,
-      // },
-      // {
-      //   propName: "roomAddress",
-      //   value: formData.roomAddress,
-      // },
-      // {
-      //   propName: "roomPhotos",
-      //   value: formData.roomPhotos,
-      // },
-      // {
-      //   propName: "roomType",
-      //   value: formData.roomType,
-      // },
-      // {
-      //   propName: "roommates",
-      //   value: formData.roommates,
-      // },
-      // {
-      //   propName: "town",
-      //   value: formData.town,
-      // },
+      {
+        propName: "aboutFlat",
+        value: formData.aboutFlat,
+      },
+      {
+        propName: "city",
+        value: formData.city,
+      },
+      {
+        propName: "friendlyWith",
+        value: formData.friendlyWith,
+      },
+      {
+        propName: "rentPrice",
+        value: formData.rentPrice,
+      },
+      {
+        propName: "roomAddress",
+        value: formData.roomAddress,
+      },
+      {
+        propName: "roomPhotos",
+        value: formData.roomPhotos,
+      },
+      {
+        propName: "roomType",
+        value: formData.roomType,
+      },
+      {
+        propName: "roommates",
+        value: formData.roommates,
+      },
+      {
+        propName: "town",
+        value: formData.town,
+      },
     ]).then(data => setRedirect("/profile"));
   };
 

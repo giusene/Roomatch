@@ -37,7 +37,7 @@
         border: 2px solid #b9d1e0;
         border-radius: 4px;
         margin: 5px 0;
-        color: $mainLightBlue;
+        color: #406276;
         font-size: 12px;
       }
       button {
@@ -48,6 +48,11 @@
         margin-top: 20px;
         cursor: pointer;
       }
+    }
+  }
+  @media all and (max-width: 990px) {
+    .modal {
+      width: 300px;
     }
   }
 }

@@ -26,7 +26,7 @@
       }
     }
     .header {
-      height: 208px;
+      height: 233px;
       background-size: cover;
       background-position: center;
       position: relative;
@@ -43,17 +43,15 @@
           rgba(100, 0, 67, 0.15) 100%
         );
         width: 100%;
-        height: 208px;
+        height: 233px;
       }
     }
 
     .charsetContainer {
-      margin: 0 auto;
-      max-width: 400px;
       max-width: 400px;
       border: 2px solid #b9d1e0;
       border-radius: 21px;
-      margin: 40px auto;
+      margin: 40px 0;
       box-shadow: 0 3px 13px rgb(0 0 0 / 25%);
       .charTitle {
         padding: 20px 0 10px 30px;
@@ -97,6 +95,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     .line {
       display: none;
       height: 2px;
@@ -104,17 +103,23 @@
       width: 80%;
     }
     .logoutBtn {
-      padding: 8px;
-      background-color: transparent;
-      border: 0px;
-      text-align: right;
+      background: linear-gradient(
+        105.54deg,
+        #b9d1e0 22.32%,
+        rgba(185, 209, 224, 0.21) 107.38%
+      );
+      color: #990066;
+      border: none;
+      border-radius: 100px;
+      padding: 10px 30px;
+      margin-bottom: 10px;
       cursor: pointer;
     }
 
     .bottomContent {
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       max-width: 400px;
       button {
         background: linear-gradient(
@@ -136,13 +141,19 @@
   .main {
     flex-direction: column;
     .actions {
+      padding-top: 0;
       min-width: 100%;
       flex-direction: column-reverse;
       .line {
-        display: block;
+        display: none;
         align-self: flex-end;
         margin: 20px 0 0 0;
       }
+    }
+    .bottomContent {
+      margin-bottom: 10px;
+      max-width: 100%;
+      width: 100%;
     }
   }
 }
