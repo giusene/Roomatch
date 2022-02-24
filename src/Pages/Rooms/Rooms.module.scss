@@ -1,30 +1,28 @@
-@import "./../../libs/variables.scss";
-.main {
-  width: 100%;
-  padding: 10px 20px 20px 20px;
-  margin: 0 auto;
-  background-color: $background;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  .title {
-    display: inline-block;
-    width: 100%;
-    padding-left: 20px;
-  }
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  .filter {
-    width: 100%;
-    padding: 20px 40px;
-    margin-bottom: 20px;
-  }
-}
 
-@media all and (max-width: 990px) {
-  .main {
-    justify-content: center;
-  }
-}
+// @import "./../../libs/variables.scss";
+@import "./../Users/Users.module.scss";
+
+
+// .main {
+//   width: 100%;
+//   margin: 0 auto;
+//   background-color: $background;
+//   overflow-y: auto;
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+//   .filter {
+//     width: 100%;
+//     padding: 20px 40px;
+//     margin-bottom: 20px;
+//   }
+// }
+
+// @media all and (max-width: 990px) {
+//   .main {
+//     justify-content: center;
+//   }
+// }

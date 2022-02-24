@@ -10,7 +10,7 @@ import { GiCat, GiPartyPopper } from "react-icons/gi";
 
 import { FaHandSpock, FaSmoking } from "react-icons/fa";
 
-const UserCard = ({ setResult, userInfo }) => {
+const UserCard = ({ setResult, userInfo, filter }) => {
   const dispatch = useDispatch();
   const user = useSelector(store => store.user);
   const loading = useSelector(store => store.loading);
@@ -43,7 +43,7 @@ const UserCard = ({ setResult, userInfo }) => {
 
   useEffect(() => {
     setResult(true);
-  }, [setResult]);
+  }, [setResult, filter]);
 
   const swipe = useRef();
   const sliderCommands = (el, dir) => {

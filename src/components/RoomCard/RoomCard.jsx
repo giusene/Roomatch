@@ -12,7 +12,7 @@ import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
 import PhotoGallery from "../PhotoGallery";
 import { useEffect, useRef } from "react";
 
-const RoomCard = ({ setResult, room }) => {
+const RoomCard = ({ setResult, room, filter }) => {
   const dispatch = useDispatch();
   const user = useSelector(store => store.user);
   const loading = useSelector(store => store.loading);
@@ -45,7 +45,7 @@ const RoomCard = ({ setResult, room }) => {
 
   useEffect(() => {
     setResult(true);
-  }, [setResult]);
+  }, [setResult, filter]);
 
   const swipe = useRef();
   const sliderCommands = (el, dir) => {
@@ -76,7 +76,7 @@ const RoomCard = ({ setResult, room }) => {
                 </div>
                 <div>
                   {user.ilike.filter(like => like.roomId === room._id).length >
-                  0 ? (
+                    0 ? (
                     <FaHeart
                       onClick={() => !loading && dislikeFunc()}
                       className={`${styles.fillHeart} ${styles.icon}`}
@@ -114,7 +114,7 @@ const RoomCard = ({ setResult, room }) => {
               </div>
               <div className={styles.likeBtn}>
                 {user.ilike.filter(like => like.roomId === room._id).length >
-                0 ? (
+                  0 ? (
                   <FaHeart
                     onClick={() => !loading && dislikeFunc()}
                     className={`${styles.fillHeart} ${styles.icon}`}

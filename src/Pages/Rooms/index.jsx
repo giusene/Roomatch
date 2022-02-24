@@ -19,6 +19,13 @@ const Rooms = () => {
     httpPOST("/getrooms", user.iam).then(data => setRoomList(data));
   }, [user.iam]);
 
+  const setNoFilter = () => {
+    setFilter({
+      city: null,
+      town: user.town
+    })
+  }
+
   return (
     <div className={styles.main}>
       <h3 className={styles.title}>Find your perfect Room!</h3>
@@ -30,13 +37,20 @@ const Rooms = () => {
           town={user.town}
           city={user.city}
         />
+        <button className={styles.clearFilterBtn} onClick={setNoFilter}>No filter</button>
       </div>
       {roomsList.map(
         room =>
           !user.matches.map(item => item.roomId).includes(room._id) &&
           room.roomOwner !== user._id &&
-          filter.city === room.city && (
-            <RoomCard setResult={setResult} room={room} key={room._id} />
+          (filter.city
+            ?
+            (
+              filter.city === room.city && (
+                <RoomCard setResult={setResult} filter={filter.city} room={room} key={room._id} />
+              )
+            )
+            : <RoomCard setResult={setResult} filter={filter.city} room={room} key={room._id} />
           )
       )}
       {!result && <PlaceHolder />}
