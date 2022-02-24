@@ -1,3 +1,4 @@
+@import "./../src/libs/variables.scss";
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +11,9 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(../src/libs/SVG/background-zigzag-lighten.svg);
+  background-size: contain;
+  background-color: lighten($mainLightBlue, 17);
 }
 
 code {
