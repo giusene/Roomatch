@@ -50,6 +50,7 @@ const MatchesProfiles = () => {
         ) : user.matches.length > 0 ? (
           user.matches.map(room => (
             <div key={room.roomId} className={styles.matches}>
+              {console.log(room)}
               {user.newMatch.filter(item => item === room.roomId).length >
                 0 && <span>New</span>}
               <Link to="/messages" state={room}>

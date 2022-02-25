@@ -27,9 +27,9 @@ const Messages = ({ setVisible }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     stateFromLink.state.id
       ? // eslint-disable-next-line react-hooks/exhaustive-deps
-        user.messages[stateFromLink.state.id].discussion.length
+        user.messages[stateFromLink.state.id]?.discussion.length
       : // eslint-disable-next-line react-hooks/exhaustive-deps
-        user.messages[stateFromLink.state.roomOwner].discussion.length,
+        user.messages[stateFromLink.state.roomOwner]?.discussion.length,
   ]);
 
   return (

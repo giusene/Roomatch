@@ -13,7 +13,7 @@ const ChatContainer = ({ interlocutor }) => {
     chatWrapper.current.scrollTop = chatWrapper.current.scrollHeight;
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user.messages[interlocutor].discussion.length]);
+  }, [user.messages[interlocutor]?.discussion.length]);
 
   return (
     <div ref={chatWrapper} className={styles.main}>

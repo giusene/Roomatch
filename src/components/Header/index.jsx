@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateAction } from "../../store/actions";
 
 const Header = () => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector(state => state.user);
   const dispatch = useDispatch();
 
   useEffect(() => {
