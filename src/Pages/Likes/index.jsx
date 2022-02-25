@@ -32,7 +32,11 @@ const Likes = () => {
         );
       }, 500);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user.newLike.length]);
+  }, [
+    user.newLike.length,
+    user.roomId.wholikesme.length,
+    user.wholikesme.length,
+  ]);
 
   return (
     <>

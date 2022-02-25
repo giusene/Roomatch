@@ -250,7 +250,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
         </div>
         <div className={styles.likeBtn}>
           <FiHeart
-            onClick={() => !loading && likeFunc() && setShowInfo(!showInfo)}
+            onClick={() => !loading && likeFunc() && setShowInfo(false)}
             className={`${styles.outlineHeart} ${styles.icon}`}
           />
         </div>
@@ -281,7 +281,7 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
 
         <div className={styles.likeBtn}>
           <FiHeart
-            onClick={() => !loading && likeFunc() && setShowInfo(!showInfo)}
+            onClick={() => !loading && likeFunc() && setShowInfo(false)}
             className={`${styles.outlineHeart} ${styles.icon}`}
           />
         </div>

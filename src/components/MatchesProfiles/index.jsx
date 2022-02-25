@@ -1,14 +1,16 @@
 import styles from "./MatchesProfiles.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { changeChar } from "../../store/actions";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const MatchesProfiles = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.user);
+  const [matchList, setMatchlist] = useState([]);
 
   useEffect(() => {
+    setMatchlist(user.roomId.roomId ? user.roomId.matches : user.matches);
     user.newMatch.length > 0 &&
       setTimeout(() => {
         dispatch(
@@ -24,14 +26,14 @@ const MatchesProfiles = () => {
         );
       }, 500);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user.newMatch.length]);
+  }, [user.newMatch.length, user.roomId.matches.length, user.matches.length]);
 
   return (
     <div className={styles.container}>
       <div className={styles.matchesContainer}>
         {user.roomId.roomId ? (
           user.roomId.matches.length > 0 ? (
-            user.roomId.matches.map((userMatch, index) => (
+            matchList.map((userMatch, index) => (
               <div key={index} className={styles.matches}>
                 {user.newMatch.filter(item => item === userMatch.id).length >
                   0 && <span>New</span>}
@@ -48,9 +50,8 @@ const MatchesProfiles = () => {
             <p>No match available. To make a match, go and press like!</p>
           )
         ) : user.matches.length > 0 ? (
-          user.matches.map(room => (
+          matchList.map(room => (
             <div key={room.roomId} className={styles.matches}>
-              {console.log(room)}
               {user.newMatch.filter(item => item === room.roomId).length >
                 0 && <span>New</span>}
               <Link to="/messages" state={room}>
