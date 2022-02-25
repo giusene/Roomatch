@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { httpPOST } from "../../../libs/http";
 import styles from "./ThirdStep.module.scss";
 import { BsArrowLeftCircle } from "react-icons/bs";
+import { capitalizeFirstLetter } from "./../../../libs/functions";
 
 const ThirdStep = ({ values, prevStep, setRegmessage }) => {
   const [message, setMessage] = useState("");
@@ -11,7 +12,12 @@ const ThirdStep = ({ values, prevStep, setRegmessage }) => {
   const { name, surname, age, city, gender, town, photo } = values;
 
   const hadleConfirm = () => {
-    httpPOST("/users", values).then(data => {
+    httpPOST("/users", {
+      ...values,
+      name: capitalizeFirstLetter(values.name),
+      surname: capitalizeFirstLetter(values.surname),
+      email: values.email.toLocaleLowerCase(),
+    }).then(data => {
       data.message === "email already present in our system" ? (
         setMessage(data.message)
       ) : (
@@ -36,7 +42,7 @@ const ThirdStep = ({ values, prevStep, setRegmessage }) => {
         ></div>
         <div className={styles.info}>
           <h3>
-            {name} {surname}
+            {capitalizeFirstLetter(name)} {capitalizeFirstLetter(surname)}
           </h3>
           <p>Gender: {gender}</p>
           <p>Age: {age}</p>

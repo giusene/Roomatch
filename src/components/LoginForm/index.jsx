@@ -17,7 +17,16 @@ const LoginForm = ({ regmessage }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(loginAction(loginForm, setRedirect, setMessage));
+    dispatch(
+      loginAction(
+        {
+          email: loginForm.email.toLocaleLowerCase(),
+          password: loginForm.password,
+        },
+        setRedirect,
+        setMessage
+      )
+    );
   };
 
   useEffect(() => {
