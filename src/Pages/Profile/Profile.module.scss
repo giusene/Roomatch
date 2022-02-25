@@ -3,6 +3,7 @@
 .main {
   display: flex;
   padding: 0 40px;
+  min-height: calc(100vh - 165px);
   .wrapper {
     flex-grow: 1;
     overflow-y: auto;

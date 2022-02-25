@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import MatchesProfiles from "../../components/MatchesProfiles";
 import MessagePreview from "../../components/MessagePreview";
 import styles from "./Matches.module.scss";
+import Footer from "../../components/Footer/Footer";
 
 const Matches = () => {
   const user = useSelector((state) => state.user);
@@ -41,6 +42,7 @@ const Matches = () => {
           )}
         </div>
       </div>
+      <Footer />
     </>
   );
 };
