@@ -50,18 +50,21 @@ Oh, by the way, we've got a <b>desktop version</b> too!
 <h2>Technologies used</h2>
 <p>Both frontend and backend were created from scratch</p>
 <h3>Frontend:</h3>
+<p>
   <img alt="HTML" src="https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white&style=for-the-badge" />
   <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" /> 
   <img alt="React" src="https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white&style=for-the-badge" />  
   <img alt="react router" src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" />  
   <img alt="redux" src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" />
-  <img alt="Axios" src="https://www.nicepng.com/png/detail/335-3358532_an-operating-system-for-the-brain-gets-fda.png" width=109 />
+  <img alt="Axios" src="https://www.nicepng.com/png/detail/335-3358532_an-operating-system-for-the-brain-gets-fda.png" width=108 />
   <img alt="Sass" src="https://img.shields.io/badge/Sass-CC6699?logo=sass&logoColor=white&style=for-the-badge" />
+ </p>
 <h3>Backend:</h3>
+<p>
   <img alt="Node JS" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
    <img alt="Express JS" src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" />
   <img alt="MongoDB" src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
-
+</p>
 <br/>
 <h2>How to run it:</h2>
 
