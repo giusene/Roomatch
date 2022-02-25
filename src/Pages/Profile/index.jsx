@@ -13,20 +13,20 @@ import EditProfile from "../../components/EditProfile";
 const Profile = () => {
   const [modal, setModal] = useState(false);
   const dispatch = useDispatch();
-  const user = useSelector(state => state.user);
-  const loading = useSelector(state => state.loading);
+  const user = useSelector((state) => state.user);
+  const loading = useSelector((state) => state.loading);
 
   const logoutData = {
     email: user.email,
     token: user.token,
   };
 
-  const handleLogout = e => {
+  const handleLogout = (e) => {
     e.preventDefault();
     dispatch(logoutAction(logoutData));
   };
 
-  const handleChar = char => {
+  const handleChar = (char) => {
     dispatch(
       changeChar(
         [
@@ -124,7 +124,7 @@ const Profile = () => {
         </div>
       </div>
       <div className={styles.actions}>
-        <button className={styles.logoutBtn} onClick={e => handleLogout(e)}>
+        <button className={styles.logoutBtn} onClick={(e) => handleLogout(e)}>
           Logout
         </button>
         <button className={styles.logoutBtn} onClick={() => setModal(true)}>

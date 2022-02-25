@@ -7,15 +7,15 @@ import { likeDislike } from "../../store/actions";
 import styles from "./RoomCard.module.scss";
 import { FiHeart } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
-import { BsArrowRightCircle, BsArrowLeftCircle } from "react-icons/bs";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 import PhotoGallery from "../PhotoGallery";
 import { useEffect, useRef } from "react";
 
 const RoomCard = ({ setResult, room, filter }) => {
   const dispatch = useDispatch();
-  const user = useSelector(store => store.user);
-  const loading = useSelector(store => store.loading);
+  const user = useSelector((store) => store.user);
+  const loading = useSelector((store) => store.loading);
 
   const likeFunc = () => {
     dispatch(
@@ -75,8 +75,8 @@ const RoomCard = ({ setResult, room, filter }) => {
                   <progress value={room.compatibility} max="100"></progress>
                 </div>
                 <div>
-                  {user.ilike.filter(like => like.roomId === room._id).length >
-                    0 ? (
+                  {user.ilike.filter((like) => like.roomId === room._id)
+                    .length > 0 ? (
                     <FaHeart
                       onClick={() => !loading && dislikeFunc()}
                       className={`${styles.fillHeart} ${styles.icon}`}
@@ -94,7 +94,7 @@ const RoomCard = ({ setResult, room, filter }) => {
               className={styles.rightBtn}
               onClick={() => sliderCommands(swipe, "right")}
             >
-              <BsArrowRightCircle />
+              <IoIosArrowForward />
             </button>
           </div>
 
@@ -103,7 +103,7 @@ const RoomCard = ({ setResult, room, filter }) => {
               className={styles.leftBtn}
               onClick={() => sliderCommands(swipe, "left")}
             >
-              <BsArrowLeftCircle />
+              <IoIosArrowBack />
             </button>
             <div className={styles.headerCardInfo}>
               <div className={styles.title}>
@@ -113,8 +113,8 @@ const RoomCard = ({ setResult, room, filter }) => {
                 </p>
               </div>
               <div className={styles.likeBtn}>
-                {user.ilike.filter(like => like.roomId === room._id).length >
-                  0 ? (
+                {user.ilike.filter((like) => like.roomId === room._id).length >
+                0 ? (
                   <FaHeart
                     onClick={() => !loading && dislikeFunc()}
                     className={`${styles.fillHeart} ${styles.icon}`}
