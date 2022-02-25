@@ -130,14 +130,14 @@ const UserCard = ({ setResult, userInfo, filter }) => {
               <p className={styles.charTitle}>Friendly for</p>
               <div className={styles.charSet}>
                 <div className={styles.char}>
-                  <span className={user.iam.lgbtq === 1 ? styles.active : ""}>
+                  <span className={userInfo.iam.lgbtq === 1 ? styles.active : ""}>
                     <RiRainbowLine />
                   </span>
                   LGBTQ+
                 </div>
                 <div className={styles.char}>
                   <span
-                    className={user.iam.pet_owner === 1 ? styles.active : ""}
+                    className={userInfo.iam.pet_owner === 1 ? styles.active : ""}
                   >
                     <GiCat />
                   </span>
@@ -146,7 +146,7 @@ const UserCard = ({ setResult, userInfo, filter }) => {
                 <div className={styles.char}>
                   <span
                     className={
-                      user.iam.multicultural === 1 ? styles.active : ""
+                      userInfo.iam.multicultural === 1 ? styles.active : ""
                     }
                   >
                     <FaHandSpock />
@@ -154,20 +154,20 @@ const UserCard = ({ setResult, userInfo, filter }) => {
                   Multicultural
                 </div>
                 <div className={styles.char}>
-                  <span className={user.iam.veg === 1 ? styles.active : ""}>
+                  <span className={userInfo.iam.veg === 1 ? styles.active : ""}>
                     <RiPlantFill />
                   </span>
                   Veg
                 </div>
                 <div className={styles.char}>
-                  <span className={user.iam.smooker === 1 ? styles.active : ""}>
+                  <span className={userInfo.iam.smooker === 1 ? styles.active : ""}>
                     <FaSmoking />
                   </span>
                   Smoker
                 </div>
                 <div className={styles.char}>
                   <span
-                    className={user.iam.party_lover === 1 ? styles.active : ""}
+                    className={userInfo.iam.party_lover === 1 ? styles.active : ""}
                   >
                     <GiPartyPopper />
                   </span>
