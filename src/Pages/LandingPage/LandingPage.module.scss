@@ -9,6 +9,22 @@
   background-size: cover;
   background-position: center;
   position: relative;
+  .logoContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 auto;
+    z-index: 3;
+    .logo {
+      width: 140px;
+      height: 45px;
+      margin: 30px 40px;
+      background-image: url(./../../libs/img/logo/logo-header-pink.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
   .mask {
     height: 100vh;
     width: 100vw;
@@ -56,6 +72,9 @@
       .registerLink {
         color: white;
         font-size: $superSmall;
+        &:hover {
+          color: rgba(255, 255, 255, 0.692);
+        }
       }
     }
   }
