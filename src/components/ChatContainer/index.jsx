@@ -6,12 +6,14 @@ import { enGB } from "date-fns/locale";
 import { useRef, useEffect } from "react";
 
 const ChatContainer = ({ interlocutor }) => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector(state => state.user);
   const chatWrapper = useRef(0);
 
   useEffect(() => {
     chatWrapper.current.scrollTop = chatWrapper.current.scrollHeight;
-  }, [chatWrapper.current.scrollHeight, chatWrapper.current.scrollTop]);
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user.messages[interlocutor].discussion.length]);
 
   return (
     <div ref={chatWrapper} className={styles.main}>

@@ -19,7 +19,8 @@ const Users = () => {
     httpPOST("/getusers", myData.roomId.friendlyWith).then(data =>
       setPeopleList(data)
     );
-  }, [myData.roomId.friendlyWith]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const setNoFilter = () => {
     setFilter({

@@ -17,7 +17,8 @@ const Rooms = () => {
 
   useEffect(() => {
     httpPOST("/getrooms", user.iam).then(data => setRoomList(data));
-  }, [user.iam]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const setNoFilter = () => {
     setFilter({

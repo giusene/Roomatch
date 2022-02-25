@@ -22,12 +22,14 @@ const Messages = ({ setVisible }) => {
           : stateFromLink.state.roomOwner,
       })
     );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
-    stateFromLink.state.id,
-    stateFromLink.state.roomOwner,
-    user._id,
-    dispatch,
-    user,
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    stateFromLink.state.id
+      ? // eslint-disable-next-line react-hooks/exhaustive-deps
+        user.messages[stateFromLink.state.id].discussion.length
+      : // eslint-disable-next-line react-hooks/exhaustive-deps
+        user.messages[stateFromLink.state.roomOwner].discussion.length,
   ]);
 
   return (
