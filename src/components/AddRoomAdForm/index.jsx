@@ -7,7 +7,7 @@ import HeaderAddRoomForm from "../HeaderAddRoomAdForm/HeaderAddRoomForm";
 import { useSelector } from "react-redux";
 
 const AddRoomAdForm = () => {
-  const user = useSelector((state) => state.user);
+  const user = useSelector(state => state.user);
   const [step, setStep] = useState(1);
 
   const initialForm = {
@@ -50,14 +50,14 @@ const AddRoomAdForm = () => {
     setStep(step - 1);
   };
 
-  const handleInputData = (input) => (e) => {
+  const handleInputData = input => e => {
     setFormData({
       ...formData,
       [input]: e.target.value,
     });
   };
 
-  const setImage = (input) => {
+  const setImage = input => {
     let newPhotos = [...formData.roomPhotos, input];
     setFormData({
       ...formData,
@@ -69,6 +69,14 @@ const AddRoomAdForm = () => {
     setFormData({
       ...formData,
       [input]: value,
+    });
+  };
+
+  const handleCity = (city, town) => {
+    setFormData({
+      ...formData,
+      city: city,
+      town: town,
     });
   };
 
@@ -115,6 +123,7 @@ const AddRoomAdForm = () => {
             nextStep={nextStep}
             handleFormData={handleInputData}
             handleInputCities={handleInputCities}
+            handleCity={handleCity}
             handleAbout={handleAbout}
             handleAboutCheck={handleAboutCheck}
             values={formData}

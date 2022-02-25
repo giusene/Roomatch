@@ -12,15 +12,16 @@ const FirstStepForm = ({
   values,
   nextStep,
   handleInputCities,
+  handleCity,
 }) => {
-  const submitFormData = (e) => {
+  const submitFormData = e => {
     e.preventDefault();
     nextStep();
   };
 
   return (
     <div className={styles.main}>
-      <form className={styles.flexForm} onSubmit={(e) => submitFormData(e)}>
+      <form className={styles.flexForm} onSubmit={e => submitFormData(e)}>
         <div className={styles.rentType}>
           <div className={styles.rent}>
             <label className={styles.label} htmlFor="rentPrice">
@@ -62,6 +63,7 @@ const FirstStepForm = ({
             City*
           </label>
           <CitiesSelector
+            handleCity={handleCity}
             handleInputCities={handleInputCities}
             values={values}
           />
@@ -89,7 +91,7 @@ const FirstStepForm = ({
                 <input
                   className={styles.flatInput}
                   value={values.aboutFlat.bedrooms}
-                  onChange={(e) => handleAbout("bedrooms", e)}
+                  onChange={e => handleAbout("bedrooms", e)}
                   name="bedrooms"
                   id="bedrooms"
                   type="number"
@@ -105,7 +107,7 @@ const FirstStepForm = ({
                 <input
                   className={styles.flatInput}
                   value={values.aboutFlat.bathrooms}
-                  onChange={(e) => handleAbout("bathrooms", e)}
+                  onChange={e => handleAbout("bathrooms", e)}
                   name="bathrooms"
                   id="bathrooms"
                   type="number"
@@ -121,7 +123,7 @@ const FirstStepForm = ({
                 <input
                   className={styles.flatInput}
                   value={values.aboutFlat.kitchen}
-                  onChange={(e) => handleAbout("kitchen", e)}
+                  onChange={e => handleAbout("kitchen", e)}
                   name="kitchen"
                   id="kitchen"
                   type="number"
@@ -143,7 +145,7 @@ const FirstStepForm = ({
                     name="action"
                     id="airCond"
                     checked={values.aboutFlat.airCond}
-                    onChange={(e) => handleAboutCheck("airCond", e)}
+                    onChange={e => handleAboutCheck("airCond", e)}
                   />
                   <span className={styles.mark}></span>
                 </label>
@@ -153,7 +155,7 @@ const FirstStepForm = ({
                   Bills included
                   <input
                     checked={values.aboutFlat.billsIncl}
-                    onChange={(e) => handleAboutCheck("billsIncl", e)}
+                    onChange={e => handleAboutCheck("billsIncl", e)}
                     type="checkbox"
                     name="action"
                     id="billsIncl"
@@ -166,7 +168,7 @@ const FirstStepForm = ({
                   WiFi
                   <input
                     checked={values.aboutFlat.wifi}
-                    onChange={(e) => handleAboutCheck("wifi", e)}
+                    onChange={e => handleAboutCheck("wifi", e)}
                     type="checkbox"
                     name="action"
                     id="wifi"

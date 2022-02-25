@@ -40,17 +40,25 @@ const RegistrationForm = () => {
     setStep(step - 1);
   };
 
-  const handleInputData = (input) => (e) => {
+  const handleInputData = input => e => {
     setFormData({
       ...formData,
       [input]: e.target.value,
     });
   };
 
-  const setImage = (input) => {
+  const setImage = input => {
     setFormData({
       ...formData,
       photo: input,
+    });
+  };
+
+  const handleCity = (city, town) => {
+    setFormData({
+      ...formData,
+      city: city,
+      town: town,
     });
   };
 
@@ -92,6 +100,7 @@ const RegistrationForm = () => {
             handleFormData={handleInputData}
             handleInputPref={handleInputPref}
             handleInputCities={handleInputCities}
+            handleCity={handleCity}
             values={formData}
           />
         </div>

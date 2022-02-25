@@ -9,15 +9,17 @@ const SecondStep = ({
   values,
   handleInputCities,
   handleInputPref,
+  handleCity,
+  handleTown,
 }) => {
-  const submitFormData = (e) => {
+  const submitFormData = e => {
     e.preventDefault();
     nextStep();
   };
 
   return (
     <div className={styles.containerForm}>
-      <form className={styles.form} onSubmit={(e) => submitFormData(e)}>
+      <form className={styles.form} onSubmit={e => submitFormData(e)}>
         <div>
           <div className={styles.age}>
             <label className={styles.selectorLabel} htmlFor="age">
@@ -58,6 +60,8 @@ const SecondStep = ({
               City*
             </label>
             <CitiesSelector
+              handleCity={handleCity}
+              handleTown={handleTown}
               handleInputCities={handleInputCities}
               values={values}
             />
@@ -75,7 +79,7 @@ const SecondStep = ({
                       name="action"
                       id="lgbtq"
                       checked={values.iam.lgbtq === 1 ? true : false}
-                      onChange={(e) => handleInputPref("lgbtq", e)}
+                      onChange={e => handleInputPref("lgbtq", e)}
                     />
                     <span className={styles.mark}></span>
                   </label>
@@ -86,7 +90,7 @@ const SecondStep = ({
                     Pet owner
                     <input
                       checked={values.iam.pet_owner === 1 ? true : false}
-                      onChange={(e) => handleInputPref("pet_owner", e)}
+                      onChange={e => handleInputPref("pet_owner", e)}
                       type="checkbox"
                       name="action"
                       id="pet_owner"
@@ -102,7 +106,7 @@ const SecondStep = ({
                     Multicultural
                     <input
                       checked={values.iam.multicultural === 1 ? true : false}
-                      onChange={(e) => handleInputPref("multicultural", e)}
+                      onChange={e => handleInputPref("multicultural", e)}
                       type="checkbox"
                       name="action"
                       id="multicultural"
@@ -119,7 +123,7 @@ const SecondStep = ({
                     <input
                       checked={values.iam.veg === 1 ? true : false}
                       type="checkbox"
-                      onChange={(e) => handleInputPref("veg", e)}
+                      onChange={e => handleInputPref("veg", e)}
                       name="action"
                       id="veg"
                     />
@@ -132,7 +136,7 @@ const SecondStep = ({
                     Smooker
                     <input
                       checked={values.iam.smooker === 1 ? true : false}
-                      onChange={(e) => handleInputPref("smooker", e)}
+                      onChange={e => handleInputPref("smooker", e)}
                       type="checkbox"
                       name="action"
                       id="smooker"
@@ -149,7 +153,7 @@ const SecondStep = ({
                     Party lover
                     <input
                       checked={values.iam.party_lover === 1 ? true : false}
-                      onChange={(e) => handleInputPref("party_lover", e)}
+                      onChange={e => handleInputPref("party_lover", e)}
                       type="checkbox"
                       name="action"
                       id="party_lover"

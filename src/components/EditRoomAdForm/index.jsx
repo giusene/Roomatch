@@ -41,6 +41,14 @@ const EditRoomAdForm = () => {
     });
   };
 
+  const handleCity = (city, town) => {
+    setFormData({
+      ...formData,
+      city: city,
+      town: town,
+    });
+  };
+
   const handleInputPref = (input, e) => {
     setFormData({
       ...formData,
@@ -84,6 +92,7 @@ const EditRoomAdForm = () => {
             nextStep={nextStep}
             handleFormData={handleInputData}
             handleInputCities={handleInputCities}
+            handleCity={handleCity}
             handleAbout={handleAbout}
             handleAboutCheck={handleAboutCheck}
             values={formData}

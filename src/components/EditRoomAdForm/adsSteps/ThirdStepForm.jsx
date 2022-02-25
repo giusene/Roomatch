@@ -14,8 +14,6 @@ const ThirdStepForm = ({ formData, prevStep }) => {
   const [redirect, setRedirect] = useState("/editroom");
 
   const formSubmit = () => {
-    console.log(formData);
-
     httpPATCH(`/rooms/${user.roomId.roomId}`, [
       {
         propName: "city",
