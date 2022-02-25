@@ -1,5 +1,5 @@
 import styles from "./Main.module.scss";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./../../components/Header";
 import MainNav from "./../../components/MainNav";
 import Rooms from "./../Rooms";
@@ -13,16 +13,22 @@ import { useSelector } from "react-redux";
 import NewRoom from "../NewRoom";
 import Messages from "../Messages";
 import EditRoom from "../EditRoom";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 const Main = () => {
   const user = useSelector(state => state.user);
   const [visible, setVisible] = useState(true);
+  const container = useRef();
+  const path = useLocation();
+
+  useEffect(() => {
+    container.current.scrollTo(0, 0);
+  }, [path]);
 
   return (
     <div className={styles.main}>
       <Header />
-      <div className={styles.mainContainer}>
+      <div ref={container} className={styles.mainContainer}>
         <Routes>
           <Route
             path="/list"
