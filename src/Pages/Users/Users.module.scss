@@ -10,6 +10,7 @@
     display: inline-block;
     width: 100%;
     padding-left: 20px;
+    color: darken($mainLightBlue, 30);
   }
   &::-webkit-scrollbar {
     display: none;

@@ -4,7 +4,9 @@ const Footer = ({ landing = false }) => {
   const year = new Date().getFullYear();
 
   return (
-    <div className={landing ? styles.footerWrapperLanding : styles.footerWrapper}>
+    <div
+      className={landing ? styles.footerWrapperLanding : styles.footerWrapper}
+    >
       <div className={styles.footer}>
         <div className={styles.links}>
           <ul>

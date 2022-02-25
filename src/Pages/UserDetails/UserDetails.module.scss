@@ -3,7 +3,7 @@
 .main {
   width: 100%;
   overflow-y: auto;
-  padding-bottom: calc(100px + 30px);
+  min-height: calc(100vh - 165px);
 
   .info {
     position: relative;
@@ -60,10 +60,11 @@
     }
   }
   .charsetContainer {
+    color: darken($mainLightBlue, 30);
     width: 80%;
     max-width: 400px;
     margin: 0 auto;
-    border: 2px solid $mainLightBlue;
+    border: 2px solid rgba(0, 0, 255, 0);
     border-radius: $radiusDiv;
     margin: 60px auto;
     box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
@@ -71,7 +72,6 @@
     .charTitle {
       margin: 30px 0 10px 30px;
       font-weight: bold;
-      color: $mainLightBlue;
       font-size: 14px;
     }
     .charSet {

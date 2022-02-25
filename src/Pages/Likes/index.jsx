@@ -7,7 +7,7 @@ import PlaceHolder from "../../components/PlaceHolder";
 import Footer from "../../components/Footer/Footer";
 
 const Likes = () => {
-  const user = useSelector(state => state.user);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
 
   const [dataLikes, setDataLikes] = useState({ data: [], isRoom: null });

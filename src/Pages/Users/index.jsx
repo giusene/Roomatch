@@ -8,7 +8,7 @@ import PlaceHolder from "../../components/PlaceHolder";
 import Footer from "../../components/Footer/Footer";
 
 const Users = () => {
-  const myData = useSelector(state => state.user);
+  const myData = useSelector((state) => state.user);
   const [peopleList, setPeopleList] = useState([]);
   const [result, setResult] = useState(false);
   const [filter, setFilter] = useState({
@@ -17,7 +17,7 @@ const Users = () => {
   });
 
   useEffect(() => {
-    httpPOST("/getusers", myData.roomId.friendlyWith).then(data =>
+    httpPOST("/getusers", myData.roomId.friendlyWith).then((data) =>
       setPeopleList(data)
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -48,8 +48,10 @@ const Users = () => {
         </div>
         <div className={styles.cardsWrapper}>
           {peopleList.map(
-            user =>
-              !myData.roomId.matches.map(item => item.id).includes(user._id) &&
+            (user) =>
+              !myData.roomId.matches
+                .map((item) => item.id)
+                .includes(user._id) &&
               myData._id !== user._id &&
               user.roomId.roomId === "" &&
               (filter.city ? (

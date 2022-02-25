@@ -3,6 +3,9 @@
 .main {
   padding: 0 20px;
   overflow-y: auto;
+  color: darken($mainLightBlue, 30);
+  margin-bottom: 60px;
+
   .btnSet {
     display: flex;
     flex-direction: column;
@@ -71,8 +74,6 @@
     font-weight: 400;
     font-size: 14px;
     font-weight: bold;
-    color: $mainLightBlue;
-    border: 2px solid $mainLightBlue;
     border-radius: $radiusDiv;
     box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
     padding: 20px;
@@ -80,7 +81,7 @@
     span {
       margin: 0 10px;
       align-items: center;
-      color: black;
+      color: darken($mainLightBlue, 30);
       font-weight: normal;
       svg {
         font-size: 14px;
@@ -92,9 +93,9 @@
     flex-wrap: wrap;
     justify-content: center;
     .charsetContainer {
+      border: 2px solid rgba(0, 0, 255, 0);
       max-width: 400px;
       margin: 20px;
-      border: 2px solid $mainLightBlue;
       border-radius: $radiusDiv;
       box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
 
@@ -103,7 +104,6 @@
         font-weight: 400;
         font-size: 14px;
         font-weight: bold;
-        color: $mainLightBlue;
       }
       .charSet {
         display: flex;
@@ -130,7 +130,6 @@
         }
         .charNum {
           margin-right: 5px;
-          color: $mainLightBlue;
           font-size: $smallSize;
           font-weight: bold;
         }
@@ -151,13 +150,11 @@
     max-width: 840px;
     padding: 20px;
     margin: 20px auto;
-    border: 2px solid $mainLightBlue;
     border-radius: $radiusDiv;
     box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
     p {
       margin-bottom: 10px;
       font-weight: bold;
-      color: $mainLightBlue;
     }
   }
   .likes {
@@ -187,5 +184,8 @@
       padding: 10px 30px;
       cursor: pointer;
     }
+  }
+  .footer {
+    margin-top: 50px;
   }
 }

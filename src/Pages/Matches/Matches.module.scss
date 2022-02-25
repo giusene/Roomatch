@@ -5,6 +5,8 @@
   padding-top: 10px;
   padding-bottom: 100px;
   min-height: calc(100vh - 165px);
+  color: darken($mainLightBlue, 30);
+
   .separator {
     width: 80%;
     height: 1px;

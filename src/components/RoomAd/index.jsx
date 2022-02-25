@@ -14,7 +14,7 @@ const RoomAd = ({ room }) => {
             <div className={styles.likes}>
               <span>
                 {
-                  room.wholikesme.filter(user => user.room?.roomId === "")
+                  room.wholikesme.filter((user) => user.room?.roomId === "")
                     .length
                 }
               </span>

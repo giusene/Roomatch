@@ -87,6 +87,7 @@
   }
 
   .infoCardContainer {
+    color: darken($mainLightBlue, 30);
     border: 1px solid $mainLightBlue;
     min-width: 19rem;
     max-width: 20rem;
@@ -143,7 +144,7 @@
     color: darken($mainLightBlue, 21);
     width: 260px;
     margin: 0 auto;
-    border: 2px solid $mainLightBlue;
+    border: 2px solid rgba(0, 0, 255, 0);
     border-radius: $radiusDiv;
     margin: 40px auto;
     box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);

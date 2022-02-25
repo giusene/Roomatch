@@ -28,6 +28,8 @@
   .likesContainer {
     flex-grow: 1;
     .title {
+      color: darken($mainLightBlue, 30);
+
       display: inline-block;
       margin: 0 30px;
     }

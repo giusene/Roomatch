@@ -8,7 +8,7 @@ import PlaceHolder from "../../components/PlaceHolder";
 import Footer from "../../components/Footer/Footer";
 
 const Rooms = () => {
-  const user = useSelector(state => state.user);
+  const user = useSelector((state) => state.user);
   const [roomsList, setRoomList] = useState([]);
   const [result, setResult] = useState(false);
   const [filter, setFilter] = useState({
@@ -17,7 +17,7 @@ const Rooms = () => {
   });
 
   useEffect(() => {
-    httpPOST("/getrooms", user.iam).then(data => setRoomList(data));
+    httpPOST("/getrooms", user.iam).then((data) => setRoomList(data));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -46,8 +46,8 @@ const Rooms = () => {
         </div>
         <div className={styles.cardsWrapper}>
           {roomsList.map(
-            room =>
-              !user.matches.map(item => item.roomId).includes(room._id) &&
+            (room) =>
+              !user.matches.map((item) => item.roomId).includes(room._id) &&
               room.roomOwner !== user._id &&
               (filter.city ? (
                 filter.city === room.city && (

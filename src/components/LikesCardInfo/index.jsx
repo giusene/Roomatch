@@ -14,8 +14,8 @@ import { useSelector, useDispatch } from "react-redux";
 
 const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
   const dispatch = useDispatch();
-  const loading = useSelector(store => store.loading);
-  const loggedUser = useSelector(store => store.user);
+  const loading = useSelector((store) => store.loading);
+  const loggedUser = useSelector((store) => store.user);
 
   const currentItemDetails = isRoom ? data.friendlyWith : data.iam;
   const currentItem = data;

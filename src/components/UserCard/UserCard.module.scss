@@ -91,7 +91,6 @@
   }
 
   .infoCardContainer {
-    border: 1px solid $mainLightBlue;
     min-width: 300px;
     margin: 0 1.6rem 0 1.2rem;
     height: 30rem;
@@ -100,8 +99,11 @@
     padding: $sidePadding;
     box-shadow: 0 3px 13px rgba(0, 0, 0, 0.25);
     position: relative;
+    color: darken($mainLightBlue, 30);
+
     .headerCardInfo {
       display: flex;
+
       .title {
         flex-grow: 1;
         p {
