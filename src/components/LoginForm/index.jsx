@@ -5,7 +5,7 @@ import styles from "./LoginForm.module.scss";
 import { useDispatch } from "react-redux";
 import HeaderForms from "../../components/HeaderForms/HeaderForms";
 
-const LoginForm = () => {
+const LoginForm = ({ regmessage }) => {
   const [message, setMessage] = useState("");
   let url = useNavigate();
   const [redirect, setRedirect] = useState("/login");
@@ -27,6 +27,7 @@ const LoginForm = () => {
   return (
     <div className={styles.main}>
       <HeaderForms />
+      {regmessage && <p className={styles.message}>{regmessage}</p>}
       <form className={styles.form} onSubmit={e => handleSubmit(e)}>
         <label className={styles.label} htmlFor="email">
           Email*

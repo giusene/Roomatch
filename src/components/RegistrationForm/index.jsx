@@ -28,7 +28,7 @@ const initialForm = {
   messages: {},
 };
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ setRegmessage }) => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState(initialForm);
 
@@ -109,7 +109,11 @@ const RegistrationForm = () => {
       return (
         <div className={styles.containerForm}>
           <HeaderForms step={step} />
-          <ThirdStep prevStep={prevStep} values={formData} />
+          <ThirdStep
+            prevStep={prevStep}
+            values={formData}
+            setRegmessage={setRegmessage}
+          />
         </div>
       );
     default:

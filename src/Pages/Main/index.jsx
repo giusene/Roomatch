@@ -38,7 +38,6 @@ const Main = () => {
             path="/"
             element={user.roomId.roomId === "" ? <Rooms /> : <Users />}
           />
-          {/* <Route path="/rooms" element={<Rooms />} /> */}
           <Route path="/likes" element={<Likes />} />
           <Route path="/matches" element={<Matches />} />
           <Route path="/profile" element={<Profile />} />

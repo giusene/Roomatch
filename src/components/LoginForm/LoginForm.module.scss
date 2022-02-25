@@ -2,6 +2,11 @@
 
 .main {
   position: relative;
+  .message {
+    text-align: center;
+    margin-top: 20px;
+    color: $mainPink;
+  }
   form {
     display: flex;
     flex-direction: column;

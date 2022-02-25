@@ -4,17 +4,22 @@ import { httpPOST } from "../../../libs/http";
 import styles from "./ThirdStep.module.scss";
 import { BsArrowLeftCircle } from "react-icons/bs";
 
-const ThirdStep = ({ values, prevStep }) => {
+const ThirdStep = ({ values, prevStep, setRegmessage }) => {
   const [message, setMessage] = useState("");
   const [redirect, setRedirect] = useState("/registration");
   let url = useNavigate();
   const { name, surname, age, city, gender, town, photo } = values;
 
   const hadleConfirm = () => {
-    httpPOST("/users", values).then((data) => {
-      data.message === "email already present in our system"
-        ? setMessage(data.message)
-        : setRedirect("/");
+    httpPOST("/users", values).then(data => {
+      data.message === "email already present in our system" ? (
+        setMessage(data.message)
+      ) : (
+        <>
+          {setRedirect("/login")}
+          {setRegmessage("Account created. Ready to start!")}
+        </>
+      );
     });
   };
 

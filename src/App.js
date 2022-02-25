@@ -5,11 +5,12 @@ import Main from "./Pages/Main";
 import LandingPage from "./Pages/LandingPage";
 import Registration from "./Pages/Registration";
 import Login from "./Pages/Login";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const dispatch = useDispatch();
   const loginStatus = useSelector(state => state.logged);
+  const [regmessage, setRegmessage] = useState("");
 
   useEffect(() => {
     if (window.localStorage.getItem("roomatch")) {
@@ -22,8 +23,14 @@ function App() {
     <>
       <Routes>
         <Route path="*" element={loginStatus ? <Main /> : <LandingPage />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/login" element={loginStatus ? <Main /> : <Login />} />
+        <Route
+          path="/registration"
+          element={<Registration setRegmessage={setRegmessage} />}
+        />
+        <Route
+          path="/login"
+          element={loginStatus ? <Main /> : <Login regmessage={regmessage} />}
+        />
       </Routes>
     </>
   );
