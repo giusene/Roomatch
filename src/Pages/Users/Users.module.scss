@@ -4,9 +4,6 @@
   margin: 0 auto;
   background-color: $background;
   overflow-y: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   padding: 10px 18px 20px 20px;
   min-height: calc(100vh - 165px);
   .title {
@@ -43,6 +40,11 @@
         font-weight: bold;
       }
     }
+  }
+  .cardsWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 

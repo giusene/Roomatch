@@ -15,7 +15,7 @@
     width: 400px;
     background-color: #fff;
     border-radius: 15px;
-    padding: 20px;
+    padding: 20px 30px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 3px 21px rgb(0 0 0 / 83%);
@@ -27,6 +27,10 @@
       svg {
         cursor: pointer;
       }
+    }
+    h3 {
+      margin-bottom: 10px;
+      color: #406276;
     }
     form {
       display: flex;

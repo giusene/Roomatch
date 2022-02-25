@@ -25,6 +25,14 @@ const EditProfile = ({ setModal }) => {
     });
   };
 
+  const handleCity = (city, town) => {
+    setForm({
+      ...form,
+      city: city,
+      town: town,
+    });
+  };
+
   const HandleSubmit = e => {
     e.preventDefault();
 
@@ -68,6 +76,7 @@ const EditProfile = ({ setModal }) => {
         <div className={styles.btnWrapper}>
           <IoIosCloseCircle onClick={() => setModal(false)} />
         </div>
+        <h3>Edit your profile</h3>
         <form onSubmit={e => HandleSubmit(e)}>
           <input
             value={form.name}
@@ -102,12 +111,12 @@ const EditProfile = ({ setModal }) => {
             <option value="Female">Female</option>
             <option value="Other">Other</option>
           </select>
-          {/* <input
-            value={form.gender}
-            onChange={e => setForm({ ...form, gender: e.target.value })}
-            type="text"
-          /> */}
-          <CitiesSelector handleInputCities={handleInputCities} values={form} />
+
+          <CitiesSelector
+            handleCity={handleCity}
+            handleInputCities={handleInputCities}
+            values={form}
+          />
           <button>Salva</button>
         </form>
       </div>

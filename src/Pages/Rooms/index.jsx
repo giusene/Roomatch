@@ -44,29 +44,31 @@ const Rooms = () => {
             No filter
           </button>
         </div>
-        {roomsList.map(
-          room =>
-            !user.matches.map(item => item.roomId).includes(room._id) &&
-            room.roomOwner !== user._id &&
-            (filter.city ? (
-              filter.city === room.city && (
+        <div className={styles.cardsWrapper}>
+          {roomsList.map(
+            room =>
+              !user.matches.map(item => item.roomId).includes(room._id) &&
+              room.roomOwner !== user._id &&
+              (filter.city ? (
+                filter.city === room.city && (
+                  <RoomCard
+                    setResult={setResult}
+                    filter={filter.city}
+                    room={room}
+                    key={room._id}
+                  />
+                )
+              ) : (
                 <RoomCard
                   setResult={setResult}
                   filter={filter.city}
                   room={room}
                   key={room._id}
                 />
-              )
-            ) : (
-              <RoomCard
-                setResult={setResult}
-                filter={filter.city}
-                room={room}
-                key={room._id}
-              />
-            ))
-        )}
-        {!result && <PlaceHolder />}
+              ))
+          )}
+          {!result && <PlaceHolder />}
+        </div>
       </div>
       <Footer />
     </>
