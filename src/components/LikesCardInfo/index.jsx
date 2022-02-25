@@ -14,11 +14,39 @@ import { useSelector, useDispatch } from "react-redux";
 
 const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
   const dispatch = useDispatch();
-  const loading = useSelector((store) => store.loading);
-  const loggedUser = useSelector((store) => store.user);
+  const loading = useSelector(store => store.loading);
+  const loggedUser = useSelector(store => store.user);
+  const user = useSelector(state => state.user);
+
 
   const currentItemDetails = isRoom ? data.friendlyWith : data.iam;
   const currentItem = data;
+
+  // CHECK ROOM COMPATIBILITY
+  const roomComp = () => {
+    let compatibility = 0;
+    let percent = 0;
+
+    Object.keys(currentItemDetails).forEach(par => {
+      parseInt(currentItemDetails[par]) === parseInt(user.iam[par]) &&
+        compatibility++;
+      percent++;
+    });
+    return parseInt((compatibility * 100) / percent);
+  };
+
+  // CHECK USER COMPATIBILITY
+  const userComp = () => {
+    let compatibility = 0;
+    let percent = 0;
+
+    Object.keys(currentItemDetails).forEach(par => {
+      parseInt(currentItemDetails[par]) ===
+        parseInt(user.roomId.friendlyWith[par]) && compatibility++;
+      percent++;
+    });
+    return parseInt((compatibility * 100) / percent);
+  };
 
   const likeFunc = () => {
     dispatch(
@@ -216,7 +244,10 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
           </div>
           <h4>Price: {data.rentPrice},00€/month</h4>
         </div>
-
+        <div className={styles.compatibility}>
+          <label htmlFor="">Compatibility {roomComp()}%</label>
+          <progress value={roomComp()} max="100"></progress>
+        </div>
         <div className={styles.likeBtn}>
           <FiHeart
             onClick={() => !loading && likeFunc() && setShowInfo(!showInfo)}
@@ -241,6 +272,10 @@ const LikesCardInfo = ({ data, showInfo, setShowInfo, isRoom }) => {
             <p>
               from {data.town} ({data.city})
             </p>
+          </div>
+          <div className={styles.compatibility}>
+            <label htmlFor="">Compatibility {userComp()}%</label>
+            <progress value={userComp()} max="100"></progress>
           </div>
         </div>
 
